@@ -220,18 +220,20 @@ window.onload = function() {
     save_name(name) {
       localStorage.setItem("name", name);
     }
+    save_url(url) {
+      localStorage.setItem("url", url);
+    }
     send_message(message) {
       var parent = this;
       if (parent.get_name() == null && message == null) {
         return;
       }
-      getitem
       var messages = db.ref("chats/");
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
         db.ref("chats/" + `message_${index}`)
           .set({
-            profilepic: '',
+            profilepic: parent.get_url(),
             name: parent.get_name(),
             message: message,
             index: index
@@ -244,6 +246,14 @@ window.onload = function() {
     get_name() {
       if (localStorage.getItem("name") != null) {
         return localStorage.getItem("name");
+      } else {
+        this.home();
+      }
+    }
+
+get_url() {
+      if (localStorage.getItem("url") != null) {
+        return localStorage.getItem("url");
       } else {
         this.home();
       }
