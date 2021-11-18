@@ -185,7 +185,7 @@ window.onload = function() {
         var index = parseFloat(snapshot.numChildren()) + 1;
         db.ref("chats/" + `message_${index}`)
           .set({
-            profilepic: ;
+            profilepic: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Ftoppng.com%2Fuploads%2Fpreview%2Fdiscord-logo-discord-11563258075bqnd0dtabo.png&imgrefurl=https%3A%2F%2Ftoppng.com%2Fdiscord-logo-discord-PNG-free-PNG-Images_229033&tbnid=RHMlDPDiZD70oM&vet=12ahUKEwjAgp7ZoKL0AhURfqwKHRWGA0wQMygFegUIARDTAQ..i&docid=wCTXxF0qV8YcDM&w=840&h=859&q=transparent%20discord&hl=en&safe=active&ved=2ahUKEwjAgp7ZoKL0AhURfqwKHRWGA0wQMygFegUIARDTAQ',
             name: parent.get_name(),
             message: message,
             index: index
@@ -236,6 +236,7 @@ window.onload = function() {
         });
 
         ordered.forEach(function(data) {
+          var profilepic = data.profilepic;
           var name = data.name;
           var message = data.message;
 
@@ -253,8 +254,7 @@ window.onload = function() {
 
           var message_pfp = document.createElement("img");
           message_pfp.setAttribute("class", "message_pfp");
-          message_pfp.src =
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDVG8VK-9wz1PVrb7_PKTx9JQ5X0u3Nzlcjydrxodr9hCZuaNDNoU7IdVjlvVZEfvms8U:https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Square-1024x1024.png&usqp=CAU";
+          message_pfp.src = profilepic;
 
           var message_user_container = document.createElement("div");
           message_user_container.setAttribute(
