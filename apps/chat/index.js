@@ -236,6 +236,13 @@ const firebaseConfig = {
           var message_inner_container = document.createElement('div')
           message_inner_container.setAttribute('class', 'message_inner_container')
 
+var profpiccont = document.createElement('div')
+          message_user_container.setAttribute('class', 'profpiccont')
+
+          var message_pfp = document.createElement('p')
+          message_pfp.setAttribute('class', 'message_pfp')
+          message_pfp.textContent = `E`
+
           var message_user_container = document.createElement('div')
           message_user_container.setAttribute('class', 'message_user_container')
 
@@ -251,8 +258,9 @@ const firebaseConfig = {
           message_content.textContent = `${message}`
 
           message_user_container.append(message_user)
+          profpiccont.append(message_pfp)
           message_content_container.append(message_content)
-          message_inner_container.append(message_user_container, message_content_container)
+          message_inner_container.append(message_user_container, message_content_container, profpiccont)
           message_container.append(message_inner_container)
 
           chat_content_container.append(message_container)
