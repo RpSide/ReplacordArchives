@@ -1,3 +1,45 @@
+/grabs invite code
+var queryString = window.location.search
+  
+  var urlParams = new URLSearchParams(queryString);
+   
+  var invitecode = urlParams.get('code')
+
+  if (queryString != null || queryString != undefined) {
+     localStorage.setItem("code", invitecode + "/");
+    localStorage.setItem("chatroomname", invitecode);
+}
+    
+function makeinvite() {
+
+alert('https://essycomp.glitch.me/?appID=3&code=' + invitecode)
+
+}
+
+var roome = localStorage.getItem("code");
+
+if (roome == undefined || roome == null || roome == "") {
+ localStorage.setItem("code", 'chatroom1/');
+ localStorage.setItem("chatroomname", 'chatroom1');
+}
+
+var room = localStorage.getItem("code")
+var roomname = localStorage.getItem("chatroomname")
+
+function chatroompicker(params){
+localStorage.clear()
+var room = localStorage.getItem("code");
+let roomcode = prompt("chatroom code", room);
+let text;
+if (roomcode == null || roomcode == "") {
+ alert ('empty field');
+} else {
+  text = roomcode;
+window.location.href = document.documentURI + '?code=' + roomcode
+}
+}
+
+
 window.onload = function() {
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -60,7 +102,7 @@ window.onload = function() {
 
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
-      join_input.setAttribute("maxlength", 15);
+      join_input.setAttribute("maxlength", 25);
       join_input.placeholder = "Name";
       join_input.onkeyup = function() {
         if (join_input.value.length > 0) {
