@@ -67,7 +67,7 @@ window.onload = function() {
       this.create_title();
       this.create_chat();
     }
-    create_title(){
+create_title(){
 const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='chatroompicker()' id='unb'>Join A Room</button> <button id='unb' onclick='makeinvite()'>Make A Invite to this room</button>"
 var title_container = document.createElement('div')
       title_container.setAttribute('id', 'untitle')
@@ -85,24 +85,24 @@ var bttns = document.createElement('span')
       document.body.append(title_container)
       document.body.append(title_container2)
     }
-    create_join_form() {
+  create_join_form(){
       // YOU MUST HAVE (PARENT = THIS). OR NOT. I'M NOT YOUR BOSS!😂
       var parent = this;
 
-      var join_container = document.createElement("div");
-      join_container.setAttribute("id", "join_container");
-      var join_inner_container = document.createElement("div");
-      join_inner_container.setAttribute("id", "join_inner_container");
+      var join_container = document.createElement('div')
+      join_container.setAttribute('id', 'join_container')
+      var join_inner_container = document.createElement('div')
+      join_inner_container.setAttribute('id', 'join_inner_container')
 
-      var join_button_container = document.createElement("div");
-      join_button_container.setAttribute("id", "join_button_container");
+      var join_button_container = document.createElement('div')
+      join_button_container.setAttribute('id', 'join_button_container')
 
-      var join_button = document.createElement("button");
-      join_button.setAttribute("id", "join_button");
-      join_button.innerHTML = 'Join <i class="fas fa-sign-in-alt"></i>';
+      var join_button = document.createElement('button')
+      join_button.setAttribute('id', 'join_button')
+      join_button.innerHTML = 'Join <i class="fas fa-sign-in-alt"></i>'
 
-      var join_input_container = document.createElement("div");
-      join_input_container.setAttribute("id", "join_input_container");
+      var join_input_container = document.createElement('div')
+      join_input_container.setAttribute('id', 'join_input_container')
 
       var join_input_2 = document.createElement("input");
       join_input_2.setAttribute("id", "join_input");
@@ -224,14 +224,9 @@ var bttns = document.createElement('span')
     save_name(name) {
       localStorage.setItem("name", name);
     }
-    save_url(url) {
-      if (url == null){
-localStorage.setitem("url", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD23AlgiFA6iqSILpi-cfN49SYrEOOJGyQ57pKJJrQaXA6L0hao-kjGhI0vlqKv7Ng8dE:https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b0b4c759-ad9c-4425-a9f4-ab89e2fd9837/de8cefl-35c0bc59-59b9-42ab-b19f-5c73828bb78e.png/v1/fill/w_512,h_512,q_80,strp/blank_youtube_profile_pic_by_redballbomb_de8cefl-fullview.jpg%3Ftoken%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvYjBiNGM3NTktYWQ5Yy00NDI1LWE5ZjQtYWI4OWUyZmQ5ODM3XC9kZThjZWZsLTM1YzBiYzU5LTU5YjktNDJhYi1iMTlmLTVjNzM4MjhiYjc4ZS5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.hqiBNaqF1Cgdy2pNAPbUiUMF-KUtVBZkYsEKoxF3Dxc&usqp=CAU")
-    }
-      else {
+    save_url(url){
       localStorage.setItem("url", url);
-}
-    }
+  }
     send_message(message) {
       var parent = this;
       if (parent.get_name() == null && message == null) {
