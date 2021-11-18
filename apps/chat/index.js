@@ -85,6 +85,21 @@ var bttns = document.createElement('span')
       document.body.append(title_container)
       document.body.append(title_container2)
     }
+
+    /*create_title(){
+      var title_container = document.createElement('div')
+      title_container.setAttribute('id', 'title_container')
+      var title_inner_container = document.createElement('div')
+      title_inner_container.setAttribute('id', 'title_inner_container')
+
+      var title = document.createElement('h1')
+      title.setAttribute('id', 'title')
+      title.textContent = roomname
+
+      title_inner_container.append(title)
+      title_container.append(title_inner_container)
+      document.body.append(title_container)
+    }*/
   create_join_form(){
       // YOU MUST HAVE (PARENT = THIS). OR NOT. I'M NOT YOUR BOSS!😂
       var parent = this;
@@ -107,11 +122,13 @@ var bttns = document.createElement('span')
       var join_input_2 = document.createElement("input");
       join_input_2.setAttribute("id", "join_input");
       join_input_2.placeholder = "Picture url";
+      join_input_2.textContent = pfpurle;
 
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
       join_input.setAttribute("maxlength", 25);
       join_input.placeholder = "Name";
+
       join_input.onkeyup = function() {
         if (join_input.value.length > 0) {
           join_button.classList.add("enabled");
@@ -151,10 +168,8 @@ var bttns = document.createElement('span')
     create_chat() {
       var parent = this;
       // GET THAT MEMECHAT HEADER OUTTA HERE
-      var title_container = document.getElementById("title_container");
-      var title = document.getElementById("title");
-      title_container.classList.add("chat_title_container");
-      title.classList.add("chat_title");
+
+    
 
       var chat_container = document.createElement("div");
       chat_container.setAttribute("id", "chat_container");
@@ -232,10 +247,10 @@ var bttns = document.createElement('span')
       if (parent.get_name() == null && message == null) {
         return;
       }
-      var messages = db.ref("chats/");
+      var messages = db.ref(room);
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref("chats/" + `message_${index}`)
+        db.ref(room + `message_${index}`)
           .set({
             profilepic: parent.get_url(),
             name: parent.get_name(),
@@ -267,7 +282,7 @@ get_url() {
         "chat_content_container"
       );
 
-      var messages = db.ref("chats/");
+      var messages = db.ref(room);
       messages.on("value", function(snapshot) {
         chat_content_container.innerHTML = "";
         if (snapshot.numChildren() == 0) {
