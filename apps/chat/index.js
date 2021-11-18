@@ -132,6 +132,25 @@ var bttns = document.createElement('span')
       join_input.placeholder = "Name";
       join_input.textContent = namee;
 
+
+
+let date = new Date();
+var datee = (date.getMonth() + 1) + "/" + date.getDate()
+let dateee = new Date();
+
+      if (dateee.getHours() > 12 ) {
+
+var time = (dateee.getHours() - 12) + ':' + dateee.getMinutes() + ' pm'
+
+}
+      else {
+
+var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
+
+
+}
+
+
       join_input.onkeyup = function() {
         if (join_input.value.length > 0) {
           join_button.classList.add("enabled");
@@ -250,15 +269,36 @@ var bttns = document.createElement('span')
       if (parent.get_name() == null && message == null) {
         return;
       }
+
+
+let date = new Date();
+var datee = (date.getMonth() + 1) + "/" + date.getDate()
+let dateee = new Date();
+
+      if (dateee.getHours() > 12 ) {
+
+var time = (dateee.getHours() - 12) + ':' + dateee.getMinutes() + ' pm'
+
+}
+      else {
+
+var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
+
+
+}
+
+
       var messages = db.ref(room);
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
         db.ref(room + `message_${index}`)
           .set({
             profilepic: parent.get_url(),
-            name: parent.get_name(),
+            name: parent.get_name() + '  ( ' + time + ' | ' + datee + ' )',
             message: message,
-            index: index
+            index: index,
+            time: time,
+            date: datee
           })
           .then(function() {
             parent.refresh_chat();
