@@ -236,7 +236,7 @@ window.onload = function() {
         });
 
         ordered.forEach(function(data) {
-          var profilepic = data.profilepic;
+          var profpic = data.profilepic;
           var name = data.name;
           var message = data.message;
 
@@ -254,7 +254,7 @@ window.onload = function() {
 
           var message_pfp = document.createElement("img");
           message_pfp.setAttribute("class", "message_pfp");
-          message_pfp.src = profilepic;
+          message_pfp.src = profpic;
 
           var message_user_container = document.createElement("div");
           message_user_container.setAttribute(
