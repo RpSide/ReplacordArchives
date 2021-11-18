@@ -1,3 +1,5 @@
+var pfpurle = localStorage.getItem("url");
+var namee = localStorage.getItem("name");
 //grabs invite code
 var queryString = window.location.search
   
@@ -128,6 +130,7 @@ var bttns = document.createElement('span')
       join_input.setAttribute("id", "join_input");
       join_input.setAttribute("maxlength", 25);
       join_input.placeholder = "Name";
+      join_input.textContent = namee;
 
       join_input.onkeyup = function() {
         if (join_input.value.length > 0) {
