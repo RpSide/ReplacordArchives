@@ -1,4 +1,4 @@
-/grabs invite code
+//grabs invite code
 var queryString = window.location.search
   
   var urlParams = new URLSearchParams(queryString);
@@ -166,9 +166,7 @@ window.onload = function() {
       var chat_input = document.createElement("input");
       chat_input.setAttribute("id", "chat_input");
       chat_input.setAttribute("maxlength", 1000);
-      chat_input.placeholder = `${localStorage.getItem(
-        "name"
-      )}. Say something...`;
+      chat_input.placeholder = `${localStorage.getItem("name")}. Say something...`;
       chat_input.onkeyup = function() {
         if (chat_input.value.length > 0) {
           chat_input_send.removeAttribute("disabled");
@@ -321,11 +319,7 @@ window.onload = function() {
           message_user_container.append(message_user);
           profpiccont.append(message_pfp);
           message_content_container.append(message_content);
-          message_inner_container.append(
-            profpiccont,
-            message_user_container,
-            message_content_container
-          );
+          message_inner_container.append(profpiccont, message_user_container, message_content_container);
           message_container.append(message_inner_container);
 
           chat_content_container.append(message_container);
