@@ -68,18 +68,22 @@ window.onload = function() {
       this.create_chat();
     }
     create_title() {
-      var title_container = document.createElement("div");
-      title_container.setAttribute("id", "title_container");
-      var title_inner_container = document.createElement("div");
-      title_inner_container.setAttribute("id", "title_inner_container");
+const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='chatroompicker()' id='unb'>Join A Room</button> <button id='unb' onclick='makeinvite()'>Make A Invite to this room</button>"
+var title_container = document.createElement('div')
+      title_container.setAttribute('id', 'untitle')
+var title_container2 = document.createElement('div')
+      title_container2.setAttribute('id', 'untitle2')
+var title = document.createElement('h1')
+      title.textContent = roomname
 
-      var title = document.createElement("h1");
-      title.setAttribute("id", "title");
-      title.textContent = "blank chat";
+var bttns = document.createElement('span')
+    bttns.setAttribute('id', 'd')
+    bttns.innerHTML = htes
 
-      title_inner_container.append(title);
-      title_container.append(title_inner_container);
-      document.body.append(title_container);
+      title_container.append(title)
+      title_container2.append(bttns)
+      document.body.append(title_container)
+      document.body.append(title_container2)
     }
     create_join_form() {
       // YOU MUST HAVE (PARENT = THIS). OR NOT. I'M NOT YOUR BOSS!😂
@@ -221,7 +225,12 @@ window.onload = function() {
       localStorage.setItem("name", name);
     }
     save_url(url) {
+      if (url == null){
+localStorage.setitem("url", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD23AlgiFA6iqSILpi-cfN49SYrEOOJGyQ57pKJJrQaXA6L0hao-kjGhI0vlqKv7Ng8dE:https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b0b4c759-ad9c-4425-a9f4-ab89e2fd9837/de8cefl-35c0bc59-59b9-42ab-b19f-5c73828bb78e.png/v1/fill/w_512,h_512,q_80,strp/blank_youtube_profile_pic_by_redballbomb_de8cefl-fullview.jpg%3Ftoken%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvYjBiNGM3NTktYWQ5Yy00NDI1LWE5ZjQtYWI4OWUyZmQ5ODM3XC9kZThjZWZsLTM1YzBiYzU5LTU5YjktNDJhYi1iMTlmLTVjNzM4MjhiYjc4ZS5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.hqiBNaqF1Cgdy2pNAPbUiUMF-KUtVBZkYsEKoxF3Dxc&usqp=CAU")
+    }
+      else {
       localStorage.setItem("url", url);
+}
     }
     send_message(message) {
       var parent = this;
