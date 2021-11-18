@@ -1,3 +1,15 @@
+/* new */
+/* Profile pictures */
+.profpiccont{
+  width: 100%;
+  display: inline-block;
+}
+.message_pfp{
+  width: 50px;
+  font-weight: bold;
+  font-size: 14px;
+}
+/* old */
 body{
   /* https://www.color-hex.com/color/d3d3d3 */
   background-color: #fff; /*#f6f6f6, EBEBD3, fafafa*/
