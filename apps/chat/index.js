@@ -67,7 +67,7 @@ window.onload = function() {
       this.create_title();
       this.create_chat();
     }
-    create_title() {
+    create_title(){
 const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='chatroompicker()' id='unb'>Join A Room</button> <button id='unb' onclick='makeinvite()'>Make A Invite to this room</button>"
 var title_container = document.createElement('div')
       title_container.setAttribute('id', 'untitle')
