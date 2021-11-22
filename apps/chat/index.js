@@ -360,6 +360,16 @@ var queryString = window.location.search
   var urlParams = new URLSearchParams(queryString);
    
   var roomcode = urlParams.get('code')
+    
+    
+    
+
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
 
 function create_title(params) {
 
@@ -369,7 +379,7 @@ var title_container = document.createElement('div')
 var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
 var title = document.createElement('h1')
-      title.textContent = roomname
+      title.textContent = 'getname'
 
 var bttns = document.createElement('span')
     bttns.setAttribute('id', 'd')
