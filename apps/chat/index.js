@@ -15,7 +15,7 @@ var queryString = window.location.search
     
 function makeinvite() {
 
-alert('https://essycomp.glitch.me/?appID=3&code=' + invitecode)
+alert('https://devcompessay.glitch.me/?appID=3&code=' + invitecode)
 
 }
 
@@ -38,7 +38,7 @@ if (roomcode == null || roomcode == "") {
  alert ('empty field');
 } else {
   text = roomcode;
-window.location.replace( 'https://esycmp.glitch.me?appID=3&code=' + roomcode)
+window.location.replace( 'https://devcompessay.glitch.me?appID=3&code=' + roomcode)
 }
 }
 
