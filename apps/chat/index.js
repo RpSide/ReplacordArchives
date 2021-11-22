@@ -1,7 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
 var client = 'Developer'
-var room = '3615131315141316171/'
 
 window.onload = function() {
  // Your web app's Firebase configuration
@@ -22,6 +21,7 @@ window.onload = function() {
   var database = firebase.database();
   var dbRef = firebase.database().ref();
 
+var room = 'chatroom1'
 
 
   class MEME_CHAT {
@@ -41,7 +41,7 @@ var title_container = document.createElement('div')
 var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
 var title = document.createElement('h1')
-      title.textContent = 'e'
+      title.textContent = 'roomname'
 
 var bttns = document.createElement('span')
     bttns.setAttribute('id', 'd')
@@ -397,4 +397,3 @@ firebase.database().ref(roomcode + '/').set({
 window.location.href = 'https://devcompessay.glitch.me?appID=3&code=' + roomcode
 }
 }
-
