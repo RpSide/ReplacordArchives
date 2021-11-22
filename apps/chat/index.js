@@ -1,5 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
+var client = 'Developer'
 //grabs invite code
 var queryString = window.location.search
   
@@ -37,7 +38,7 @@ if (roomcode == null || roomcode == "") {
  alert ('empty field');
 } else {
   text = roomcode;
-window.location.href = document.documentURI + '?code=' + roomcode
+window.location.replace( 'https://esycmp.glitch.me?appID=3&code=' + roomcode)
 }
 }
 
@@ -298,7 +299,8 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
             message: message,
             index: index,
             time: time,
-            date: datee
+            date: datee,
+            cliente: client
           })
           .then(function() {
             parent.refresh_chat();
@@ -357,6 +359,7 @@ get_url() {
           var profpic = data.profilepic;
           var name = data.name;
           var message = data.message;
+          var ver = data.cliente;
 
           var message_container = document.createElement("div");
           message_container.setAttribute("class", "message_container");
@@ -382,7 +385,7 @@ get_url() {
 
           var message_user = document.createElement("p");
           message_user.setAttribute("class", "message_user");
-          message_user.textContent = `${name}`;
+          message_user.textContent = `${name}` + ' - ' + vers;
 
           var message_content_container = document.createElement("div");
           message_content_container.setAttribute(
