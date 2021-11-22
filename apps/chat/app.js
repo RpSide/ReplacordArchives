@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 document.getElementById('file').addEventListener('change', (event) => {
     const file = event.target.files[0];
-    const storageRef = firebase.storage().ref('images/' + file.name);
+    const storageRef = firebase.storage().ref('user-pfps/' + file.name);
 
     storageRef.put(file).on('state_changed', (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -23,11 +23,10 @@ document.getElementById('file').addEventListener('change', (event) => {
 
     });
 
-    storageRef.getDownloadURL().then(function(url){
+window.setTimeout(4000,  storageRef.getDownloadURL().then(function(url){
 console.log(storageRef.getDownloadURL())
         const image = document.getElementById('image');
-        console.log(url);
+        console.log(url)
         image.src = url
-    });
-});
-
+    })
+);
