@@ -2,8 +2,6 @@ var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
 var client = 'Developer'
 
-var room = 'chatroom1'
-
 
 window.onload = function() {
  // Your web app's Firebase configuration
@@ -360,26 +358,32 @@ var queryString = window.location.search
   var urlParams = new URLSearchParams(queryString);
    
   var roomcode = urlParams.get('code')
-    
-    
-    
+  var room = roomcode + '/'
 
+function create_title(params) {
+
+const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>"
+
+var title_container = document.createElement('div')
+      title_container.setAttribute('id', 'untitle')
+var title_container2 = document.createElement('div')
+      title_container2.setAttribute('id', 'untitle2')
+var title = document.createElement('h1')
+firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    title.textContent = snapshot.val()
+    console.log(snapshot.val());
+    
   } else {
+    alert('this room does not exist')
+    title.textContent = ''
     console.log("No data available");
   }
 }).catch((error) => {
   console.error(error);
 });
 
-function create_title(params) {
-
-const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>"
-var title_container = document.createElement('div')
-      title_container.setAttribute('id', 'untitle')
-var title_container2 = document.createElement('div')
-      title_container2.setAttribute('id', 'untitle2')
-var title = document.createElement('h1')
-      title.textContent = 'getname'
+      
 
 var bttns = document.createElement('span')
     bttns.setAttribute('id', 'd')
@@ -426,3 +430,4 @@ firebase.database().ref(roomcode + '/').set({
 window.location.href = 'https://devcompessay.glitch.me?appID=3&code=' + roomcode
 }
 }
+
