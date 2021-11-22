@@ -1,3 +1,5 @@
+var room = "furry's only/"
+
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
@@ -16,16 +18,16 @@
 
   var db = firebase.database();
 
-      var e = db.ref('r/');
+      var e = db.ref(room);
       e.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref('r/')
+        db.ref(room)
           .set({
-            name:'e'
+            name:'Furrys Only'
           })
       });
 
-var messages = db.ref('r/');
+var messages = db.ref(room);
       messages.on("value", function(snapshot) {
         if (snapshot.numChildren() == 0) {
           return;
@@ -53,5 +55,5 @@ var messages = db.ref('r/');
         });
 
         ordered.forEach(function(data) {
-          var profpic = data.profilepic;
+          var name = data.name;
         })});
