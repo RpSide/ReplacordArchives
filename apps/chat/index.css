@@ -1,10 +1,12 @@
 /* new */
 /* Profile pictures */
 .profpiccont{
+  border-radius: 30px;
   width: 100%;
   display: inline-block;
 }
 .message_pfp{
+  border-radius: 30px;
   width: 60px;
   height: 60px;
   font-weight: bold;
@@ -208,13 +210,13 @@ font-family: 'Gloria Hallelujah', cursive;
     height: 100%;
     float: left;
     font-size: 18px;
-    background-color: gray;
+    background-color: black;
     text-align: right;
     color: #ccc;
   }
   #chat_input_send.enabled{
     color: #D64045;
-    background-color: white;
+    background-color: darkgray;
     cursor: pointer;
   
   }
