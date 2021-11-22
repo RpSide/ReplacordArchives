@@ -1,4 +1,4 @@
-var room = "furry's only/"
+var room = "f/"
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -19,8 +19,6 @@ var room = "furry's only/"
   var db = firebase.database();
 
 function d(params){
-localStorage.clear()
-var room = localStorage.getItem("code");
 let roomcode = prompt("chatroom code", room);
 let text;
 if (roomcode == null || roomcode == "") {
