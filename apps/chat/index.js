@@ -316,10 +316,11 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
     }
 
 get_url() {
-      if (localStorage.getItem("url") != null) {
+      if (localStorage.getItem("url") != null || localStorage.getItem("url") != undefined) {
         return localStorage.getItem("url");
       } else {
-        this.home();
+        localStorage.setItem("url", 'https://th.bing.com/th/id/OIP.mMz3b-Tnh_-Qwg3atrTl_AHaGO?w=199&h=180&c=7&r=0&o=5&pid=1.7')
+return localStorage.getItem("url");
       }
     }
     refresh_chat() {
@@ -370,9 +371,6 @@ get_url() {
             "message_inner_container"
           );
 
-          var profpiccont = document.createElement("div");
-          profpiccont.setAttribute("class", "profpicont");
-
           var message_pfp = document.createElement("img");
           message_pfp.setAttribute("class", "message_pfp");
           message_pfp.src = profpic;
@@ -383,9 +381,9 @@ get_url() {
             "message_user_container"
           );
 
-          var message_user = document.createElement("p");
+          var message_user = document.createElement("span");
           message_user.setAttribute("class", "message_user");
-          message_user.textContent = `${name}` + ' - ' + ver;
+          message_user.textContent = "" + `${name}` + ' - ' + ver;
 
           var message_content_container = document.createElement("div");
           message_content_container.setAttribute(
@@ -397,10 +395,11 @@ get_url() {
           message_content.setAttribute("class", "message_content");
           message_content.textContent = message;
 
+          message_user_container.append(message_pfp);
           message_user_container.append(message_user);
-          profpiccont.append(message_pfp);
+          
           message_content_container.append(message_content);
-          message_inner_container.append(profpiccont, message_user_container, message_content_container);
+          message_inner_container.append(message_user_container, message_content_container);
           message_container.append(message_inner_container);
 
           chat_content_container.append(message_container);
