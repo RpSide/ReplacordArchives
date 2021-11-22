@@ -362,10 +362,10 @@ var queryString = window.location.search
 
 function create_title(params) {
 
-firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
 
-const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>" + '<title>' + snapshot.val() + " || Scuffed Discord - Dev" + '</title>'
+
+
+
 
 var title_container = document.createElement('div')
       title_container.setAttribute('id', 'untitle')
@@ -374,11 +374,24 @@ var title_container2 = document.createElement('div')
 var title = document.createElement('h1')
 var title23 = document.createElement('title')
 
-    title.textContent = snapshot.val()
+var bttns = document.createElement('span')
+    bttns.setAttribute('id', 'd')
+   
 
+
+firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
+  if (snapshot.exists()) {
+
+
+
+const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button> " + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
+
+     bttns.innerHTML = htes
+    title.textContent = snapshot.val()
     console.log(snapshot.val());
-    
-  } else {
+    }
+  
+  else {
     alert('this room does not exist')
     title.textContent = ''
     console.log("No data available");
@@ -389,9 +402,7 @@ var title23 = document.createElement('title')
 
       
 
-var bttns = document.createElement('span')
-    bttns.setAttribute('id', 'd')
-    bttns.innerHTML = htes
+
 
       title_container.append(title)
       title_container2.append(bttns)
@@ -436,5 +447,5 @@ window.location.href = 'https://devcompessay.glitch.me?appID=3&code=' + roomcode
 }
 
 function makeainvite(params) {
-  alert('https://essycomp.glitch.me?appID=3&code=' + roomcode)
+  alert('https://devcompessay.glitch.me?appID=3&code=' + roomcode)
 }
