@@ -29,18 +29,7 @@ if (roome == undefined || roome == null || roome == "") {
 var room = localStorage.getItem("code")
 var roomname = localStorage.getItem("chatroomname")
 
-function chatroompicker(params){
-localStorage.clear()
-var room = localStorage.getItem("code");
-let roomcode = prompt("chatroom code", room);
-let text;
-if (roomcode == null || roomcode == "") {
- alert ('empty field');
-} else {
-  text = roomcode;
-window.location.replace( 'https://devcompessay.glitch.me?appID=3&code=' + roomcode)
-}
-}
+f
 
 
 window.onload = function() {
@@ -59,6 +48,32 @@ window.onload = function() {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
+
+function chatroompicker(params){
+
+localStorage.clear()
+var room = localStorage.getItem("code");
+let roomcode = prompt("chatroom code", room);
+let text;
+if (roomcode == null || roomcode == "") {
+ alert ('empty field');
+} else {
+  text = roomcode;
+
+
+     var e = db.ref(room);
+      e.once("value", function(snapshot) {
+        var index = parseFloat(snapshot.numChildren()) + 1;
+        db.ref(room + 'chatroomname')
+          .set({
+            name: 'e',
+        })
+
+
+window.location.replace( 'https://devcompessay.glitch.me?appID=3&code=' + roomcode)
+      })
+
+
 
   class MEME_CHAT {
     home() {
