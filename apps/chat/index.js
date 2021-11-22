@@ -125,16 +125,10 @@ var bttns = document.createElement('span')
       var join_input_container = document.createElement('div')
       join_input_container.setAttribute('id', 'join_input_container')
 
-      var join_input_2 = document.createElement("input");
-      join_input_2.setAttribute("id", "file");
-      join_input_2.setAttribute("type", "file");
-
-      var progress = document.createElement("progress");
-       progress.setAttribute("id", "progress_bar");
-
-      var img = document.createElement("img");
-       img.setAttribute("id", "image");
-
+      
+var join_input_2 = document.createElement("input");
+      join_input_2.setAttribute("id", "join_input_2");
+      
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
       join_input.setAttribute("maxlength", 25);
@@ -174,8 +168,6 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
         }
       };
 
-      join_input_container.append(img);
-      join_input_container.append(progress);
       join_button_container.append(join_button);
       join_input_container.append(join_input);
       join_input_container.append(join_input_2);
@@ -273,7 +265,13 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
       localStorage.setItem("name", name);
     }
     save_url(url){
+      if (document.getelementByid('join_input_2').value != null){
       localStorage.setItem("url", url);
+      }
+      else {
+localStorage.setItem("url", 'https://th.bing.com/th/id/OIP.gDBdAA5pacZzSnpFUHEKPgHaGA?w=246&h=199&c=7&r=0&o=5&pid=1.7')
+}
+      
   }
     send_message(message) {
       var parent = this;
