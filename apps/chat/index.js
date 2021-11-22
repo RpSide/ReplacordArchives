@@ -1,7 +1,7 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
 var client = 'Developer'
-var room = '3214101217141411121/'
+var room = '3615131315141316171/'
 
 window.onload = function() {
  // Your web app's Firebase configuration
@@ -394,6 +394,7 @@ if (roomname == null || roomname == "") {
 firebase.database().ref(roomcode + '/').set({
     name: roomname,
   });
+window.location.href = 'https://devcompessay.glitch.me?appID=3&code=' + roomcode
 }
 }
 
