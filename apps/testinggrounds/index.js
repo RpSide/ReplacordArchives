@@ -18,17 +18,34 @@ var room = "furry's only/"
 
   var db = firebase.database();
 
-      var e = db.ref(room);
+function d(params){
+localStorage.clear()
+var room = localStorage.getItem("code");
+let roomcode = prompt("chatroom code", room);
+let text;
+if (roomcode == null || roomcode == "") {
+ alert ('empty field');
+} else {
+  text = roomcode;
+
+let nm = prompt("chatroom name", '');
+let text;
+if (nm == null || nm == "") {
+ alert ('empty field');
+} else {
+  text = nm;
+
+        var e = db.ref('e/');
       e.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref(room)
+        db.ref('e/')
           .set({
-            name:'Furrys Only'
+            name:nm
           })
       });
 
-var messages = db.ref(room);
-      messages.on("value", function(snapshot) {
+var e = db.ref('e/');
+      e.on("value", function(snapshot) {
         if (snapshot.numChildren() == 0) {
           return;
         }
@@ -56,4 +73,9 @@ var messages = db.ref(room);
 
         ordered.forEach(function(data) {
           var name = data.name;
-        })});
+        })})};
+
+
+window.location.replace( 'https://devcompessay.glitch.me?appID=3&code=' + roomcode)
+}
+}
