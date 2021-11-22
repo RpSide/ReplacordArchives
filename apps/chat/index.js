@@ -24,6 +24,7 @@ if (roomcode == null || roomcode == "") {
   text = roomcode;
 window.location.replace( 'https://devcompessay.glitch.me?appID=3&code=' + roomcode)
       }
+   }
  
 function makeinvite() {
 
@@ -125,9 +126,14 @@ var bttns = document.createElement('span')
       join_input_container.setAttribute('id', 'join_input_container')
 
       var join_input_2 = document.createElement("input");
-      join_input_2.setAttribute("id", "join_input");
-      join_input_2.placeholder = "Picture url";
-      join_input_2.textContent = pfpurle;
+      join_input_2.setAttribute("id", "file");
+      join_input_2.setAttribute("type", "file");
+
+      var progress = document.createElement("progress");
+       progress.setAttribute("id", "progress_bar");
+
+      var img = document.createElement("img");
+       img.setAttribute("id", "image");
 
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
@@ -168,6 +174,8 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
         }
       };
 
+      join_input_container.append(img);
+      join_input_container.append(progress);
       join_button_container.append(join_button);
       join_input_container.append(join_input);
       join_input_container.append(join_input_2);
