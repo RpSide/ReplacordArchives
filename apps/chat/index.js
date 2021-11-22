@@ -362,7 +362,10 @@ var queryString = window.location.search
 
 function create_title(params) {
 
-const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>"
+firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
+  if (snapshot.exists()) {
+
+const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>" + '<title>' + snapshot.val() + " || Scuffed Discord - Dev" + '</title>'
 
 var title_container = document.createElement('div')
       title_container.setAttribute('id', 'untitle')
@@ -370,10 +373,9 @@ var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
 var title = document.createElement('h1')
 var title23 = document.createElement('title')
-firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
+
     title.textContent = snapshot.val()
-    title23.textContent = snapshot.val() + " || Scuffed Discord"
+
     console.log(snapshot.val());
     
   } else {
@@ -433,3 +435,6 @@ window.location.href = 'https://devcompessay.glitch.me?appID=3&code=' + roomcode
 }
 }
 
+function makeainvite(params) {
+  alert('https://essycomp.glitch.me?appID=3&code=' + roomcode)
+}
