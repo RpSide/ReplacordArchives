@@ -1,6 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = 'Ver Developer'
+var client = 'Developer'
 //grabs invite code
 var queryString = window.location.search
   
@@ -12,23 +12,10 @@ var queryString = window.location.search
      localStorage.setItem("code", invitecode + "/");
     localStorage.setItem("chatroomname", invitecode);
 }
-   function chatroompicker(params){
-
-localStorage.clear()
-var room = localStorage.getItem("code");
-let roomcode = prompt("chatroom code", room);
-let text;
-if (roomcode == null || roomcode == "") {
- alert ('empty field');
-} else {
-  text = roomcode;
-window.location.replace( 'https://devcompessay.glitch.me?appID=3&code=' + roomcode)
-      }
-   }
- 
+    
 function makeinvite() {
 
-alert('https://devcompessay.glitch.me/?appID=3&code=' + invitecode)
+alert('https://essycomp.glitch.me/?appID=3&code=' + invitecode)
 
 }
 
@@ -42,6 +29,18 @@ if (roome == undefined || roome == null || roome == "") {
 var room = localStorage.getItem("code")
 var roomname = localStorage.getItem("chatroomname")
 
+function chatroompicker(params){
+localStorage.clear()
+var room = localStorage.getItem("code");
+let roomcode = prompt("chatroom code", room);
+let text;
+if (roomcode == null || roomcode == "") {
+ alert ('empty field');
+} else {
+  text = roomcode;
+window.location.replace( 'https://esycmp.glitch.me?appID=3&code=' + roomcode)
+}
+}
 
 
 window.onload = function() {
@@ -60,8 +59,6 @@ window.onload = function() {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
-
-
 
   class MEME_CHAT {
     home() {
@@ -125,10 +122,11 @@ var bttns = document.createElement('span')
       var join_input_container = document.createElement('div')
       join_input_container.setAttribute('id', 'join_input_container')
 
-      
-var join_input_2 = document.createElement("input");
-      join_input_2.setAttribute("id", "join_input_2");
-      
+      var join_input_2 = document.createElement("input");
+      join_input_2.setAttribute("id", "join_input");
+      join_input_2.placeholder = "Picture url";
+      join_input_2.textContent = pfpurle;
+
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
       join_input.setAttribute("maxlength", 25);
@@ -265,13 +263,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
       localStorage.setItem("name", name);
     }
     save_url(url){
-      if (document.getelementByid('join_input_2').value != null){
       localStorage.setItem("url", url);
-      }
-      else {
-localStorage.setItem("url", 'https://th.bing.com/th/id/OIP.gDBdAA5pacZzSnpFUHEKPgHaGA?w=246&h=199&c=7&r=0&o=5&pid=1.7')
-}
-      
   }
     send_message(message) {
       var parent = this;
@@ -327,9 +319,6 @@ get_url() {
       if (localStorage.getItem("url") != null) {
         return localStorage.getItem("url");
       } else {
-localStorage.setItem("url", 'https://th.bing.com/th/id/OIP.gDBdAA5pacZzSnpFUHEKPgHaGA?w=246&h=199&c=7&r=0&o=5&pid=1.7') != null
-
-localStorage.getItem("url")
         this.home();
       }
     }
