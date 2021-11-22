@@ -288,7 +288,6 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 }
 
-
       var messages = db.ref(room);
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
@@ -316,10 +315,10 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
     }
 
 get_url() {
-      if (localStorage.getItem("url") != null || localStorage.getItem("url") != undefined) {
+      if (localStorage.getItem("url") == null || localStorage.getItem("url") == undefined || localStorage.getItem("url") == "") {
+      localStorage.setItem("url", 'https://th.bing.com/th/id/OIP.63k3jY4bAR22zRGkL4AfbQAAAA?w=168&h=180&c=7&r=0&o=5&pid=1.7');
         return localStorage.getItem("url");
       } else {
-        localStorage.setItem("url", 'https://th.bing.com/th/id/OIP.mMz3b-Tnh_-Qwg3atrTl_AHaGO?w=199&h=180&c=7&r=0&o=5&pid=1.7')
 return localStorage.getItem("url");
       }
     }
