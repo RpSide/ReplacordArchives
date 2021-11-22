@@ -22,11 +22,13 @@ document.getElementById('file').addEventListener('change', (event) => {
         progressBar.value = progress;
 
     });
+ storageRef.getDownloadURL().then(function(url){
 
-window.setTimeout(4000,  storageRef.getDownloadURL().then(function(url){
 console.log(storageRef.getDownloadURL())
         const image = document.getElementById('image');
         console.log(url)
-        image.src = url
-    })
-);
+image.src = url
+alert(url)
+    });
+});
+
