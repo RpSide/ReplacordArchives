@@ -2,6 +2,9 @@ var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
 var client = 'Developer'
 
+var room = 'chatroom1'
+
+
 window.onload = function() {
  // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -21,52 +24,19 @@ window.onload = function() {
   var database = firebase.database();
   var dbRef = firebase.database().ref();
 
-var room = 'chatroom1'
 
 
   class MEME_CHAT {
     home() {
       document.body.innerHTML = "";
-      this.create_title();
+      create_title();
       this.create_join_form();
     }
     chat() {
-      this.create_title();
+      create_title();
       this.create_chat();
     }
-create_title(){
-const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>"
-var title_container = document.createElement('div')
-      title_container.setAttribute('id', 'untitle')
-var title_container2 = document.createElement('div')
-      title_container2.setAttribute('id', 'untitle2')
-var title = document.createElement('h1')
-      title.textContent = 'roomname'
 
-var bttns = document.createElement('span')
-    bttns.setAttribute('id', 'd')
-    bttns.innerHTML = htes
-
-      title_container.append(title)
-      title_container2.append(bttns)
-      document.body.append(title_container)
-      document.body.append(title_container2)
-    }
-
-    /*create_title(){
-      var title_container = document.createElement('div')
-      title_container.setAttribute('id', 'title_container')
-      var title_inner_container = document.createElement('div')
-      title_inner_container.setAttribute('id', 'title_inner_container')
-
-      var title = document.createElement('h1')
-      title.setAttribute('id', 'title')
-      title.textContent = roomname
-
-      title_inner_container.append(title)
-      title_container.append(title_inner_container)
-      document.body.append(title_container)
-    }*/
   create_join_form(){
       // YOU MUST HAVE (PARENT = THIS). OR NOT. I'M NOT YOUR BOSS!😂
       var parent = this;
@@ -382,6 +352,55 @@ return localStorage.getItem("url");
     app.chat();
   }
 };
+
+// grabs paramiters from the url
+
+var queryString = window.location.search
+  
+  var urlParams = new URLSearchParams(queryString);
+   
+  var roomcode = urlParams.get('code')
+
+function create_title(params) {
+
+const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>"
+var title_container = document.createElement('div')
+      title_container.setAttribute('id', 'untitle')
+var title_container2 = document.createElement('div')
+      title_container2.setAttribute('id', 'untitle2')
+var title = document.createElement('h1')
+      title.textContent = roomname
+
+var bttns = document.createElement('span')
+    bttns.setAttribute('id', 'd')
+    bttns.innerHTML = htes
+
+      title_container.append(title)
+      title_container2.append(bttns)
+      document.body.append(title_container)
+      document.body.append(title_container2)
+    }
+
+    /*create_title(){
+      var title_container = document.createElement('div')
+      title_container.setAttribute('id', 'title_container')
+      var title_inner_container = document.createElement('div')
+      title_inner_container.setAttribute('id', 'title_inner_container')
+
+      var title = document.createElement('h1')
+      title.setAttribute('id', 'title')
+      title.textContent = roomname
+
+      title_inner_container.append(title)
+      title_container.append(title_inner_container)
+      document.body.append(title_container)
+    }*/
+
+
+
+
+
+
 function makechatroom() {
 
  var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
