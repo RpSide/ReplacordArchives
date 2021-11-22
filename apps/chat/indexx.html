@@ -1,36 +1,19 @@
-<html>
-  <head>
-    
-<script>
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAxAqkFw8oIJiHyLAQllDk4W9bh3pbBC4g",
-  authDomain: "unblocked-infinite-a9e25.firebaseapp.com",
-  databaseURL: "https://unblocked-infinite-a9e25-default-rtdb.firebaseio.com",
-  projectId: "unblocked-infinite-a9e25",
-  storageBucket: "unblocked-infinite-a9e25.appspot.com",
-  messagingSenderId: "267045856766",
-  appId: "1:267045856766:web:baa6dc5285d5dcf322ccaf",
-  measurementId: "G-WR56G0NC25"
-};
-firebase.initializeApp(firebaseConfig);
+<!DOCTYPE html>
+<html lang="en">
 
-// Get a reference to the storage service, which is used to create references in your storage bucket
-var storage = firebase.storage();
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firebase storage</title>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+</head>
 
-// Create a root reference
-var storageRef = firebase.storage().ref();
-
-// Create a reference to 'mountains.jpg'
-var mountainsRef = storageRef.child('https://cdn.glitch.me/cf42d47e-457d-4d82-a333-fb802479e099%2Fc78bf4c4-c141-48d7-b197-7ea94cee24df.image.png?v=1637264207274');
-
-// While the file names are the same, the references point to different files
-mountainsRef.name          // true
-mountainsRef.fullPath 
-
-</script>
-  </head>
 <body>
-  
-  </body>
+    <input type="file" id="file">
+    <progress id="progress_bar" value="0" max="100"></progress>
+    <img src="" alt="" id="image">
+    <script src="/apps/chat/app.js" type="text/javascript"></script>
+</body>
+
 </html>
