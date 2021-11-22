@@ -316,7 +316,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 get_url() {
       if (localStorage.getItem("url") == null || localStorage.getItem("url") == undefined || localStorage.getItem("url") == "") {
-      localStorage.setItem("url", 'https://th.bing.com/th/id/OIP.63k3jY4bAR22zRGkL4AfbQAAAA?w=168&h=180&c=7&r=0&o=5&pid=1.7');
+      localStorage.setItem("url", 'https://th.bing.com/th/id/R.3cd190548b0f15a338d44eb465dd0476?rik=Bn7r%2fBvgVHSihw&pid=ImgRaw&r=0');
         return localStorage.getItem("url");
       } else {
 return localStorage.getItem("url");
