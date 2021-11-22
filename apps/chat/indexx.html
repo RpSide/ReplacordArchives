@@ -18,6 +18,15 @@ firebase.initializeApp(firebaseConfig);
 // Get a reference to the storage service, which is used to create references in your storage bucket
 var storage = firebase.storage();
 
+// Create a root reference
+var storageRef = firebase.storage().ref();
+
+// Create a reference to 'mountains.jpg'
+var mountainsRef = storageRef.child('https://cdn.glitch.me/cf42d47e-457d-4d82-a333-fb802479e099%2Fc78bf4c4-c141-48d7-b197-7ea94cee24df.image.png?v=1637264207274');
+
+// While the file names are the same, the references point to different files
+mountainsRef.name          // true
+mountainsRef.fullPath 
 
 </script>
   </head>
