@@ -59,6 +59,36 @@ window.onload = function() {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
+ var database = firebase.database();
+
+var dbRef = firebase.database().ref();
+
+function makechatroom() {
+
+ var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
+  
+let roomname = prompt("chatroom name", room);
+let text2;
+if (roomname == null || roomname == "") {
+ alert ('empty field');
+} else {
+database.ref(roomcode + '/').set({
+    name: roomname,
+  });
+
+
+dbRef.child(roomcode).child('name').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
+}
+}
 
 
 
@@ -73,7 +103,7 @@ window.onload = function() {
       this.create_chat();
     }
 create_title(){
-const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='chatroompicker()' id='unb'>Join A Room</button> <button id='unb' onclick='makeinvite()'>Make A Invite to this room</button>"
+const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='chatroompicker()' id='unb'>make a chatroom</button> <button id='unb' onclick='makechatroom()'>Make A Invite to this room</button>"
 var title_container = document.createElement('div')
       title_container.setAttribute('id', 'untitle')
 var title_container2 = document.createElement('div')

@@ -20,22 +20,9 @@ var room = "f/"
 
 const dbRef = firebase.database().ref();
 
-
-
-dbRef.child(room).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-
-
 function writeUserData() {
 
- var roomcode = Math.floor(Math.random() + "" + Math.random() + "" + Math.random() + '' )
+ var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
   
 let roomname = prompt("chatroom name", room);
 let text2;
@@ -45,6 +32,17 @@ if (roomname == null || roomname == "") {
 database.ref(roomcode + '/').set({
     name: roomname,
   });
+
+
+dbRef.child(roomcode).child('name').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
 
 }
 }
