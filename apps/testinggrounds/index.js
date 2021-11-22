@@ -20,9 +20,66 @@ var room = "f/"
 
 const dbRef = firebase.database().ref();
 
-function writeUserData() {
+function makenormalroom() {
 
  var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
+  
+let roomname = prompt("chatroom name", room);
+let text2;
+if (roomname == null || roomname == "") {
+ alert ('empty field');
+} else {
+database.ref(roomcode + '/').set({
+    name: roomname,
+  });
+
+
+dbRef.child(roomcode).child('name').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
+}
+}
+
+function makespecialroom() {
+  
+let roomcode = prompt("chatroom code", room);
+let text2;
+if (roomcode == null || roomcode == "") {
+ alert ('empty field');
+} else {
+let roomname = prompt("chatroom code", room);
+let text2;
+if (roomname == null || roomname == "") {
+ alert ('empty field');
+} else {
+database.ref(roomcode + '/').set({
+    name: roomname,
+  });
+}
+
+
+dbRef.child(roomcode).child('name').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
+}
+}
+
+
+function writeUserData() {
   
 let roomname = prompt("chatroom name", room);
 let text2;

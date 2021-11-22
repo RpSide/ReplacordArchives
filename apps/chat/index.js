@@ -369,9 +369,11 @@ var title_container = document.createElement('div')
 var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
 var title = document.createElement('h1')
+var title23 = document.createElement('title')
 firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
   if (snapshot.exists()) {
     title.textContent = snapshot.val()
+    title23.textContent = snapshot.val() + " || Scuffed Discord"
     console.log(snapshot.val());
     
   } else {
