@@ -2,46 +2,6 @@ var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
 var client = 'Developer'
 
-//grabs invite code
-var queryString = window.location.search
-  
-  var urlParams = new URLSearchParams(queryString);
-   
-  var invitecode = urlParams.get('code')
-
-  if (queryString != null || queryString != undefined) {
-     localStorage.setItem("code", invitecode + "/");
-    localStorage.setItem("chatroomname", invitecode);
-}
-    
-function makeinvite() {
-
-alert('https://devcompessay.glitch.me/?appID=3&code=' + invitecode)
-
-}
-
-var roome = localStorage.getItem("code");
-
-if (roome == undefined || roome == null || roome == "") {
- localStorage.setItem("code", 'chatroom1/');
- localStorage.setItem("chatroomname", 'chatroom1');
-}
-
-var room = localStorage.getItem("code")
-var roomname = localStorage.getItem("chatroomname")
-
-function chatroompicker(params){
-localStorage.clear()
-var room = localStorage.getItem("code");
-let roomcode = prompt("chatroom code", room);
-let text;
-if (roomcode == null || roomcode == "") {
- alert ('empty field');
-} else {
-window.location.replace( 'https://devcompessay.glitch.me?appID=3&code=' + roomcode)
-}
-}
-
 
 window.onload = function() {
  // Your web app's Firebase configuration
@@ -59,36 +19,8 @@ window.onload = function() {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
- var database = firebase.database();
-
-var dbRef = firebase.database().ref();
-
-function makechatroom() {
-
- var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
-  
-let roomname = prompt("chatroom name", room);
-let text2;
-if (roomname == null || roomname == "") {
- alert ('empty field');
-} else {
-database.ref(roomcode + '/').set({
-    name: roomname,
-  });
-
-
-dbRef.child(roomcode).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-
-}
-}
+  var database = firebase.database();
+  var dbRef = firebase.database().ref();
 
 
 
@@ -103,13 +35,13 @@ dbRef.child(roomcode).child('name').get().then((snapshot) => {
       this.create_chat();
     }
 create_title(){
-const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='chatroompicker()' id='unb'>make a chatroom</button> <button id='unb' onclick='makechatroom()'>Make A Invite to this room</button>"
+const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>"
 var title_container = document.createElement('div')
       title_container.setAttribute('id', 'untitle')
 var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
 var title = document.createElement('h1')
-      title.textContent = roomname
+      title.textContent = 'e'
 
 var bttns = document.createElement('span')
     bttns.setAttribute('id', 'd')
@@ -450,3 +382,28 @@ return localStorage.getItem("url");
     app.chat();
   }
 };
+function makechatroom() {
+
+ var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
+  
+let roomname = prompt("chatroom name", 'e');
+let text2;
+if (roomname == null || roomname == "") {
+ alert ('empty field');
+} else {
+database.ref(roomcode + '/').set({
+    name: roomname,
+  });
+
+
+dbRef.child(roomcode).child('name').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+}
+}
