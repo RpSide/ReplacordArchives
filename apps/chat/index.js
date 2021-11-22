@@ -1,7 +1,7 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
 var client = 'Developer'
-
+var room = '3214101217141411121/'
 
 window.onload = function() {
  // Your web app's Firebase configuration
@@ -263,7 +263,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
             index: index,
             time: time,
             date: datee,
-            cliente: client
+            client: client
           })
           .then(function() {
             parent.refresh_chat();
@@ -323,7 +323,7 @@ return localStorage.getItem("url");
           var profpic = data.profilepic;
           var name = data.name;
           var message = data.message;
-          var ver = data.cliente;
+          var ver = data.client;
 
           var message_container = document.createElement("div");
           message_container.setAttribute("class", "message_container");
@@ -391,19 +391,9 @@ let text2;
 if (roomname == null || roomname == "") {
  alert ('empty field');
 } else {
-database.ref(roomcode + '/').set({
+firebase.database().ref(roomcode + '/').set({
     name: roomname,
   });
-
-
-dbRef.child(roomcode).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
 }
 }
+
