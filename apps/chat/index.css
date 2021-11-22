@@ -208,13 +208,13 @@ font-family: 'Gloria Hallelujah', cursive;
     height: 100%;
     float: left;
     font-size: 18px;
-    background-color: Transparent;
+    background-color: gray;
     text-align: right;
     color: #ccc;
   }
   #chat_input_send.enabled{
     color: #D64045;
-    background-color: Transparent;
+    background-color: white;
     cursor: pointer;
   
   }
