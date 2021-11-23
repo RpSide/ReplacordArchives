@@ -1,6 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = 'Developer'
+var client = '2.3'
 
 
 window.onload = function() {
@@ -439,10 +439,10 @@ if (roomname == null || roomname == "") {
 firebase.database().ref(roomcode + '/').set({
     name: roomname,
   });
-window.location.href = 'https://devcompessay.glitch.me?appID=3&code=' + roomcode
+window.location.href = 'https://' + document.domain + '/Discord-2.0/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
 }
 }
 
 function makeainvite(params) {
-  alert('https://devcompessay.glitch.me?appID=3&code=' + roomcode)
+  alert('https://' + document.domain + '/Discord-2.0/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode)
 }
