@@ -53,7 +53,7 @@ let text2;
 if (roomcode == null || roomcode == "") {
  alert ('empty field');
 } else {
-let roomname = prompt("chatroom code", room);
+let roomname = prompt("chatroom name", room);
 let text2;
 if (roomname == null || roomname == "") {
  alert ('empty field');
