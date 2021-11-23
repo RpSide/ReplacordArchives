@@ -397,13 +397,12 @@ const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button> <
   console.error(error);
 });
 
-
-firebase.database().ref().child('tst').child('welcome').get().then((snapshot) => {
+firebase.database().ref().child(roomcode).child('welcome').get().then((snapshot) => {
   if (snapshot.exists()) {
-var data2asda = snapshot.val()
-if (data2asda != undefined || data2asda != null) {
+var welcomemessage = snapshot.val()
+if (welcomemessage != undefined || welcomemessage != null) {
 
-alert(data2asda + title12)
+alert(welcomemessage)
   
   }
 
