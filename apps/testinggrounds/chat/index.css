@@ -95,16 +95,8 @@ display:block;
     user-select: none;
   }
 #title2{
-margin-top: 0;
-line-height: 0px;
-padding-top:0;
-  margin:0;
-  padding:0;
-    display:table;
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 30px;
-    letter-spacing: 2px;
-    user-select: none;
+    font-size: 20px;
   }
   
    #join_container{
@@ -219,7 +211,7 @@ font-family: 'Gloria Hallelujah', cursive;
     height: 25px;
     float: left;
     background-color: white;
-    color: gray;
+    color: black;
     font-size: 15px;
 border-radius: 10px;
 background-color: lightgray;
@@ -227,18 +219,18 @@ border-color: black;
 
   }
   #chat_input_send{
-    border: none;
-    width: 24px;
-    height: 24px;
+    width: 27px;
+    height: 27px;
     float: left;
     font-size: 18px;
-    background-color: transparent;
+  border-radius: 500px;
+    background-color: black;
     background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend.png?v=1637717846590");
     text-align: right;
     color: #ccc;
   }
   #chat_input_send.enabled{
-    color: #D64045;
+border-radius: 500px;
     background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend%20(1).png?v=1637717792094");
     background-color: darkgray;
     cursor: pointer;

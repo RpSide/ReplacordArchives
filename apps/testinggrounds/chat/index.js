@@ -371,6 +371,7 @@ var title = document.createElement('span')
 title.setAttribute('id', 'title')
 var title23 = document.createElement('title')
 var subtitle = document.createElement('span')
+subtitle.setAttribute('id', 'title2')
 
 var bttns = document.createElement('span')
     bttns.setAttribute('id', 'd')
