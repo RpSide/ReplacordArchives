@@ -14,7 +14,7 @@ var queryString = window.location.search
   var invitecode = urlParams.get('code')
 if (appID == 3) {
 
-var url = document.documentURI + urlParams
+var url = document.documentURI + '?code=' + invitecode
 
   window.location.replace(url)
   
