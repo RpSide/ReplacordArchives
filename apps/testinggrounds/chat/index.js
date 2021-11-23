@@ -360,7 +360,20 @@ var queryString = window.location.search
 function create_title(params) {
 
 
+firebase.database().ref().child('tst').child('excode').get().then((snapshot) => {
+  if (snapshot.exists()) {
 
+    alert()
+
+    console.log(snapshot.val());
+    }
+  
+  else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
 
 
 
@@ -397,14 +410,13 @@ const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button> <
   console.error(error);
 });
 
-      
-
-
+    
 
       title_container.append(title)
       title_container2.append(bttns)
       document.body.append(title_container)
       document.body.append(title_container2)
+
     }
 
     /*create_title(){
