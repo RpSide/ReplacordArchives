@@ -32,38 +32,7 @@ database.ref(roomcode + '/').set({
     name: roomname,
   });
 
-function makenormalroom2() {
 
- var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
-  
-let roomname = prompt("chatroom name", "");
-let text2;
-if (roomname == null || roomname == "") {
- alert ('empty field');
-} else {
-let message = prompt("chatroom welcome message", '');
-let text2;
-if (message == null || message == "") {
- alert ('empty field');
-} else {
-database.ref(roomcode + '/').set({
-    name: roomname,
-    name: message,
-  });
-  };
-
-
-dbRef.child(roomcode).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-
-}
 
 
 function makespecialroom() {
@@ -81,30 +50,8 @@ if (roomname == null || roomname == "") {
 database.ref(roomcode + '/').set({
     name: roomname,
   });
-}
+};
 
-function makespecialroom2() {
-  
-let roomcode2 = prompt("chatroom code", '');
-let text2;
-if (roomcode2 == null || roomcode2 == "") {
- alert ('empty field');
-} else {
-let roomname2 = prompt("chatroom name", '');
-let text2;
-if (roomname2 == null || roomname2 == "") {
- alert ('empty field');
-} else {
-let message2 = prompt("chatroom name", '');
-let text2;
-if (message2 == null || message2 == "") {
- alert ('empty field');
-} else {
-database.ref(roomcode2 + '/').set({
-    name: roomname2,
-    name: message2
-  });
-}
 
 
 
