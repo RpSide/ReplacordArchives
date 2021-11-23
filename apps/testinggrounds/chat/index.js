@@ -360,20 +360,6 @@ var queryString = window.location.search
 function create_title(params) {
 
 
-firebase.database().ref().child('tst').child('excode').get().then((snapshot) => {
-  if (snapshot.exists()) {
-
-    alert()
-
-    console.log(snapshot.val());
-    }
-  
-  else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
 
 
 
@@ -399,6 +385,7 @@ const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button> <
      bttns.innerHTML = htes
     title.textContent = snapshot.val()
     console.log(snapshot.val());
+    return snapshot.val() 
     }
   
   else {
@@ -410,6 +397,25 @@ const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button> <
   console.error(error);
 });
 
+
+firebase.database().ref().child('tst').child('welcome').get().then((snapshot) => {
+  if (snapshot.exists()) {
+var data2asda = snapshot.val()
+if (data2asda != undefined || data2asda != null) {
+
+alert(data2asda + title12)
+  
+  }
+
+    
+    }
+  
+  else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
     
 
       title_container.append(title)
