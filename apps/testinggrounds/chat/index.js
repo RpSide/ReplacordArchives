@@ -444,11 +444,11 @@ window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat
 }
 
 function makeainvite(params) {
-  alert('https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode)
+  alert('https://' + document.domain + '/apps/testinggrounds/chat/' + '?appId=3&code=chatroom1' + roomcode)
 }
 
 function joinroom(params) {
-let join = prompt("Chatroom invite url", 'https://zombiefiedgaming.github.io/apps/testinggrounds/chat/invite/?appId=3&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/testinggrounds/chat/' + '?appId=3&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
