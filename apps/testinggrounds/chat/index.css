@@ -1,5 +1,6 @@
 /* new */
 /* Profile pictures */
+
 .profpiccont{
   width: 100%;
   display: inline-block;
@@ -34,8 +35,8 @@ font-family: 'Gloria Hallelujah', cursive;
 }
 #untitle {
 border-radius: 60px;
- width: 700px;
- height: 150px;
+ width:   70%;
+ height: 15%;
 margin: auto;
 background-color: gray;
 border-color: white;
@@ -47,9 +48,10 @@ text-align: center;
 }
 
 #untitle2 {
+
 border-radius: 10px;
- width: 650px;
- height: 80px;
+ width:   65%;
+ height: 80%;
 margin: auto;
 background-color: gray;
 border-color: white;
@@ -86,6 +88,7 @@ font-family: 'Gloria Hallelujah', cursive;
 margin-bottom: 0;
   margin:0;
   padding:0;
+display:block;
     color: #fff;/*EBEBD3, C5283D*/
     font-size: 90px;
     letter-spacing: 2px;
@@ -169,7 +172,7 @@ padding-top:0;
   
   #chat_container{
     width:   100%;
-    height: 530px;
+    height: 53%;
   
     display: flex;
     justify-content: center;
@@ -211,15 +214,21 @@ font-family: 'Gloria Hallelujah', cursive;
     margin-top: 10px;
   }
   #chat_input{
+    
     width: 95%;
     height: 100%;
     float: left;
     background-color: Transparent;
-    color: white;
+    color: gray;
     font-size: 15px;
+border-radius: 10px;
+background-color: lightgray;
+border-color: black; 
+
   }
   #chat_input_send{
-    width: 5%;
+border-radius: 500px;
+    width: 8%;
     height: 100%;
     float: left;
     font-size: 18px;
