@@ -381,7 +381,7 @@ firebase.database().ref().child(roomcode).child('name').get().then((snapshot) =>
 
 
 
-const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button> <button id='unb'></button>" + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
+const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='joinroom()'>Join a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>" + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
 
      bttns.innerHTML = htes
     title.textContent = snapshot.val()
@@ -439,10 +439,21 @@ if (roomname == null || roomname == "") {
 firebase.database().ref(roomcode + '/').set({
     name: roomname,
   });
-window.location.href = 'https://' + document.domain + '/Discord-2.0/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
+window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
 }
 }
 
 function makeainvite(params) {
-  alert('https://' + document.domain + '/Discord-2.0/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode)
+  alert('https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode)
+}
+
+function joinroom(params) {
+let join = prompt("Chatroom invite url", 'https://zombiefiedgaming.github.io/apps/testinggrounds/chat/invite/?appId=3&code=chatroom1');
+let text2;
+if (join == null || join == "") {
+ alert ('empty field');
+} else {
+window.location.href = join
+}
+
 }
