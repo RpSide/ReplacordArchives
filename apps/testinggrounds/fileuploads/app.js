@@ -1,14 +1,14 @@
 
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyAxAqkFw8oIJiHyLAQllDk4W9bh3pbBC4g",
-    authDomain: "https://unblocked-infinite-a9e25-default-rtdb.firebaseio.com",
-    databaseURL: "https://unblocked-infinite-a9e25-default-rtdb.firebaseio.com",
-    projectId: "unblocked-infinite-a9e25",
-    storageBucket: "unblocked-infinite-a9e25.appspot.com",
-    messagingSenderId: "unblocked-infinite-a9e25.appspot.com",
-    appId: "1:267045856766:web:baa6dc5285d5dcf322ccaf"
+const firebaseConfig = {
+  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
+  authDomain: "chat-883eb.firebaseapp.com",
+  projectId: "chat-883eb",
+  storageBucket: "chat-883eb.appspot.com",
+  messagingSenderId: "421817736954",
+  appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
+  measurementId: "G-YCQZGGEGZ9"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
