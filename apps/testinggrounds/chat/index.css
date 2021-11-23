@@ -83,14 +83,21 @@ font-family: 'Gloria Hallelujah', cursive;
   }
   
   #title{
+line-height : 20px;
+margin-bottom: 0;
+  margin:0;
+  padding:0;
     display: inline-block;
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 100px;
+    font-size: 90px;
     letter-spacing: 2px;
     user-select: none;
   }
 #title2{
-    display: inline-block;
+padding-top:0;
+  margin:0;
+  padding:0;
+    display: block;
     color: #fff;/*EBEBD3, C5283D*/
     font-size: 30px;
     letter-spacing: 2px;
