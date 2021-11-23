@@ -20,7 +20,6 @@ window.onload = function() {
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
   var database = firebase.database();
-  var dbRef = firebase.database().ref();
 
 
 
