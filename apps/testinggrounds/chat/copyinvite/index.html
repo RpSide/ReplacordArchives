@@ -4,6 +4,7 @@
 
   <script>
 
+
 // grabs paramiters from the url
 
 var queryString = window.location.search
@@ -14,11 +15,14 @@ var queryString = window.location.search
   var invitecode = urlParams.get('code')
 if (appID == 3) {
 
-var url = 'https://' + document.domain + '/apps/testinggrounds/chat/' + '?code=' + invitecode
+var url = 'https://' + document.domain + '/apps/testinggrounds/chat/invite/' + '?code=' + invitecode
 
-  window.location.href = url
+  document.write(<!-- The text field -->
+'<input type="text" value="'url'"=" myInput"><button onclick="myFunction()">Copy text</button>')
   
 }
+
+
 if (appID != 1 || appID != 2 || appID != 3) {
 
   document.write('Sorry ' + document.domain + '/apps/testinggrounds/chat/ + '?' + urlParams + ' is not a Valid Invite link')
