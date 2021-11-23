@@ -369,6 +369,7 @@ var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
 var title = document.createElement('h1')
 var title23 = document.createElement('title')
+var subtitle = document.createElement('h3')
 
 var bttns = document.createElement('span')
     bttns.setAttribute('id', 'd')
@@ -415,9 +416,30 @@ alert(welcomemessage)
 }).catch((error) => {
   console.error(error);
 });
+
+firebase.database().ref().child(roomcode).child('subtitle').get().then((snapshot) => {
+  if (snapshot.exists()) {
+var subtitle2 = snapshot.val()
+if (subtitle2 != undefined || subtitle2 != null) {
+
+  subtitle.textContent = snapshot.val()
+
+  
+  }
+
+    
+    }
+  
+  else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
     
 
       title_container.append(title)
+      title_container.append(subtitle)
       title_container2.append(bttns)
       document.body.append(title_container)
       document.body.append(title_container2)
