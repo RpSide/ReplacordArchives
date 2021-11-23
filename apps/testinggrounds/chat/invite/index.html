@@ -12,6 +12,7 @@ var queryString = window.location.search
    
   var appID = urlParams.get('appID')
   var invitecode = urlParams.get('code')
+
 if (appID == 3) {
 
 var url = 'https://' + document.domain + '/apps/testinggrounds/chat/' + '?code=' + invitecode
@@ -21,7 +22,7 @@ var url = 'https://' + document.domain + '/apps/testinggrounds/chat/' + '?code='
 }
 if (appID != 1 || appID != 2 || appID != 3) {
 
-  document.write('Sorry ' + document.domain + '/apps/testinggrounds/chat/ + '?' + urlParams + ' is not a Valid Invite link')
+  document.write('Sorry ' + document.domain + '/apps/testinggrounds/chat/invite/ + '?' + urlParams + ' is not a Valid Invite link')
   
 }
 </script>
