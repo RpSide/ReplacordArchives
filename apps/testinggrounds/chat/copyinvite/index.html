@@ -1,9 +1,8 @@
 <html>
   <head>
-  <title>Copy Invite</title>
+  <title>Invite</title>
 
   <script>
-
 
 // grabs paramiters from the url
 
@@ -16,7 +15,22 @@ var queryString = window.location.search
 if (appID != null && appID != undefined && appID == 3 && invitecode != "" && invitecode != null && invitecode != undefined ) {
 var url = 'https://' + document.domain + '/apps/testinggrounds/chat/' + '?code=' + invitecode
 
-  document.write('<input type="text" value="' + url + '"="myInput"><button onclick="myFunction()">Copy text</button>')
+    document.write('<input type="text" value="' + url + '"="myInput"><button onclick="myFunction()">Copy text</button>')
+}
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
 }
 
 else {
@@ -24,3 +38,8 @@ else {
 document.write("<h1>Not A Valid Invite Link</h1>")
 
 }
+</script>
+  </head>
+  <body>
+  </body>
+</html>
