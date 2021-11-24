@@ -6,7 +6,7 @@
   display: inline-block;
 }
 .message_pfp{
-  border-radius: 30px;
+  border-radius: 30vw;
   width: 4.5vw;
   height:  6vh;
   font-weight: bold;
@@ -37,7 +37,7 @@ background-color: gray;
 border-color: white;
 color: black;
   font-size: 40px;
-
+text-align-verticle: center;
 text-align: center;
 }
 
@@ -72,7 +72,11 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-font-family: 'Nova Round', cursive;
+
+
+font-family: manofa-condensed,sans-serif;
+font-weight: 300;
+font-style: italic;
   }
   
   #title{

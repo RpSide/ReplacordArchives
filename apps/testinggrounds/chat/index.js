@@ -376,7 +376,7 @@ subtitle.setAttribute('id', 'title2')
 // buttons
 var cmaker = document.createElement('button')
     cmaker.setAttribute('id', 'unb')
-    cmaker.textContent = 'Make a room'
+    cmaker.textContent = 'Create a room'
 
 var jroom = document.createElement('button')
     jroom.setAttribute('id', 'unb')
