@@ -18,10 +18,9 @@ background-color: darkgray;
 border-color: black; 
 color: black;
 border-radius: 50vw;
-  font-size: 15px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
-  padding: 3px;
+  font-size: 1vw;
+
+  padding: 1vw;
 }
 
 #unb:hover {
@@ -36,8 +35,7 @@ background-color: gray;
 border-color: white;
 color: black;
   font-size: 40px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
 text-align: center;
 }
 
@@ -51,8 +49,7 @@ background-color: gray;
 border-color: white;
 color: black;
   font-size: 40px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
 text-align: center;
 }
 
@@ -60,8 +57,7 @@ text-align: center;
 body {
     /* https://www.color-hex.com/color/d3d3d3 */
     background-color: black; /*#f6f6f6, EBEBD3, fafafa*/
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
     font-weight: 900;
     border:none;
     overflow: hidden;
@@ -74,8 +70,7 @@ font-family: 'Gloria Hallelujah', cursive;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Nova Round', cursive;
   }
   
   #title{
@@ -180,8 +175,7 @@ display:block;
   
     float: left;
     overflow-y: auto;
-    f  font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
   
     padding-left: 15px;
     padding-right: 15px;
@@ -196,8 +190,7 @@ font-family: 'Gloria Hallelujah', cursive;
   
     padding-left: 15px;
     padding-right: 15px;
-      font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
     margin-top: 10px;
   }
   #chat_input{
@@ -214,8 +207,8 @@ border-color: black;
 
   }
   #chat_input_send{
-    width: 5vw;
-    height: 5vh;
+    width: 3vw;
+    height: 4.5vh;
     float: left;
     font-size: 18px;
   border-radius: 500px;
@@ -359,7 +352,7 @@ display:block;
   }
   /* width */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 0.5vw;
   }
   /* Track */
   ::-webkit-scrollbar-track {
@@ -368,6 +361,6 @@ display:block;
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #D64045;
-    border-radius: 5px;
+    border-radius: 1;
   }
   
