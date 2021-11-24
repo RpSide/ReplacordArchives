@@ -26,7 +26,7 @@ let text2;
 if (roomname == null || roomname == "") {
  alert ('empty field');
 } else {
-firebase.database().ref(roomcode + '/').set({
+firebase.database().ref(chats/' + roomcode + '/').set({
     name: roomname,
   });
 }
