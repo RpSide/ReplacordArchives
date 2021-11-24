@@ -217,10 +217,10 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 }
 
-      var messages = db.ref(room);
+      var messages = db.ref('chats/' + room + 'messages');
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref(room + `message_${index}`)
+        db.ref('chats/' + room + 'messages' + `message_${index}`)
           .set({
             profilepic: parent.get_url(),
             name: parent.get_name() + '  ( ' + time + ' | ' + datee + ' )',
@@ -256,7 +256,7 @@ return localStorage.getItem("url");
         "chat_content_container"
       );
 
-      var messages = db.ref(room);
+      var messages = db.ref('chats/' + room + 'messages' + );
       messages.on("value", function(snapshot) {
         chat_content_container.innerHTML = "";
         if (snapshot.numChildren() == 0) {
@@ -392,7 +392,7 @@ var invmker = document.createElement('button')
    
 
 
-firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
+firebase.database().ref().child('chats/' + roomcode).child('name').get().then((snapshot) => {
   if (snapshot.exists()) {
 
 var titlee = snapshot.val() + ' || Scuffed Discord'
@@ -411,7 +411,7 @@ var titlee = snapshot.val() + ' || Scuffed Discord'
   console.error(error);
 });
 
-firebase.database().ref().child(roomcode).child('welcome').get().then((snapshot) => {
+firebase.database().ref().child('chats/' + roomcode).child('welcome').get().then((snapshot) => {
   if (snapshot.exists()) {
 var welcomemessage = snapshot.val()
 if (welcomemessage != undefined || welcomemessage != null) {
@@ -430,7 +430,7 @@ alert(welcomemessage)
   console.error(error);
 });
 
-firebase.database().ref().child(roomcode).child('subtitle').get().then((snapshot) => {
+firebase.database().ref().child('chats/' + roomcode).child('subtitle').get().then((snapshot) => {
   if (snapshot.exists()) {
 var subtitle2 = snapshot.val()
 if (subtitle2 != undefined || subtitle2 != null) {
@@ -489,7 +489,7 @@ let text2;
 if (roomname == null || roomname == "") {
  alert ('empty field');
 } else {
-firebase.database().ref(roomcode + '/').set({
+firebase.database().ref('chats/' + roomcode + '/').set({
     name: roomname,
   });
 window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
