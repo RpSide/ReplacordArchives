@@ -7,7 +7,7 @@
 }
 .message_pfp{
   border-radius: 30px;
-  width: 5vw;
+  width: 3.5vw;
   height:  5vh;
   font-weight: bold;
   font-size: 14px;
@@ -267,7 +267,7 @@ border-radius: 500px;
   }
   .message_user{
     font-weight: bold;
-    font-size: 14px;
+    font-size: 14vw;
   }
   .message_content_container{
     width: 100%;
