@@ -35,8 +35,8 @@ font-family: 'Gloria Hallelujah', cursive;
 }
 #untitle {
 border-radius: 60px;
- width:   70%;
- height: 15%;
+ width: 70%;
+ height: 150px;
 margin: auto;
 background-color: gray;
 border-color: white;
@@ -90,7 +90,7 @@ margin-bottom: 0;
   padding:0;
 display:block;
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 90px;
+    font-size: 190%;
     letter-spacing: 2px;
     user-select: none;
   }
@@ -181,7 +181,7 @@ display:block;
   }
   #chat_content_container{
     width: 100%;
-    height: 300px;
+    height: 30vh;
   
     float: left;
     overflow-y: auto;
