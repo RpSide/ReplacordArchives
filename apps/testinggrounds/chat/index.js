@@ -376,15 +376,17 @@ subtitle.setAttribute('id', 'title2')
 // buttons
 var cmaker = document.createElement('button')
     cmaker.setAttribute('id', 'unb')
+    cmaker.setAttribute('class', 'cmake')
     cmaker.textContent = 'Create a room'
-    cmaker.
 
 var jroom = document.createElement('button')
     jroom.setAttribute('id', 'unb')
+    jroom.setAttribute('class', 'jroom')
     jroom.textContent = 'Join a Room'
     
 var invmker = document.createElement('button')
     invmker.setAttribute('id', 'unb')
+    invmker.setAttribute('class', 'invmker')
     invmker.textContent = 'Make an Invite'
   
    
@@ -476,11 +478,10 @@ if (subtitle2 != undefined || subtitle2 != null) {
     }*/
 
 
+ var cmaker = document.getElementClass('cmake')
 
 
-
-
-function makechatroom() {
+cmaker.onclick = function() {
 
  var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
   
@@ -495,6 +496,7 @@ firebase.database().ref(roomcode + '/').set({
 window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
 }
 }
+
 
 function makeainvite(params) {
    window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/copyinvite/' + '?appID=3&code=' + roomcode
