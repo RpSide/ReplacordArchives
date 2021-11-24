@@ -370,22 +370,29 @@ var title_container2 = document.createElement('div')
 var title = document.createElement('span')
 title.setAttribute('id', 'title')
 var title23 = document.createElement('title')
+
 var subtitle = document.createElement('span')
 subtitle.setAttribute('id', 'title2')
 
-var bttns = document.createElement('span')
-    bttns.setAttribute('id', 'd')
+// buttons
+var cmaker = document.createElement('button')
+    cmaker.setAttribute('id', 'unb')
+
+var jroom = document.createElement('button')
+    jroom.setAttribute('id', 'unb')
+
+var invmker = document.createElement('button')
+    invmker.setAttribute('id', 'unb')
    
 
 
 firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
   if (snapshot.exists()) {
 
-
+title23.textContent = snapshot.val() + '|| Scuffed Discord'
 
 const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button><button id='unb' onclick='joinroom()'>Join a room</button><button id='unb' onclick='makeainvite()'>Make An Invite</button>" + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
 
-     bttns.innerHTML = htes
     title.textContent = snapshot.val()
     console.log(snapshot.val());
     return snapshot.val() 
