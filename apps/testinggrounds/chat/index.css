@@ -175,7 +175,7 @@ display:block;
     height: 100%;
   }
   #chat_content_container{
-    width: 100%;
+    width: 49vw;
     height: 30vh;
   
     float: left;
@@ -188,7 +188,7 @@ font-family: 'Gloria Hallelujah', cursive;
   }
   #chat_input_container{
     width: 100%;
-    height: 10px;
+    height: 5vh;
   
     float: left;
     border-bottom: 2px dashed #1D3354;
@@ -203,19 +203,19 @@ font-family: 'Gloria Hallelujah', cursive;
   #chat_input{
     
     width: 90%;
-    height: 25px;
+    height: 4vh;
     float: left;
     background-color: white;
     color: black;
-    font-size: 15px;
-border-radius: 10px;
+    font-size: 1vw;
+border-radius: 10vw;
 background-color: lightgray;
 border-color: black; 
 
   }
   #chat_input_send{
-    width: 27px;
-    height: 27px;
+    width: 5vw;
+    height: 5vh;
     float: left;
     font-size: 18px;
   border-radius: 500px;
@@ -251,35 +251,56 @@ border-radius: 500px;
   }
   .message_container{
     width: 100%;
-    display: inline-block;
-    margin-bottom: 20px;
+margin-bottom: 0;
+margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
   
   }
   .message_inner_container{
     width: 100%;
-    display: inline-block;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
   
     color: #1D3354;
   }
   .message_user_container{
     width: 100%;
-    display: inline-block;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
+
   }
   .message_user{
     font-weight: bold;
-    font-size: 14vw;
+    font-size: 1vw;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
   }
   .message_content_container{
     width: 100%;
-    display: inline-block;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
   
     white-space: pre-wrap;
     word-wrap: break-word;
   }
   .message_content{
     font-weight: normal;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 1vw;
+    margin-top: 0px;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
+    
   }
   
   
