@@ -367,7 +367,7 @@ var title_container = document.createElement('div')
       title_container.setAttribute('id', 'untitle')
 var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
-var title = document.createElement('span')
+var title = document.createElement('h1')
 title.setAttribute('id', 'title')
 
 var subtitle = document.createElement('span')
@@ -377,6 +377,7 @@ subtitle.setAttribute('id', 'title2')
 var cmaker = document.createElement('button')
     cmaker.setAttribute('id', 'unb')
     cmaker.textContent = 'Create a room'
+    cmaker.
 
 var jroom = document.createElement('button')
     jroom.setAttribute('id', 'unb')

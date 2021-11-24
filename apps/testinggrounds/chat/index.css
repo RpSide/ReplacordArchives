@@ -23,6 +23,7 @@ border-radius: 50vw;
   font-size: 1vw;
   border-size: 1vw;
   align-self: auto;
+
 }
 
 #unb:hover {
@@ -39,6 +40,8 @@ color: black;
   font-size: 40px;
 text-align-verticle: center;
 text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #untitle2 {
@@ -88,12 +91,20 @@ display:block;
     font-size: 6vw;
     letter-spacing: 0vw;
     user-select: none;
+        position: absolute;
+        top: 23px;
+    left: 330px;
+      
   }
 #title2{
+    text-align: center;
     color: #fff;/*EBEBD3, C5283D*/
     font-size: 2vw;
     display:block;
     user-select: none;
+   position: absolute;
+    top: 80px;
+    left: 350px;
   }
   
    #join_container{
