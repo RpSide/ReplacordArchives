@@ -217,10 +217,10 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 }
 
-      var messages = db.ref('chats/' + room + 'messages');
+      var messages = db.ref('chats/' + room + 'messages/');
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref('chats/' + room + 'messages' + `message_${index}`)
+        db.ref('chats/' + room + 'messages/' + `message_${index}`)
           .set({
             profilepic: parent.get_url(),
             name: parent.get_name() + '  ( ' + time + ' | ' + datee + ' )',
@@ -256,7 +256,7 @@ return localStorage.getItem("url");
         "chat_content_container"
       );
 
-      var messages = db.ref('chats/' + room + 'messages' + );
+      var messages = db.ref('chats/' + room + 'messages/');
       messages.on("value", function(snapshot) {
         chat_content_container.innerHTML = "";
         if (snapshot.numChildren() == 0) {
@@ -480,7 +480,7 @@ if (subtitle2 != undefined || subtitle2 != null) {
 
 
 
- document.getElementById("cmke").onclick = function() {
+ function makechatroom() {
 
  var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
   
