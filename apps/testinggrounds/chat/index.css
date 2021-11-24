@@ -7,8 +7,8 @@
 }
 .message_pfp{
   border-radius: 30px;
-  width: 3.5vw;
-  height:  5vh;
+  width: 4.5vw;
+  height:  6vh;
   font-weight: bold;
   font-size: 14px;
 }
@@ -45,7 +45,7 @@ text-align: center;
 padding: 0;
 border-radius: 10vw;
  width:   55vw;
- height: 7vh;
+ height: 8vh;
 margin: auto;
 background-color: gray;
 border-color: white;
@@ -58,7 +58,7 @@ text-align: center;
 
 body {
     /* https://www.color-hex.com/color/d3d3d3 */
-    background-color: darkgray; /*#f6f6f6, EBEBD3, fafafa*/
+    background-color: black; /*#f6f6f6, EBEBD3, fafafa*/
 
     font-weight: 900;
     border:none;
@@ -273,7 +273,7 @@ display:block;
   }
   .message_user{
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 1.5vw;
     margin-bottom: 0;
   margin:0;
   padding:0;
@@ -290,7 +290,7 @@ display:block;
   }
   .message_content{
     font-weight: normal;
-    font-size: 1vw;
+    font-size: 1.5vw;
     margin-top: 0px;
     margin-bottom: 0;
   margin:0;
