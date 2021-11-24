@@ -375,18 +375,18 @@ subtitle.setAttribute('id', 'title2')
  var title3 = document.createElement("title")
 // buttons
 var cmaker = document.createElement('button')
-    cmaker.setAttribute('id', 'unb')
-    cmaker.setAttribute('class', 'cmake')
+    cmaker.setAttribute('id', 'cmke')
+    cmaker.setAttribute('class', 'unb')
     cmaker.textContent = 'Create a room'
 
 var jroom = document.createElement('button')
-    jroom.setAttribute('id', 'unb')
-    jroom.setAttribute('class', 'jroom')
+    jroom.setAttribute('id', 'joom')
+    jroom.setAttribute('class', 'unb')
     jroom.textContent = 'Join a Room'
     
 var invmker = document.createElement('button')
-    invmker.setAttribute('id', 'unb')
-    invmker.setAttribute('class', 'invmker')
+    invmker.setAttribute('id', 'invm')
+    invmker.setAttribute('class', 'unb')
     invmker.textContent = 'Make an Invite'
   
    
@@ -478,10 +478,9 @@ if (subtitle2 != undefined || subtitle2 != null) {
     }*/
 
 
- var cmaker = document.getElementClass('cmake')
 
 
-cmaker.onclick = function() {
+ document.getElementById("cmke").onclick = function() {
 
  var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
   
