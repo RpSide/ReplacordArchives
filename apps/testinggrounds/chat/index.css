@@ -17,7 +17,7 @@
 background-color: darkgray;
 border-color: black; 
 color: black;
-border-radius: 500px;
+border-radius: 50vw;
   font-size: 15px;
 font-family: 'Ceviche One', cursive;
 font-family: 'Gloria Hallelujah', cursive;
@@ -26,17 +26,11 @@ font-family: 'Gloria Hallelujah', cursive;
 
 #unb:hover {
 background-color: lightgray;
-border-color: black;
-color: black;
-border-radius: 500px;
-  font-size: 15px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
 }
 #untitle {
-border-radius: 60px;
- width: 70vw;
- height: 150px;
+border-radius: 60vw;
+ width: 60vw;
+ height: 15vh;
 margin: auto;
 background-color: gray;
 border-color: white;
@@ -49,9 +43,9 @@ text-align: center;
 
 #untitle2 {
 
-border-radius: 10px;
- width:   65vw;
- height: 80%;
+border-radius: 10vw;
+ width:   55vw;
+ height: 10vh;
 margin: auto;
 background-color: gray;
 border-color: white;
@@ -90,13 +84,14 @@ margin-bottom: 0;
   padding:0;
 display:block;
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 19%
-    letter-spacing: 2px;
+    font-size: 4vw;
+    letter-spacing: 0vw;
     user-select: none;
   }
 #title2{
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 20px;
+    font-size: 2vw;
+    display:block;
   }
   
    #join_container{
