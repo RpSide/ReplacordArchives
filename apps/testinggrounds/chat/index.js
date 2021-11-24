@@ -369,30 +369,31 @@ var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
 var title = document.createElement('span')
 title.setAttribute('id', 'title')
-var title23 = document.createElement('title')
 
 var subtitle = document.createElement('span')
 subtitle.setAttribute('id', 'title2')
-
+ var title3 = document.createElement("title")
 // buttons
 var cmaker = document.createElement('button')
     cmaker.setAttribute('id', 'unb')
+    cmaker.textContent = 'Make a room'
 
 var jroom = document.createElement('button')
     jroom.setAttribute('id', 'unb')
-
+    jroom.textContent = 'Join a Room'
+    
 var invmker = document.createElement('button')
     invmker.setAttribute('id', 'unb')
+    invmker.textContent = 'Make an Invite'
+  
    
 
 
 firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
   if (snapshot.exists()) {
 
-title23.textContent = snapshot.val() + '|| Scuffed Discord'
-
-const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button><button id='unb' onclick='joinroom()'>Join a room</button><button id='unb' onclick='makeainvite()'>Make An Invite</button>" + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
-
+var titlee = snapshot.val() + ' || Scuffed Discord'
+    title3.textContent = titlee
     title.textContent = snapshot.val()
     console.log(snapshot.val());
     return snapshot.val() 
@@ -448,8 +449,11 @@ if (subtitle2 != undefined || subtitle2 != null) {
     
 
       title_container.append(title)
+      title_container.append(title3)
       title_container.append(subtitle)
-      title_container2.append(bttns)
+      title_container2.append(cmaker)
+      title_container2.append(jroom)
+      title_container2.append(invmker)
       document.body.append(title_container)
       document.body.append(title_container2)
 
