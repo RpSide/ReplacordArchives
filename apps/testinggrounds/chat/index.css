@@ -89,6 +89,7 @@ display:block;
     color: #fff;/*EBEBD3, C5283D*/
     font-size: 2vw;
     display:block;
+    user-select: none;
   }
   
    #join_container{

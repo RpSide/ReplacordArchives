@@ -60,5 +60,7 @@ var subtitle = document.getElementById('csubt').value
   
 firebase.database().ref(roomcode + '/').set({
     name: roomname,
+      welcome: welcome,
+    subtitle: subtitle
   });
  }
