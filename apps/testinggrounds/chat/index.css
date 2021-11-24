@@ -30,8 +30,8 @@ background-color: lightgray;
 }
 #untitle {
 border-radius: 60vw;
- width: 60vw;
- height: 15vh;
+ width: 63vw;
+ height: 18vh;
 margin: auto;
 background-color: gray;
 border-color: white;
@@ -44,7 +44,7 @@ text-align: center;
 #untitle2 {
 padding: 0;
 border-radius: 10vw;
- width:   55vw;
+ width:   58vw;
  height: 8vh;
 margin: auto;
 background-color: gray;
@@ -81,7 +81,7 @@ margin-bottom: 0;
   padding:0;
 display:block;
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 4vw;
+    font-size: 6vw;
     letter-spacing: 0vw;
     user-select: none;
   }

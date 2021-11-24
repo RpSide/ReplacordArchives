@@ -1,6 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = '2.3'
+var client = '2.5'
 
 
 window.onload = function() {
