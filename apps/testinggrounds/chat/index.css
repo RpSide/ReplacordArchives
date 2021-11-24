@@ -14,13 +14,16 @@
 }
 
 #unb {
+gap: 0px;
+margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:inline-block;
 background-color: darkgray;
 border-color: black; 
 color: black;
 border-radius: 50vw;
   font-size: 1vw;
-
-  padding: 1vw;
 }
 
 #unb:hover {
@@ -361,6 +364,6 @@ display:block;
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #D64045;
-    border-radius: 1;
+    border-radius: 1vw;
   }
   
