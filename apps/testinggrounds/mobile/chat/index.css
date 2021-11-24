@@ -207,7 +207,7 @@ font-family: 'Gloria Hallelujah', cursive;
   }
   #chat_input{
     
-    width: 90%;
+    width: 85%;
     height: 3vh;
     float: left;
     background-color: white;
@@ -219,20 +219,18 @@ border-color: black;
 
   }
   #chat_input_send{
-    width: 27px;
-    height: 27px;
+    width: 5vw;
+    height: 2.5vh;
     float: left;
     font-size: 18px;
   border-radius: 500px;
-    background-color: black;
-    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend.png?v=1637717846590");
+    background-color: gray;
     text-align: right;
     color: #ccc;
   }
   #chat_input_send.enabled{
 border-radius: 500px;
-    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend%20(1).png?v=1637717792094");
-    background-color: darkgray;
+    background-color: lightgray;
     cursor: pointer;
   
   }
