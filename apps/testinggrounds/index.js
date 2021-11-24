@@ -29,9 +29,8 @@ if (roomname == null || roomname == "") {
 firebase.database().ref(roomcode + '/').set({
     name: roomname,
   });
-
-
-
+}
+}
 
 function makespecialroom(params) {
   
@@ -51,21 +50,15 @@ firebase.database().ref(roomcode + '/').set({
 }
 }
 }
-}
-}
 
 
-function writeUserData() {
+function addextra() {
+ var roomcode = document.getElementById('ccode').value
+var roomname = document.getElementById('cname').value
+var welcome = document.getElementById('cwm').value 
+var subtitle = document.getElementById('csubt').value  
   
-let roomname = prompt("chatroom name", '');
-let text2;
-if (roomname == null || roomname == "") {
- alert ('empty field');
-} else {
-database.ref(roomcode + '/').set({
+firebase.database().ref(roomcode + '/').set({
     name: roomname,
   });
-}
-}
-
-}
+ }
