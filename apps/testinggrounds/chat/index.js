@@ -18,7 +18,18 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
   var database = firebase.database();
+  var auth = firebase.auth();
 
+// sign up, in, and out
+	
+
+var emailinput = document.createElement('input')
+      emailinput.setAttribute("id", "email");
+      emailinput.placeholder = "Email";
+
+var passwordinput = document.createElement('input')
+      passwordinput.setAttribute("id", "pessword");
+      passwordinput.placeholder = "Password";
 
 
   class MEME_CHAT {
@@ -35,97 +46,7 @@ const firebaseConfig = {
   create_join_form(){
       // YOU MUST HAVE (PARENT = THIS). OR NOT. I'M NOT YOUR BOSS!😂
       var parent = this;
-// sign up, in, and out
-const auth = firebase.auth();
-	
-	
-	function signUp(){
-		
-		var email = document.getElementById("email");
-		var password = document.getElementById("password");
-		
-		const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-		promise.catch(e => alert(e.message));
-		
-		alert("Signed Up");
-	}
-	
-	
-	
-	function signIn(){
-		
-		var email = document.getElementById("email");
-		var password = document.getElementById("password");
-		
-		const promise = auth.signInWithEmailAndPassword(email.value, password.value);
-		promise.catch(e => alert(e.message));
-		
-		
-		
-		
-	}
-	
-	
-	function signOut(){
-		
-		auth.signOut();
-		alert("Signed Out");
-		
-	}
-	
-	
-	
-	auth.onAuthStateChanged(function(user){
-		
-		if(user){
-			
-			var email = user.email;
-			alert("Active User " + email);
-			
-			//Take user to a different or home page
 
-			//is signed in
-			
-		}else{
-			
-			alert("No Active User");
-			//no user is signed in
-		}
-		
-		
-		
-	});
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
       var join_container = document.createElement('div')
       join_container.setAttribute('id', 'join_container')
       var join_inner_container = document.createElement('div')
@@ -154,21 +75,7 @@ const auth = firebase.auth();
 
 
 
-let date = new Date();
-var datee = (date.getMonth() + 1) + "/" + date.getDate()
-let dateee = new Date();
 
-      if (dateee.getHours() > 12 ) {
-
-var time = (dateee.getHours() - 12) + ':' + dateee.getMinutes() + ' pm'
-
-}
-      else {
-
-var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
-
-
-}
 
 
       join_input.onkeyup = function() {
@@ -191,6 +98,8 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
       join_inner_container.append(join_input_container, join_button_container);
       join_container.append(join_inner_container);
       document.body.append(join_container);
+
+// 
     }
     create_load(id) {
       // YOU ALSO MUST HAVE (PARENT = THIS). BUT IT'S WHATEVER THO.
