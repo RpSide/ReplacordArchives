@@ -1,6 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = '2.5'
+var client = '2.3'
 
 
 window.onload = function() {
@@ -19,7 +19,6 @@ const firebaseConfig = {
   var db = firebase.database();
   var database = firebase.database();
 
-// sign up, in, and out
 
 
   class MEME_CHAT {
@@ -65,7 +64,21 @@ const firebaseConfig = {
 
 
 
+let date = new Date();
+var datee = (date.getMonth() + 1) + "/" + date.getDate()
+let dateee = new Date();
 
+      if (dateee.getHours() > 12 ) {
+
+var time = (dateee.getHours() - 12) + ':' + dateee.getMinutes() + ' pm'
+
+}
+      else {
+
+var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
+
+
+}
 
 
       join_input.onkeyup = function() {
@@ -88,8 +101,6 @@ const firebaseConfig = {
       join_inner_container.append(join_input_container, join_button_container);
       join_container.append(join_inner_container);
       document.body.append(join_container);
-
-// 
     }
     create_load(id) {
       // YOU ALSO MUST HAVE (PARENT = THIS). BUT IT'S WHATEVER THO.
@@ -206,10 +217,10 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 }
 
-      var messages = db.ref('chats/' + room + 'messages/');
+      var messages = db.ref(room);
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref('chats/' + room + 'messages/' + `message_${index}`)
+        db.ref(room + `message_${index}`)
           .set({
             profilepic: parent.get_url(),
             name: parent.get_name() + '  ( ' + time + ' | ' + datee + ' )',
@@ -245,7 +256,7 @@ return localStorage.getItem("url");
         "chat_content_container"
       );
 
-      var messages = db.ref('chats/' + room + 'messages/');
+      var messages = db.ref(room);
       messages.on("value", function(snapshot) {
         chat_content_container.innerHTML = "";
         if (snapshot.numChildren() == 0) {
@@ -356,75 +367,25 @@ var title_container = document.createElement('div')
       title_container.setAttribute('id', 'untitle')
 var title_container2 = document.createElement('div')
       title_container2.setAttribute('id', 'untitle2')
-var title = document.createElement('h1')
+var title = document.createElement('span')
 title.setAttribute('id', 'title')
-
+var title23 = document.createElement('title')
 var subtitle = document.createElement('span')
 subtitle.setAttribute('id', 'title2')
- var title3 = document.createElement("title")
-// buttons
-var cmaker = document.createElement('button')
-    cmaker.setAttribute('id', 'cmke')
-    cmaker.setAttribute('class', 'unb')
-    cmaker.textContent = 'Create a room'
 
-var jroom = document.createElement('button')
-    jroom.setAttribute('id', 'joom')
-    jroom.setAttribute('class', 'unb')
-    jroom.textContent = 'Join a Room'
-    
-var invmker = document.createElement('button')
-    invmker.setAttribute('id', 'invm')
-    invmker.setAttribute('class', 'unb')
-    invmker.textContent = 'Make an Invite'
-  
-// make a chatroom   
+var bttns = document.createElement('span')
+    bttns.setAttribute('id', 'd')
+   
 
 
-cmaker.onclick = function(){
-
- var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
-  
-let roomname = prompt("chatroom name", 'e');
-let text2;
-if (roomname == null || roomname == "") {
- alert ('empty field');
-} else {
-firebase.database().ref('chats/' + roomcode + '/').set({
-    name: roomname,
-  });
-window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
-}
-}
-
-  
-  // Join a Chatroom
-
-jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/testinggrounds/chat/invite/' + '?appID=3&code=chatroom1');
-let text2;
-if (join == null || join == "") {
- alert ('empty field');
-} else {
-window.location.href = join
-}
-
-}
-
-
-// Make A invite
-
-invmker.onclick = function(params) {
-   window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/copyinvite/' + '?appID=3&code=' + roomcode
-}
-
-
-
-firebase.database().ref().child('chats/' + roomcode).child('name').get().then((snapshot) => {
+firebase.database().ref().child(roomcode).child('name').get().then((snapshot) => {
   if (snapshot.exists()) {
 
-var titlee = snapshot.val() + ' || Scuffed Discord'
-    title3.textContent = titlee
+
+
+const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='joinroom()'>Join a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>" + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
+
+     bttns.innerHTML = htes
     title.textContent = snapshot.val()
     console.log(snapshot.val());
     return snapshot.val() 
@@ -439,7 +400,7 @@ var titlee = snapshot.val() + ' || Scuffed Discord'
   console.error(error);
 });
 
-firebase.database().ref().child('chats/' + roomcode).child('welcome').get().then((snapshot) => {
+firebase.database().ref().child(roomcode).child('welcome').get().then((snapshot) => {
   if (snapshot.exists()) {
 var welcomemessage = snapshot.val()
 if (welcomemessage != undefined || welcomemessage != null) {
@@ -458,7 +419,7 @@ alert(welcomemessage)
   console.error(error);
 });
 
-firebase.database().ref().child('chats/' + roomcode).child('subtitle').get().then((snapshot) => {
+firebase.database().ref().child(roomcode).child('subtitle').get().then((snapshot) => {
   if (snapshot.exists()) {
 var subtitle2 = snapshot.val()
 if (subtitle2 != undefined || subtitle2 != null) {
@@ -480,11 +441,8 @@ if (subtitle2 != undefined || subtitle2 != null) {
     
 
       title_container.append(title)
-      title_container.append(title3)
       title_container.append(subtitle)
-      title_container2.append(cmaker)
-      title_container2.append(jroom)
-      title_container2.append(invmker)
+      title_container2.append(bttns)
       document.body.append(title_container)
       document.body.append(title_container2)
 
@@ -508,5 +466,35 @@ if (subtitle2 != undefined || subtitle2 != null) {
 
 
 
- 
 
+
+function makechatroom() {
+
+ var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
+  
+let roomname = prompt("chatroom name", 'e');
+let text2;
+if (roomname == null || roomname == "") {
+ alert ('empty field');
+} else {
+firebase.database().ref(roomcode + '/').set({
+    name: roomname,
+  });
+window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
+}
+}
+
+function makeainvite(params) {
+   window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/copyinvite/' + '?appID=3&code=' + roomcode
+}
+
+function joinroom(params) {
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/testinggrounds/chat/invite/' + '?appID=3&code=chatroom1');
+let text2;
+if (join == null || join == "") {
+ alert ('empty field');
+} else {
+window.location.href = join
+}
+
+}

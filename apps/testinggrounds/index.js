@@ -1,6 +1,4 @@
-var room = "f/"
-
-  // Your web app's Firebase configuration
+ // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
@@ -23,82 +21,46 @@ function makenormalroom() {
 
  var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
   
-let roomname = prompt("chatroom name", room);
+let roomname = prompt("chatroom name", '');
 let text2;
 if (roomname == null || roomname == "") {
  alert ('empty field');
 } else {
-database.ref(roomcode + '/').set({
+firebase.database().ref(chats/' + roomcode + '/').set({
     name: roomname,
   });
-
-
-dbRef.child(roomcode).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-
 }
 }
 
-function makespecialroom() {
+function makespecialroom(params) {
   
-let roomcode = prompt("chatroom code", room);
+let roomname = prompt("chatroom name", '');
+let text2;
+if (roomname == null || roomname == "") {
+ alert ('empty field');
+} else {
+let roomcode = prompt("chatroom code", '');
 let text2;
 if (roomcode == null || roomcode == "") {
  alert ('empty field');
 } else {
-let roomname = prompt("chatroom name", room);
-let text2;
-if (roomname == null || roomname == "") {
- alert ('empty field');
-} else {
-database.ref(roomcode + '/').set({
+firebase.database().ref(roomcode + '/').set({
     name: roomname,
   });
 }
-
-
-dbRef.child(roomcode).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-
 }
 }
 
 
-function writeUserData() {
+function addextra() {
+ var roomcode = document.getElementById('ccode').value
+var roomname = document.getElementById('cname').value
+var welcome = document.getElementById('cwm').value 
+var subtitle = document.getElementById('csubt').value  
   
-let roomname = prompt("chatroom name", room);
-let text2;
-if (roomname == null || roomname == "") {
- alert ('empty field');
-} else {
-database.ref(roomcode + '/').set({
+firebase.database().ref(roomcode + '/').set({
     name: roomname,
+      welcome: welcome,
+    subtitle: subtitle
   });
-
-
-dbRef.child(roomcode).child('name').get().then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
-
-}
-}
+ }
