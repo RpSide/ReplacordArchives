@@ -18,18 +18,8 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
   var database = firebase.database();
-  var auth = firebase.auth();
 
 // sign up, in, and out
-	
-
-var emailinput = document.createElement('input')
-      emailinput.setAttribute("id", "email");
-      emailinput.placeholder = "Email";
-
-var passwordinput = document.createElement('input')
-      passwordinput.setAttribute("id", "pessword");
-      passwordinput.placeholder = "Password";
 
 
   class MEME_CHAT {
