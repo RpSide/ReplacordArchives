@@ -92,8 +92,8 @@ display:block;
     letter-spacing: 0vw;
     user-select: none;
         position: absolute;
-        top: 23px;
-    left: 330px;
+        top: 33px;
+    left: 370px;
       
   }
 #title2{
@@ -103,8 +103,8 @@ display:block;
     display:block;
     user-select: none;
    position: absolute;
-    top: 80px;
-    left: 350px;
+    top: 90px;
+    left: 395px;
   }
   
    #join_container{

@@ -389,7 +389,46 @@ var invmker = document.createElement('button')
     invmker.setAttribute('class', 'unb')
     invmker.textContent = 'Make an Invite'
   
-   
+// make a chatroom   
+
+
+cmaker.onclick = function(){
+
+ var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
+  
+let roomname = prompt("chatroom name", 'e');
+let text2;
+if (roomname == null || roomname == "") {
+ alert ('empty field');
+} else {
+firebase.database().ref('chats/' + roomcode + '/').set({
+    name: roomname,
+  });
+window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
+}
+}
+
+  
+  // Join a Chatroom
+
+jroom.onclick = function(params) {
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/testinggrounds/chat/invite/' + '?appID=3&code=chatroom1');
+let text2;
+if (join == null || join == "") {
+ alert ('empty field');
+} else {
+window.location.href = join
+}
+
+}
+
+
+// Make A invite
+
+invmker.onclick = function(params) {
+   window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/copyinvite/' + '?appID=3&code=' + roomcode
+}
+
 
 
 firebase.database().ref().child('chats/' + roomcode).child('name').get().then((snapshot) => {
@@ -480,34 +519,5 @@ if (subtitle2 != undefined || subtitle2 != null) {
 
 
 
- function makechatroom() {
+ 
 
- var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
-  
-let roomname = prompt("chatroom name", 'e');
-let text2;
-if (roomname == null || roomname == "") {
- alert ('empty field');
-} else {
-firebase.database().ref('chats/' + roomcode + '/').set({
-    name: roomname,
-  });
-window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
-}
-}
-
-
-function makeainvite(params) {
-   window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/copyinvite/' + '?appID=3&code=' + roomcode
-}
-
-function joinroom(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/testinggrounds/chat/invite/' + '?appID=3&code=chatroom1');
-let text2;
-if (join == null || join == "") {
- alert ('empty field');
-} else {
-window.location.href = join
-}
-
-}
