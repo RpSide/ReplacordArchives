@@ -1,6 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = '2.5'
+var client = '2.8'
 
 
 window.onload = function() {
@@ -431,7 +431,8 @@ var titlee = snapshot.val() + ' || Scuffed Discord'
     }
   
   else {
-    alert('this room does not exist')
+    alert('this room does not exist we will send you back to the last room you were in')
+    history.back()
     title.textContent = ''
     console.log("No data available");
   }
