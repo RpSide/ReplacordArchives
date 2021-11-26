@@ -1,9 +1,6 @@
 /* new */
 /* Profile pictures */
-.profpiccont{
-  width: 100%;
-  display: inline-block;
-}
+
 .message_pfp{
   border-radius: 30px;
   width: 60px;
@@ -12,8 +9,20 @@
   font-size: 14px;
 }
 
+#disabled-unb {
+background-color: #575757;
+border-color: black; 
+color: black;
+border-radius: 500px;
+  font-size: 15px;
+font-family: 'Ceviche One', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+  padding: 3px;
+}
+
+
 #unb {
-background-color: darkgray;
+background-color: #a3a3a3;
 border-color: black; 
 color: black;
 border-radius: 500px;
@@ -24,7 +33,7 @@ font-family: 'Gloria Hallelujah', cursive;
 }
 
 #unb:hover {
-background-color: lightgray;
+background-color: #d2d2d2;
 border-color: black;
 color: black;
 border-radius: 500px;

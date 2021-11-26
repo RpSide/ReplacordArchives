@@ -383,7 +383,7 @@ firebase.database().ref().child(roomcode).child('name').get().then((snapshot) =>
 
 
 
-const htes = "<a href='../index.html' ><button id='unb' >Home</button></a> <a href='../proxies/index.html' > <button id='unb'>Proxies</button></a> <a href='../games/index.html'> <button id='unb'>Games</button></a> <a href='index.html?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button> " + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
+const htes = "<a href='../index.html'><button id='disabled-unb' class='disabled'>Home</button></a> <a href='../proxies/index.html' > <button id='disabled-unb' class='disabled'>Proxies</button></a> <a href='../games/index.html' > <button id='disabled-unb' class='disabled'>Games</button></a> <a href='?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button> " + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
 
      bttns.innerHTML = htes
     title.textContent = snapshot.val()
