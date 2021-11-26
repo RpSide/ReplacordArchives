@@ -1,6 +1,14 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
 var client = '2.8'
+if (client = 'Developer') {
+
+var baseurl = '/apps/testinggrounds/chat'
+
+}
+else {
+ver baseurl = '/apps/chat'
+}
 
 
 window.onload = function() {
@@ -406,7 +414,8 @@ if (roomname == null || roomname == "") {
 firebase.database().ref('chats/' + roomcode + '/').set({
     name: roomname,
   });
-window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
+window.location.href = 'https://' + document.domain + baseurl +'/invite?appID=3&code=' + roomcode
+
 }
 }
 
@@ -414,21 +423,20 @@ window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat
   // Join a Chatroom
 
 jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/chat/invite/' + '?appID=3&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + document.domain + baseurl + '/invite/' + '?appID=3&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
 } else {
 window.location.href = join
 }
-
 }
 
 
 // Make A invite
 
 invmker.onclick = function(params) {
-   window.location.href = 'https://' + document.domain + '/apps/chat/copyinvite/' + '?appID=3&code=' + roomcode
+   window.location.href = 'https://' + document.domain + baseurl + '/copyinvite/' + '?appID=3&code=' + roomcode
 }
 
 
