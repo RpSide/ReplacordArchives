@@ -1,6 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = 'Developer'
+var client = '1.9.4'
 
 
 window.onload = function() {
@@ -383,8 +383,7 @@ firebase.database().ref().child(roomcode).child('name').get().then((snapshot) =>
 
 
 
-const htes = "<a href='../index.html'><button id='disabled-unb' class='disabled'>Home</button></a> <a href='../proxies/index.html' > <button id='disabled-unb' class='disabled'>Proxies</button></a> <a href='../games/index.html' > <button id='disabled-unb' class='disabled'>Games</button></a> <a href='?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button> " + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
-
+const htes = "<a href='https://" + document.domain + "'><button id='unb'>Home</button></a> <a href='../proxies/index.html' > <button id='disabled-unb' class='disabled'>Proxies</button></a> <a href='../games/index.html' > <button id='disabled-unb' class='disabled'>Games</button></a> <a href='?code=chatroom1' > <button id='unb'>Chat</button></a> <button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button> " + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
      bttns.innerHTML = htes
     title.textContent = snapshot.val()
     console.log(snapshot.val());

@@ -365,7 +365,7 @@ display:block;
     100% {}
   }
   ::selection {
-    background-color: black;
+    background-color: lightgray;
     color: #fff;
   }
   /* width */

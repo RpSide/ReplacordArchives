@@ -414,7 +414,7 @@ window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat
   // Join a Chatroom
 
 jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/testinggrounds/chat/invite/' + '?appID=3&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/chat/invite/' + '?appID=3&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
@@ -428,7 +428,7 @@ window.location.href = join
 // Make A invite
 
 invmker.onclick = function(params) {
-   window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/copyinvite/' + '?appID=3&code=' + roomcode
+   window.location.href = 'https://' + document.domain + '/apps/chat/copyinvite/' + '?appID=3&code=' + roomcode
 }
 
 
