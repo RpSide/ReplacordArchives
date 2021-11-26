@@ -344,8 +344,11 @@ var queryString = window.location.search
   var urlParams = new URLSearchParams(queryString);
    
   var roomcode = urlParams.get('code')
+  var theme = urlParams.get('theme')
   var room = roomcode + '/'
-
+if (theme = 'dark') {
+  document.write('<link rel="stylesheet" href="https://devcompessays.glitch.me/apps/testinggrounds/chat/index.css"/>')
+}
 function create_title(params) {
 
 
