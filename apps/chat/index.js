@@ -344,11 +344,8 @@ var queryString = window.location.search
   var urlParams = new URLSearchParams(queryString);
    
   var roomcode = urlParams.get('code')
-  var theme = urlParams.get('theme')
   var room = roomcode + '/'
-if (theme = 'dark') {
-  document.write('<link rel="stylesheet" href="https://devcompessays.glitch.me/apps/testinggrounds/chat/index.css"/>')
-}
+
 function create_title(params) {
 
 
@@ -380,6 +377,19 @@ var invmker = document.createElement('button')
     invmker.setAttribute('id', 'invm')
     invmker.setAttribute('class', 'unb')
     invmker.textContent = 'Make an Invite'
+
+var bttods = document.createElement('button')
+    bttods.setAttribute('id', 'bttods')
+    bttods.setAttribute('class', 'unb')
+    bttods.textContent = 'Switch to Old'
+
+// go to the old days 
+
+
+bttods.onclick = function(){
+
+window.location.href = 'https://' + document.domain + '/apps/archive/chat/?appID=3&code=chatroom1'
+}
   
 // make a chatroom   
 
@@ -482,10 +492,11 @@ if (subtitle2 != undefined || subtitle2 != null) {
   console.error(error);
 });
     
-
+      
       title_container.append(title)
       title_container.append(title3)
       title_container.append(subtitle)
+      title_container2.append(bttods)
       title_container2.append(cmaker)
       title_container2.append(jroom)
       title_container2.append(invmker)
