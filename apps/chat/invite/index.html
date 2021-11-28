@@ -1,0 +1,30 @@
+<html>
+  <head>
+  <title>Invite</title>
+
+  <script>
+
+// grabs paramiters from the url
+
+var queryString = window.location.search
+  
+  var urlParams = new URLSearchParams(queryString);
+   
+  var appID = urlParams.get('appID')
+  var invitecode = urlParams.get('code')
+if (appID != null && appID != undefined && appID == 3 && invitecode != "" && invitecode != null && invitecode != undefined ) {
+var url = 'https://' + document.domain + '/apps/chat/' + '?code=' + invitecode
+
+  window.location.href = url
+}
+
+else {
+
+document.write("<h1>Not A Valid Invite Link</h1>")
+
+}
+</script>
+  </head>
+  <body>
+  </body>
+</html>

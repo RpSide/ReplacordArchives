@@ -1,62 +1,60 @@
 /* new */
 /* Profile pictures */
+
 .profpiccont{
   width: 100%;
   display: inline-block;
 }
 .message_pfp{
-  border-radius: 30px;
-  width: 60px;
-  height: 60px;
+  border-radius: 30vw;
+  width: 2.5vw;
+  height:  2.5vw;
   font-weight: bold;
   font-size: 14px;
 }
 
-#unb {
+.unb {
+  padding: 1vw;
+display: inline-block;
 background-color: darkgray;
 border-color: black; 
 color: black;
-border-radius: 500px;
-  font-size: 15px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
-  padding: 3px;
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
 }
 
-#unb:hover {
+.unb:hover {
 background-color: lightgray;
-border-color: black;
-color: black;
-border-radius: 500px;
-  font-size: 15px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
 }
 #untitle {
-border-radius: 60px;
- width: 700px;
- height: 150px;
+border-radius: 60vw;
+ width: 63vw;
+ height: 18vh;
 margin: auto;
 background-color: gray;
 border-color: white;
 color: black;
   font-size: 40px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+text-align-verticle: center;
 text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #untitle2 {
-border-radius: 10px;
- width: 650px;
- height: 80px;
+padding: 0;
+border-radius: 10vw;
+ width:   58vw;
+ height: 8vh;
 margin: auto;
 background-color: gray;
 border-color: white;
 color: black;
   font-size: 40px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
 text-align: center;
 }
 
@@ -64,8 +62,7 @@ text-align: center;
 body {
     /* https://www.color-hex.com/color/d3d3d3 */
     background-color: black; /*#f6f6f6, EBEBD3, fafafa*/
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
     font-weight: 900;
     border:none;
     overflow: hidden;
@@ -78,16 +75,36 @@ font-family: 'Gloria Hallelujah', cursive;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
+
+font-family: manofa-condensed,sans-serif;
+font-weight: 300;
+font-style: italic;
   }
   
   #title{
-    display: inline-block;
+margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 55px;
-    letter-spacing: 2px;
+    font-size: 6vw;
+    letter-spacing: 0vw;
     user-select: none;
+        position: absolute;
+        top: 33px;
+    left: 370px;
+      
+  }
+#title2{
+    text-align: center;
+    color: #fff;/*EBEBD3, C5283D*/
+    font-size: 2vw;
+    display:block;
+    user-select: none;
+   position: absolute;
+    top: 90px;
+    left: 395px;
   }
   
    #join_container{
@@ -155,7 +172,7 @@ font-family: 'Gloria Hallelujah', cursive;
   
   #chat_container{
     width:   100%;
-    height: 530px;
+    height: 100px;
   
     display: flex;
     justify-content: center;
@@ -168,23 +185,22 @@ font-family: 'Gloria Hallelujah', cursive;
   }
   #chat_inner_container{
     width: 40%;
-    height: 80%;
+    height: 100%;
   }
   #chat_content_container{
-    width: 100%;
-    height: 70%;
+    width: 49vw;
+    height: 30vh;
   
     float: left;
     overflow-y: auto;
-    f  font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
   
     padding-left: 15px;
     padding-right: 15px;
   }
   #chat_input_container{
     width: 100%;
-    height: 10%;
+    height: 5vh;
   
     float: left;
     border-bottom: 2px dashed #1D3354;
@@ -192,29 +208,36 @@ font-family: 'Gloria Hallelujah', cursive;
   
     padding-left: 15px;
     padding-right: 15px;
-      font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
     margin-top: 10px;
   }
   #chat_input{
-    width: 95%;
-    height: 100%;
+      border:none;
+    width: 90%;
+    height: 4vh;
     float: left;
-    background-color: Transparent;
-    color: white;
-    font-size: 15px;
+    background-color: white;
+    color: black;
+    font-size: 2vw;
+border-radius: 10vw;
+background-color: lightgray;
+border-color: black; 
+
   }
   #chat_input_send{
-    width: 5%;
-    height: 100%;
+    width: 3vw;
+    height: 4.5vh;
     float: left;
     font-size: 18px;
+  border-radius: 500px;
     background-color: black;
+    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend.png?v=1637717846590");
     text-align: right;
     color: #ccc;
   }
   #chat_input_send.enabled{
-    color: #D64045;
+border-radius: 500px;
+    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend%20(1).png?v=1637717792094");
     background-color: darkgray;
     cursor: pointer;
   
@@ -239,35 +262,56 @@ font-family: 'Gloria Hallelujah', cursive;
   }
   .message_container{
     width: 100%;
-    display: inline-block;
-    margin-bottom: 20px;
+margin-bottom: 0;
+margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
   
   }
   .message_inner_container{
     width: 100%;
-    display: inline-block;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
   
     color: #1D3354;
   }
   .message_user_container{
     width: 100%;
-    display: inline-block;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
+
   }
   .message_user{
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.5vw;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
   }
   .message_content_container{
     width: 100%;
-    display: inline-block;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
   
     white-space: pre-wrap;
     word-wrap: break-word;
   }
   .message_content{
     font-weight: normal;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 1.5vw;
+    margin-top: 0px;
+    margin-bottom: 0;
+  margin:0;
+  padding:0;
+display:block;
+    
   }
   
   
@@ -321,20 +365,20 @@ font-family: 'Gloria Hallelujah', cursive;
     100% {}
   }
   ::selection {
-    background-color: #D64045;
+    background-color: lightgray;
     color: #fff;
   }
   /* width */
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 0.5vw;
   }
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #cccs;
+    background: lightgray;
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #D64045;
-    border-radius: 5px;
+    background: gray;
+    border-radius: 1vw;
   }
   

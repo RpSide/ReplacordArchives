@@ -1,6 +1,14 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = '2.8'
+var client = 'Developer'
+if (client == 'Developer') {
+
+var baseurl = '/apps/testinggrounds/chat'
+
+}
+else {
+var baseurl = '/apps/chat'
+}
 
 
 window.onload = function() {
@@ -377,6 +385,19 @@ var invmker = document.createElement('button')
     invmker.setAttribute('id', 'invm')
     invmker.setAttribute('class', 'unb')
     invmker.textContent = 'Make an Invite'
+
+var bttods = document.createElement('button')
+    bttods.setAttribute('id', 'bttods')
+    bttods.setAttribute('class', 'unb')
+    bttods.textContent = 'Switch to Old'
+
+// go to the old days 
+
+
+bttods.onclick = function(){
+
+window.location.href = 'https://' + document.domain + '/apps/archive/chat/?appID=3&code=chatroom1'
+}
   
 // make a chatroom   
 
@@ -393,7 +414,8 @@ if (roomname == null || roomname == "") {
 firebase.database().ref('chats/' + roomcode + '/').set({
     name: roomname,
   });
-window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/invite?appID=3&code=' + roomcode
+window.location.href = 'https://' + document.domain + baseurl +'/invite?appID=3&code=' + roomcode
+
 }
 }
 
@@ -401,21 +423,20 @@ window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat
   // Join a Chatroom
 
 jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/testinggrounds/chat/invite/' + '?appID=3&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + document.domain + baseurl + '/invite/' + '?appID=3&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
 } else {
 window.location.href = join
 }
-
 }
 
 
 // Make A invite
 
 invmker.onclick = function(params) {
-   window.location.href = 'https://' + document.domain + '/apps/testinggrounds/chat/copyinvite/' + '?appID=3&code=' + roomcode
+   window.location.href = 'https://' + document.domain + baseurl + '/copyinvite/' + '?appID=3&code=' + roomcode
 }
 
 
@@ -479,10 +500,11 @@ if (subtitle2 != undefined || subtitle2 != null) {
   console.error(error);
 });
     
-
+      
       title_container.append(title)
       title_container.append(title3)
       title_container.append(subtitle)
+      title_container2.append(bttods)
       title_container2.append(cmaker)
       title_container2.append(jroom)
       title_container2.append(invmker)
