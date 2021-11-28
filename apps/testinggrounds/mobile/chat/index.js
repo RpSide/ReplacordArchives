@@ -217,10 +217,10 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 }
 
-      var messages = db.ref(room);
+      var messages = db.ref(room + "/messages/");
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref(room + `message_${index}`)
+        db.ref(room + '/' + "/messages/" + `message_${index}`)
           .set({
             profilepic: parent.get_url(),
             name: parent.get_name() + '  ( ' + time + ' | ' + datee + ' )',
@@ -256,7 +256,7 @@ return localStorage.getItem("url");
         "chat_content_container"
       );
 
-      var messages = db.ref(room);
+      var messages = db.ref(room + "messages/");
       messages.on("value", function(snapshot) {
         chat_content_container.innerHTML = "";
         if (snapshot.numChildren() == 0) {
