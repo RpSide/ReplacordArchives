@@ -383,7 +383,7 @@ firebase.database().ref().child(roomcode).child('name').get().then((snapshot) =>
 
 
 
-const htes = "<button onclick='makechatroom()' id='unb'>Create a room</button> <button id='unb' onclick='joinroom()'>Join a room</button> <button id='unb' onclick='makeainvite()'>Make A Invite</button>" + '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
+const htes = '<title>' + snapshot.val() + ' || Scuffed Discord - Dev </title>'
 
      bttns.innerHTML = htes
     title.textContent = snapshot.val()
