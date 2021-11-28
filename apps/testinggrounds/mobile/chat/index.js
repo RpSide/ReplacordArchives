@@ -10,8 +10,14 @@ else {
 var baseurl = '/apps/chat'
 }
 
-
 window.onload = function() {
+
+if (document.width > document.hight) {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet"href="https://devcompessays.glitch.me/apps/testinggrounds/mobile/chat/H.css"/>')
+
+}
+
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
