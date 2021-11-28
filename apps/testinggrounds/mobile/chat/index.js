@@ -10,13 +10,21 @@ else {
 var baseurl = '/apps/chat'
 }
 
-window.onload = function() {
+var linker = document.createElement('link')
 
-if (document.width > document.hight) {
+if ( window.innerWidth >  window.innerHeight) {
 
 document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet"href="https://devcompessays.glitch.me/apps/testinggrounds/mobile/chat/H.css"/>')
 
 }
+else {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet"href="https://devcompessays.glitch.me/apps/testinggrounds/mobile/chat/V.css"/>')
+
+}
+
+
+window.onload = function() {
 
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {

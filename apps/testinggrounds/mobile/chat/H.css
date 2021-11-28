@@ -32,12 +32,12 @@ background-color: lightgray;
 #untitle {
 border-radius: 60px;
  width: 70vw;
- height: 80px;
+ height: 7vw;
 margin: auto;
-background-color: gray;
+background-color: red;
 border-color: white;
 color: black;
-  font-size: 4vw;
+  font-size: 3vw;
 text-align: center;
 }
 
@@ -50,7 +50,7 @@ margin: auto;
 background-color: gray;
 border-color: white;
 color: black;
-  font-size: 2vw;
+  font-size: 0vw;
 
 text-align: center;
 }
