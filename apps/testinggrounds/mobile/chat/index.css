@@ -7,31 +7,27 @@
 }
 .message_pfp{
   border-radius: 30px;
-  width: 10vw;
-  height:  5vh;
+  width: 4vw;
+  height:  4vw;
   font-weight: bold;
   font-size: 14px;
 }
 
-#unb {
+.unb {
+  padding: 1vw;
+display: inline-block;
 background-color: darkgray;
 border-color: black; 
 color: black;
-border-radius: 500px;
-  font-size: 15px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
-  padding: 3px;
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
 }
 
-#unb:hover {
+.unb:hover {
 background-color: lightgray;
-border-color: black;
-color: black;
-border-radius: 500px;
-  font-size: 15px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
 }
 #untitle {
 border-radius: 60px;
@@ -41,9 +37,7 @@ margin: auto;
 background-color: gray;
 border-color: white;
 color: black;
-  font-size: 40px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+  font-size: 3vw;
 text-align: center;
 }
 
@@ -56,9 +50,8 @@ margin: auto;
 background-color: gray;
 border-color: white;
 color: black;
-  font-size: 40px;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+  font-size: 2vw;
+
 text-align: center;
 }
 
@@ -66,8 +59,7 @@ text-align: center;
 body {
     /* https://www.color-hex.com/color/d3d3d3 */
     background-color: black; /*#f6f6f6, EBEBD3, fafafa*/
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+
     font-weight: 900;
     border:none;
     overflow: hidden;
@@ -80,8 +72,9 @@ font-family: 'Gloria Hallelujah', cursive;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-font-family: 'Ceviche One', cursive;
-font-family: 'Gloria Hallelujah', cursive;
+font-family: manofa-condensed,sans-serif;
+font-weight: 300;
+font-style: italic;
   }
   
   #title{
