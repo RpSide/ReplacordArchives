@@ -84,9 +84,9 @@ font-style: italic;
   
   #title{
 margin-bottom: 0;
-  margin:0;
-  padding:0;
-display:block;
+  margin:10;
+  padding:10;
+display: block;
     color: #fff;/*EBEBD3, C5283D*/
     font-size: 6vw;
     letter-spacing: 0vw;

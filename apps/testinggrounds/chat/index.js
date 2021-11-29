@@ -1,6 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = '2.8'
+var client = 'Developer'
 if (client == 'Developer') {
 
 var baseurl = '/apps/testinggrounds/chat'
