@@ -500,7 +500,7 @@ if (subtitle2 != undefined || subtitle2 != null) {
   console.error(error);
 });
     
-      
+      title_container.append(emptytitle)
       title_container.append(title)
       title_container.append(title3)
       title_container.append(subtitle)

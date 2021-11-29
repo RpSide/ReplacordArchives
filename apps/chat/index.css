@@ -91,9 +91,6 @@ display:block;
     font-size: 6vw;
     letter-spacing: 0vw;
     user-select: none;
-        position: absolute;
-        top: 33px;
-    left: 370px;
       
   }
 #title2{
@@ -102,9 +99,6 @@ display:block;
     font-size: 2vw;
     display:block;
     user-select: none;
-   position: absolute;
-    top: 90px;
-    left: 395px;
   }
   
    #join_container{
