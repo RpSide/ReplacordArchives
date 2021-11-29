@@ -26,11 +26,12 @@ let text2;
 if (roomname == null || roomname == "") {
  alert ('empty field');
 } else {
-firebase.database().ref(chats/' + roomcode + '/').set({
+firebase.database().ref('chats/' + roomcode + '/').set({
     name: roomname,
   });
 }
 }
+
 
 function makespecialroom(params) {
   
