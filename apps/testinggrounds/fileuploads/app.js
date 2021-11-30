@@ -12,6 +12,8 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+// Create a root reference
+var storageRef = firebase.storage().ref();
 
 document.getElementById('file').addEventListener('change', (event) => {
     const file = event.target.files[0];
