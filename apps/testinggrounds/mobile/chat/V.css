@@ -6,9 +6,9 @@
   display: inline-block;
 }
 .message_pfp{
-  border-radius: 30vw;
-  width: 3vw;
-  height:  3vw;
+  border-radius: 30px;
+  width: 6vh;
+  height:  6vh;
   font-weight: bold;
   font-size: 14px;
 }
@@ -30,30 +30,27 @@ border-radius: 50vw;
 background-color: lightgray;
 }
 #untitle {
-border-radius: 60vw;
- width: 63vw;
- height: 18vh;
+border-radius: 60px;
+ width: 70vw;
+ height: 80px;
 margin: auto;
 background-color: gray;
 border-color: white;
 color: black;
-  font-size: 40px;
-text-align-verticle: center;
+  font-size: 4vw;
 text-align: center;
-    justify-content: center;
-    align-items: center;
 }
 
 #untitle2 {
-padding: 0;
-border-radius: 10vw;
- width:   58vw;
- height: 8vh;
+
+border-radius: 10px;
+ width:   65vw;
+ height: 80%;
 margin: auto;
 background-color: gray;
 border-color: white;
 color: black;
-  font-size: 40px;
+  font-size: 2vw;
 
 text-align: center;
 }
@@ -75,8 +72,6 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
-
 font-family: manofa-condensed,sans-serif;
 font-weight: 300;
 font-style: italic;
@@ -84,21 +79,17 @@ font-style: italic;
   
   #title{
 margin-bottom: 0;
-  margin:10;
-  padding:10;
-display: block;
+  margin:0;
+  padding:0;
+display:block;
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 6vw;
-    letter-spacing: 0vw;
+    font-size: 19%
+    letter-spacing: 2px;
     user-select: none;
-      
   }
 #title2{
-    text-align: center;
     color: #fff;/*EBEBD3, C5283D*/
-    font-size: 2vw;
-    display:block;
-    user-select: none;
+    font-size: 20px;
   }
   
    #join_container{
@@ -165,8 +156,8 @@ display: block;
   }
   
   #chat_container{
-    width:   100%;
-    height: 100px;
+    width:   100vw;
+    height: 20vw;
   
     display: flex;
     justify-content: center;
@@ -182,19 +173,20 @@ display: block;
     height: 100%;
   }
   #chat_content_container{
-    width: 49vw;
+    width: 100%;
     height: 30vh;
   
     float: left;
     overflow-y: auto;
-
+    f  font-family: 'Ceviche One', cursive;
+font-family: 'Gloria Hallelujah', cursive;
   
     padding-left: 15px;
     padding-right: 15px;
   }
   #chat_input_container{
     width: 100%;
-    height: 5vh;
+    height: 10vh;
   
     float: left;
     border-bottom: 2px dashed #1D3354;
@@ -202,37 +194,36 @@ display: block;
   
     padding-left: 15px;
     padding-right: 15px;
-
+      font-family: 'Ceviche One', cursive;
+font-family: 'Gloria Hallelujah', cursive;
     margin-top: 10px;
   }
   #chat_input{
-      border:none;
-    width: 90%;
-    height: 4vh;
+    
+    width: 85%;
+    height: 3vh;
     float: left;
     background-color: white;
     color: black;
-    font-size: 2vw;
-border-radius: 10vw;
+    font-size: 15px;
+border-radius: 10px;
 background-color: lightgray;
 border-color: black; 
 
   }
   #chat_input_send{
-    width: 3vw;
-    height: 4.5vh;
+    width: 5vw;
+    height: 2.5vh;
     float: left;
     font-size: 18px;
   border-radius: 500px;
-    background-color: black;
-    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend.png?v=1637717846590");
+    background-color: gray;
     text-align: right;
     color: #ccc;
   }
   #chat_input_send.enabled{
 border-radius: 500px;
-    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend%20(1).png?v=1637717792094");
-    background-color: darkgray;
+    background-color: lightgray;
     cursor: pointer;
   
   }
@@ -256,56 +247,35 @@ border-radius: 500px;
   }
   .message_container{
     width: 100%;
-margin-bottom: 0;
-margin-bottom: 0;
-  margin:0;
-  padding:0;
-display:block;
+    display: inline-block;
+    margin-bottom: 20px;
   
   }
   .message_inner_container{
     width: 100%;
-    margin-bottom: 0;
-  margin:0;
-  padding:0;
-display:block;
+    display: inline-block;
   
     color: #1D3354;
   }
   .message_user_container{
     width: 100%;
-    margin-bottom: 0;
-  margin:0;
-  padding:0;
-display:block;
-
+    display: inline-block;
   }
   .message_user{
     font-weight: bold;
-    font-size: 1.5vw;
-    margin-bottom: 0;
-  margin:0;
-  padding:0;
+    font-size: 14px;
   }
   .message_content_container{
     width: 100%;
-    margin-bottom: 0;
-  margin:0;
-  padding:0;
-display:block;
+    display: inline-block;
   
     white-space: pre-wrap;
     word-wrap: break-word;
   }
   .message_content{
     font-weight: normal;
-    font-size: 1.5vw;
-    margin-top: 0px;
-    margin-bottom: 0;
-  margin:0;
-  padding:0;
-display:block;
-    
+    font-size: 14px;
+    margin-top: 5px;
   }
   
   
@@ -359,20 +329,20 @@ display:block;
     100% {}
   }
   ::selection {
-    background-color: lightgray;
+    background-color: #D64045;
     color: #fff;
   }
   /* width */
   ::-webkit-scrollbar {
-    width: 0.5vw;
+    width: 6px;
   }
   /* Track */
   ::-webkit-scrollbar-track {
-    background: lightgray;
+    background: #cccs;
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: gray;
-    border-radius: 1vw;
+    background: #D64045;
+    border-radius: 5px;
   }
   
