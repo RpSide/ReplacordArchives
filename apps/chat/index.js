@@ -67,7 +67,7 @@ const firebaseConfig = {
 
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
-      join_input.setAttribute("maxlength", 25);
+      join_input.setAttribute("maxlength", 6);
       join_input.placeholder = "Name";
       join_input.textContent = namee;
 
