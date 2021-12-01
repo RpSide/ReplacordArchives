@@ -19,7 +19,7 @@ const dbRef = firebase.database().ref();
 
 function makenormalroom() {
 
- var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
+ var roomcode =  Math.random().toString(20).substr(5)
   
 let roomname = prompt("chatroom name", '');
 let text2;

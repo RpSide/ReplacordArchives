@@ -1,7 +1,9 @@
 <script>
    function random_id_1() 
 	{
-		return Math.floor(Math.random() ).toString(36).substr(2);
+		var ran = (Math.floor(Math.random() * 10) + 10)
+    var letter = ran.toString(36).substr(2)
+    return ran.toString(36).substr(2)
 	}
   document.write(random_id_1())
 </script>

@@ -430,7 +430,8 @@ const htes = "<a href='https://" + document.domain + "'><button id='unb'>Home</b
 
 function makechatroom() {
 
- var roomcode = Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1 + "" + Math.floor(Math.random() * 8) + 1
+ var roomcode = Math.random().toString(20).substr(5)
+   
   
 let roomname = prompt("chatroom name", 'e');
 let text2;
