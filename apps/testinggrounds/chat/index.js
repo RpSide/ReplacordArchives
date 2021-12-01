@@ -213,15 +213,16 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 
 }
-
+      var messageID = Math.random().toString(20).substr(5)
       var messages = db.ref('chats/' + room + 'messages/');
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
         db.ref('chats/' + room + 'messages/' + `message_${index}`)
           .set({
             profilepic: parent.get_url(),
-            name: parent.get_name() + '  ( ' + time + ' | ' + datee + ' )',
+            name: parent.get_name(),
             message: message,
+            messageID: messageID,
             index: index,
             time: time,
             date: datee,
@@ -404,7 +405,7 @@ window.location.href = 'https://' + document.domain + '/apps/archive/chat/?appID
 
 cmaker.onclick = function(){
 
- var roomcode = Math.random().toString(20).substr(5)
+ var roomcode =  Math.random().toString(20).substr(5)
    
   
 let roomname = prompt("chatroom name", 'e');
