@@ -391,7 +391,20 @@ var bttods = document.createElement('button')
     bttods.setAttribute('id', 'bttods')
     bttods.setAttribute('class', 'unb')
     bttods.textContent = 'Switch to Old'
+  
+  var theme = document.createElement('button')
+    theme.setAttribute('id', 'themes')
+    theme.setAttribute('class', 'unb')
+    theme.textContent = 'Themes'
 
+  // go to the old days 
+
+
+theme.onclick = function(){
+
+window.location.href = 'https://essaycomp.github.io?code=' + room 
+}
+  
 // go to the old days 
 
 
@@ -510,6 +523,7 @@ if (subtitle2 != undefined || subtitle2 != null) {
       title_container2.append(cmaker)
       title_container2.append(jroom)
       title_container2.append(invmker)
+      title_container2.append(theme)
       document.body.append(title_container)
       document.body.append(title_container2)
 
