@@ -402,7 +402,7 @@ var bttods = document.createElement('button')
 
 theme.onclick = function(){
 
-window.location.href = 'https://essaycomp.github.io?code=' + room 
+window.location.href = 'https://' + document.domain + '/apps/chat/themes/' + '?code=' + roomcode 
 }
   
 // go to the old days 

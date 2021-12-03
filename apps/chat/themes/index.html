@@ -1,0 +1,26 @@
+<script>
+// grabs paramiters from the url
+
+var queryString = window.location.search
+  
+  var urlParams = new URLSearchParams(queryString);
+   
+  var roomcode = urlParams.get('code')
+  
+  function light() {
+    
+  var theme = 'light'
+  
+ window.location.href = 'https://devcompessays.glitch.me/apps/chat/index' + theme + 'theme.html?code=' + roomcode
+  
+  }
+  
+    function dark() {
+ window.location.href = 'https://devcompessays.glitch.me/apps/chat/?code=' + roomcode
+  
+  }
+</script>
+
+<button onclick='light()'>Light Theme Chat</button>
+
+<button onclick='dark()'>Dark Theme Chat</button>
