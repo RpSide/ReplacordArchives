@@ -137,15 +137,27 @@ const firebaseConfig = {
       chat_input_send.setAttribute("disabled", true);
       chat_input_send.innerHTML = `<i class="far fa-paper-plane"></i>`;
 
-      
-      var form = document.createElement('form')
-      form.setAttribute('action', '?code=e' + roomcode)
-      form.setAttribute('onsubmit', 'send_message(chat_input.value)')
-          
+      function handle(e){
+        alert('e')
+      var key=e.keyCode || e.which;
+  if (key==13){
+    
+    alert('e')
+  }
+}    
       var chat_input = document.createElement("input");
       chat_input.setAttribute("id", "chat_input");
       chat_input.setAttribute("maxlength", 2000);
       chat_input.placeholder = `${localStorage.getItem("name")}. Say something...`;
+      
+      chat_input.onkeypress = function(e){
+        alert('e')
+      var key=e.keyCode || e.which;
+  if (key==13){
+    
+    alert('e')
+  }
+}    
       chat_input.onkeyup = function() {
         if (chat_input.value.length > 0) {
           chat_input_send.removeAttribute("disabled");
@@ -181,8 +193,7 @@ const firebaseConfig = {
       };
 
       chat_logout_container.append(chat_logout);
-      form.append(chat_input)
-      chat_input_container.append(form, chat_input_send);
+      chat_input_container.append(chat_input, chat_input_send);
       chat_inner_container.append(
         chat_content_container,
         chat_input_container,
