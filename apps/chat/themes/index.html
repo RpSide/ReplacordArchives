@@ -1,3 +1,77 @@
+<style>
+ 
+  .red {
+  padding: 1vw;
+display: inline-block;
+background-color: darkred;
+border-color: darkred ;
+color: red;
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
+}
+
+.red:hover {
+background-color: coral;
+}
+  
+  .white {
+  padding: 1vw;
+display: inline-block;
+background-color: lightgray;
+border-color: white; 
+color: white;
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
+}
+
+.white:hover {
+background-color: white;
+}
+  
+  .black {
+  padding: 1vw;
+display: inline-block;
+background-color: darkgray;
+border-color: black; 
+color: black;
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
+}
+
+.black:hover {
+background-color: lightgray;
+}
+  
+.blue {
+  padding: 1vw;
+display: inline-block;
+background-color: darkblue;
+border-color: darkblue; 
+color: blue;
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
+}
+
+.blue:hover {
+background-color: lightblue;
+}
+
+
+
+</style>
+
 <script>
 // grabs paramiters from the url
 
@@ -34,10 +108,10 @@ var queryString = window.location.search
   }
 </script>
 
-<h1><button onclick='light()'>Light Theme Chat</button></h1>
+<h1><button class='white' onclick='light()'>Light Theme Chat</button></h1>
 
-<h1><button onclick='dark()'>Dark Theme Chat</button></h1>
+<h1><button class='black' onclick='dark()'>Dark Theme Chat</button></h1>
 
-<h1><button onclick='blue()'>Blue Theme Chat</button></h1>
+<h1><button class='blue' onclick='blue()'>Blue Theme Chat</button></h1>
 
-<h1><button onclick='red()'>Red Theme Chat</button></h1>
+<h1><button class='red' onclick='red()'>Red Theme Chat</button></h1>
