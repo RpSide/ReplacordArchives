@@ -6,6 +6,7 @@ var queryString = window.location.search
    
   var AppID = urlParams.get('id')
   var invite = urlParams.get('inv')
+  var copyinvite = urlParams.get('cinv')
   var code = urlParams.get('code')
 
 // Scuffed Discord App 
@@ -15,6 +16,7 @@ var queryString = window.location.search
 	  
 	  
   }
+
   
 // Scuffed Discord App Invitation
    if (AppID == '0' && invite == 'true'){
@@ -28,6 +30,22 @@ var queryString = window.location.search
 	 else {
 		 var invitelink = 'https://' + document.domain + '/apps/?id=0&code=' + code
 		 document.write("<a href='" + invitelink +"'>Accept invite to room</a>")
+		 
+	 }
+}
+
+
+// Scuffed Discord App Copy Invitation
+   if (AppID == '0' && copyinvite == 'true'){
+	if (code == null || code == undefined){
+		alert("This Is Not A Valid Invite Link")
+		document.write("<h1>This Is Not A Valid Invite Link</h1>")
+    		var invitelink = 'https://' + document.domain + '/apps/?id=1&inv=true&code=chatroom1'
+		document.write('<a style="font-size:25px;" href="' + invitelink + '"> Valid Invite Link ' + invitelink + '</a>')
+	}
+	 else {
+		var invitelink = 'https://' + document.domain + '/apps/?id=1&inv=true&code=chatroom1'
+		document.write('<html><head><title>Copy Invite</title><script src="00/copy.js"></script></head><body></body></html>')
 		 
 	 }
 }

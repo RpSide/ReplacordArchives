@@ -8,7 +8,7 @@ var baseurl = '/apps/testinggrounds/chat'
 
 }
 else {
-var baseurl = '/apps/chat'
+var baseurl = '/apps/00'
 }
 
 
