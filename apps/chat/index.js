@@ -151,14 +151,16 @@ const firebaseConfig = {
       chat_input.placeholder = `${localStorage.getItem("name")}. Say something...`;
       
       chat_input.onkeypress = function(e){
-        alert('e')
       var key=e.keyCode || e.which;
   if (key==13){
-    
-    alert('e')
+    if (chat_input.value.length > 0){
+    parent.send_message(chat_input.value)
+    chat_input.value = ''
   }
-}    
-      chat_input.onkeyup = function() {
+  }
+    }
+  chat_input.onkeyup = function() {
+    
         if (chat_input.value.length > 0) {
           chat_input_send.removeAttribute("disabled");
           chat_input_send.classList.add("enabled");
