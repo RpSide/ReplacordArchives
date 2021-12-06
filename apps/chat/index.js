@@ -137,9 +137,14 @@ const firebaseConfig = {
       chat_input_send.setAttribute("disabled", true);
       chat_input_send.innerHTML = `<i class="far fa-paper-plane"></i>`;
 
+      
+      var form = document.createElement('form')
+      form.setAttribute('action', '?code=e' + roomcode)
+      form.setAttribute('onsubmit', 'send_message(chat_input.value)')
+          
       var chat_input = document.createElement("input");
       chat_input.setAttribute("id", "chat_input");
-      chat_input.setAttribute("maxlength", 1000);
+      chat_input.setAttribute("maxlength", 2000);
       chat_input.placeholder = `${localStorage.getItem("name")}. Say something...`;
       chat_input.onkeyup = function() {
         if (chat_input.value.length > 0) {
@@ -161,6 +166,8 @@ const firebaseConfig = {
           chat_input_send.classList.remove("enabled");
         }
       };
+      
+      
 
       var chat_logout_container = document.createElement("div");
       chat_logout_container.setAttribute("id", "chat_logout_container");
@@ -174,7 +181,8 @@ const firebaseConfig = {
       };
 
       chat_logout_container.append(chat_logout);
-      chat_input_container.append(chat_input, chat_input_send);
+      form.append(chat_input)
+      chat_input_container.append(form, chat_input_send);
       chat_inner_container.append(
         chat_content_container,
         chat_input_container,
