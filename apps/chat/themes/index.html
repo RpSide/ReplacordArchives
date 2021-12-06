@@ -11,7 +11,20 @@ var queryString = window.location.search
     
   var theme = 'light'
   
- window.location.href = 'https://devcompessays.glitch.me/apps/chat/index' + theme + 'theme.html?code=' + roomcode
+ window.location.href = 'https://devcompessays.glitch.me/apps/chat/' + theme + 'theme.html?code=' + roomcode
+  
+  }
+  function blue() {
+  var theme = 'blue'
+  
+ window.location.href = 'https://devcompessays.glitch.me/apps/chat/' + theme + 'theme.html?code=' + roomcode
+  
+  }
+  
+  function red() {
+  var theme = 'red'
+  
+ window.location.href = 'https://devcompessays.glitch.me/apps/chat/' + theme + 'theme.html?code=' + roomcode
   
   }
   
@@ -21,6 +34,10 @@ var queryString = window.location.search
   }
 </script>
 
-<button onclick='light()'>Light Theme Chat</button>
+<h1><button onclick='light()'>Light Theme Chat</button></h1>
 
-<button onclick='dark()'>Dark Theme Chat</button>
+<h1><button onclick='dark()'>Dark Theme Chat</button></h1>
+
+<h1><button onclick='blue()'>Blue Theme Chat</button></h1>
+
+<h1><button onclick='red()'>Red Theme Chat</button></h1>
