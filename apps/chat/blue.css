@@ -1,17 +1,18 @@
 /* new */
 /* Profile pictures */
 
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: black;
+  color: white;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: black;
+  color: white;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: black;
+  color: white;
 }
 
 .profpiccont{
@@ -29,9 +30,9 @@
 .unb {
   padding: 1vw;
 display: inline-block;
-background-color: darkgray;
-border-color: black; 
-color: black;
+background-color: darkblue;
+border-color: darkblue; 
+color: blue;
 border-radius: 50vw;
   font-size: 1vw;
   border-size: 1vw;
@@ -40,16 +41,16 @@ border-radius: 50vw;
 }
 
 .unb:hover {
-background-color: lightgray;
+background-color: lightblue;
 }
 #untitle {
 border-radius: 60vw;
  width: 63vw;
  height: 18vh;
 margin: auto;
-background-color: gray;
-border-color: white;
-color: black;
+background-color: blue;
+border-color: blue;
+color: darkblue;
   font-size: 40px;
 text-align-verticle: center;
 text-align: center;
@@ -63,9 +64,9 @@ border-radius: 10vw;
  width:   58vw;
  height: 8vh;
 margin: auto;
-background-color: gray;
-border-color: white;
-color: black;
+background-color: blue;
+border-color: blue;
+color: darkblue;
   font-size: 40px;
 
 text-align: center;
@@ -74,7 +75,7 @@ text-align: center;
 
 body {
     /* https://www.color-hex.com/color/d3d3d3 */
-    background-color: black; /*#f6f6f6, EBEBD3, fafafa*/
+    background-color: lightblue; /*#f6f6f6, EBEBD3, fafafa*/
 
     font-weight: 900;
     border:none;
@@ -83,7 +84,7 @@ body {
   
   }
   *{
-    color: white;
+    color: blue;
     outline: none;
     padding: 0;
     margin: 0;
@@ -100,7 +101,7 @@ margin-bottom: 0;
   margin:10;
   padding:10;
 display: block;
-    color: #fff;/*EBEBD3, C5283D*/
+    color: darkblue;/*EBEBD3, C5283D*/
     font-size: 6vw;
     letter-spacing: 0vw;
     user-select: none;
@@ -108,7 +109,7 @@ display: block;
   }
 #title2{
     text-align: center;
-    color: #fff;/*EBEBD3, C5283D*/
+    color: darkblue;/*EBEBD3, C5283D*/
     font-size: 2vw;
     display:block;
     user-select: none;
@@ -223,12 +224,11 @@ display: block;
     width: 90%;
     height: 4vh;
     float: left;
-    background-color: white;
-    color: black;
+    background-color: lightblue;
+    color: blue;
     font-size: 2vw;
 border-radius: 10vw;
-background-color: lightgray;
-border-color: black; 
+border-color: darkblue; 
 
   }
   #chat_input_send{
@@ -237,15 +237,16 @@ border-color: black;
     float: left;
     font-size: 18px;
   border-radius: 500px;
-    background-color: black;
-    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend.png?v=1637717846590");
+    background-color: lightblue;
+    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend%20(1).png?v=1637717792094");
     text-align: right;
     color: #ccc;
   }
   #chat_input_send.enabled{
 border-radius: 500px;
-    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend%20(1).png?v=1637717792094");
-    background-color: darkgray;
+    background-image:
+url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend.png?v=1637717846590");
+    background-color: blue;
     cursor: pointer;
   
   }
@@ -327,7 +328,7 @@ display:block;
   .enabled{
     transition: background-color 0.5s;
     color: #fff;
-    background-color: #D64045; /*#5B7553;*/
+    background-color: darkblue; /*#5B7553;*/
     cursor: pointer;
   }
   #title_container.chat_title_container{
@@ -372,7 +373,7 @@ display:block;
     100% {}
   }
   ::selection {
-    background-color: lightgray;
+    background-color: blue;
     color: #fff;
   }
   /* width */
@@ -381,11 +382,10 @@ display:block;
   }
   /* Track */
   ::-webkit-scrollbar-track {
-    background: lightgray;
+    background: darkblue;
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: gray;
+    background: blue;
     border-radius: 1vw;
   }
-  
