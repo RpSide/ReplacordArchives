@@ -424,7 +424,7 @@ var bttods = document.createElement('button')
 
 theme.onclick = function(){
 
-window.location.href = 'https://' + document.domain + '/apps/chat/themes/' + '?code=' + roomcode 
+window.location.href = 'https://' + document.domain + '/apps/' + '?themes=true&code=' + roomcode 
 }
   
 // go to the old days 
@@ -451,7 +451,7 @@ if (roomname == null || roomname == "") {
 firebase.database().ref('chats/' + roomcode + '/').set({
     name: roomname,
   });
-window.location.href = 'https://' + document.domain + baseurl +'/invite?appID=3&code=' + roomcode
+window.location.href = 'https://' + document.domain +'?id=3&code=' + roomcode
 
 }
 }
@@ -460,7 +460,7 @@ window.location.href = 'https://' + document.domain + baseurl +'/invite?appID=3&
   // Join a Chatroom
 
 jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + baseurl + '/invite/' + '?appID=3&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '?appID=3&inv=true&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
