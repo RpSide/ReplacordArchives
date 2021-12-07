@@ -64,6 +64,6 @@ var queryString = window.location.search
 // account page
   if (AppID == '2')  {
 
-    document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>firebase storage</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><input type="file" id="file"><progress id="progress_bar" value="0" max="100"></progress><script src="https://devcompessays.glitch.me/apps/testinggrounds/fileuploads/app.js" type="text/javascript"></script></body></html>')
+    document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>firebase storage</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><input id="name"><input type="file" id="file"><button id="submit">Login</button><progress id="progress_bar" value="0" max="100"></progress><script src="https://devcompessays.glitch.me/apps/testinggrounds/fileuploads/app.js" type="text/javascript"></script></body></html>')
 
 }

@@ -1,7 +1,8 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
+ apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
   authDomain: "chat-883eb.firebaseapp.com",
+  databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
   projectId: "chat-883eb",
   storageBucket: "chat-883eb.appspot.com",
   messagingSenderId: "421817736954",
@@ -11,8 +12,19 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+
+var submit = document.getElementById('submit')
+var names = document.getElementById('name').value
+
+submit.onclick = function() {
+localStorage.setItem('name', names)
+  alert(ll)
+
+}
+
+
+
 document.getElementById('file').addEventListener('change', (event) => {
-                  document.getElementById('urlpick').textContent = ''
     const file = event.target.files[0];
     const storageRef = firebase.storage().ref('user-pfps/' + file.name);
 
@@ -24,17 +36,14 @@ document.getElementById('file').addEventListener('change', (event) => {
     });
 
     storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
         console.log(url);
-                localStorage.setItem("url", url)
-      alert(localStorage.getItem("url"))
+        localStorage.setItem('url', url)
     });
   
-    storageRef.getDownloadURL().then(function(url){
+  storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
         console.log(url);
-                localStorage.setItem("url", url)
-      alert(localStorage.getItem("url"))
+        localStorage.setItem('url', url)
     });
-
-  
-  
 });
