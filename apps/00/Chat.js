@@ -481,11 +481,14 @@ invmker.onclick = function(params) {
 firebase.database().ref().child('chats/' + roomcode).child('name').get().then((snapshot) => {
   if (snapshot.exists()) {
 
+    if (snapshot.val() != null || snapshot.val() != undefined || snapshot.val() != 'null' || snapshot.val() != ' ') {
+      
 var titlee = snapshot.val() + ' || Scuffed Discord'
     title3.textContent = titlee
     title.textContent = snapshot.val()
     console.log(snapshot.val());
     return snapshot.val() 
+    }
     }
   
   else {
@@ -501,7 +504,7 @@ var titlee = snapshot.val() + ' || Scuffed Discord'
 firebase.database().ref().child('chats/' + roomcode).child('welcome').get().then((snapshot) => {
   if (snapshot.exists()) {
 var welcomemessage = snapshot.val()
-if (welcomemessage != undefined || welcomemessage != null) {
+if (welcomemessage != undefined || welcomemessage != null || welcomemessage != 'null' || welcomemessage != 'undefined') {
 
 alert(welcomemessage)
   
