@@ -12,6 +12,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 document.getElementById('file').addEventListener('change', (event) => {
+                  document.getElementById('urlpick').textContent = ''
     const file = event.target.files[0];
     const storageRef = firebase.storage().ref('user-pfps/' + file.name);
 
@@ -24,15 +25,32 @@ document.getElementById('file').addEventListener('change', (event) => {
 
     storageRef.getDownloadURL().then(function(url){
         console.log(url);
-        document.getElementById
+                document.getElementById('urlpick').value = url
     });
   
   
     storageRef.getDownloadURL().then(function(url){
         console.log(url);
-        window.setItem('url', url)
+                document.getElementById('urlpick').value = url
     });
 
   
   
 });
+
+
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("urlpick");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  
+  /* Alert the copied text */
+  window.location.href = 'https://devcompessays.glitch.me/apps/?id=0&code=chatroom1'
+}
