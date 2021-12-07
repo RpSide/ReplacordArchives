@@ -1,19 +1,19 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyBSnK6IQYF0I95rrf6dPBUyopXxUhzz-XA",
-    authDomain: "test-6dc98.firebaseapp.com",
-    databaseURL: "https://test-6dc98.firebaseio.com",
-    projectId: "test-6dc98",
-    storageBucket: "test-6dc98.appspot.com",
-    messagingSenderId: "710439854114",
-    appId: "1:710439854114:web:11da79de037bfe857a2a7b"
+  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
+  authDomain: "chat-883eb.firebaseapp.com",
+  projectId: "chat-883eb",
+  storageBucket: "chat-883eb.appspot.com",
+  messagingSenderId: "421817736954",
+  appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
+  measurementId: "G-YCQZGGEGZ9"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 document.getElementById('file').addEventListener('change', (event) => {
     const file = event.target.files[0];
-    const storageRef = firebase.storage().ref('images/' + file.name);
+    const storageRef = firebase.storage().ref('user-pfps/' + file.name);
 
     storageRef.put(file).on('state_changed', (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -22,7 +22,7 @@ document.getElementById('file').addEventListener('change', (event) => {
         progressBar.value = progress;
     });
 
-    storageRef.getDownloadURL().then(function(url){
+    window.setTimeoutstorageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
         image.src = url
