@@ -62,3 +62,7 @@ var queryString = window.location.search
   }
 
 // account page
+  if (AppID == '2')  {
+
+
+}
