@@ -17,21 +17,19 @@ const firebaseConfig = {
 
 
   var  get = {
-  data: function(place, node) {
+  data: function(token, attribute) {
   
   const dbRef = firebase.database().ref();
-dbRef.child('bot/1stbot').child('name').get().then((snapshot) => {
+dbRef.child("bot/" + tkn).child(attribute).get().then((snapshot) => {
   if (snapshot.exists()) {
     return snapshot.val()
-    
       } else {
     console.log("No data available");
   }
 }).catch((error) => {
   console.error(error);
 });
-  
-}
+  }
   }
 
 
