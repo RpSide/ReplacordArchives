@@ -12,7 +12,7 @@ var baseurl = '/apps/00'
 }
 if (name == '' || name == null || name == undefined) {
 
-window.location.href = 'https://devcompessay.glitch.me/apps/?id=2'
+window.location.href = 'https://devcompessays.glitch.me/apps/?id=2'
 
 }
 
