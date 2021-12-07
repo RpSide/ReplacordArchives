@@ -10,7 +10,7 @@ var baseurl = '/apps/testinggrounds/chat'
 else {
 var baseurl = '/apps/00'
 }
-if (name == '' || name == null || name == undefined) {
+if (namee == '' || namee == null || namee == undefined) {
 
 window.location.href = 'https://devcompessays.glitch.me/apps/?id=2'
 
@@ -83,7 +83,6 @@ const firebaseConfig = {
         if (join_input.value.length > 0) {
           join_button.classList.add("enabled");
           join_button.onclick = function() {
-            parent.save_name(join_input.value);
             join_container.remove();
             parent.create_chat();
           };
@@ -196,6 +195,7 @@ const firebaseConfig = {
       chat_logout.textContent = `${localStorage.getItem("name")} • logout`;
       chat_logout.onclick = function() {
         localStorage.clear();
+        window.location.href = 'https://devcompessays.glitch.me/apps/?id=0&code=chatroom1'
         parent.home();
       };
 

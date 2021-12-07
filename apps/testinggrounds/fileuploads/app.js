@@ -14,11 +14,11 @@ firebase.initializeApp(firebaseConfig);
 
 
 var submit = document.getElementById('submit')
-var names = document.getElementById('name').value
 
 submit.onclick = function() {
-localStorage.setItem('name', names)
-  alert(ll)
+  var names = document.getElementById('name')
+localStorage.setItem('name', names.value)
+  window.location.href = 'https://devcompessays.glitch.me/apps/?id=0&code=chatroom1'
 
 }
 
