@@ -239,7 +239,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
       var messages = db.ref('chats/' + room + 'messages/');
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref('chats/' + room + 'messages/' + `message_${index}`)
+        db.ref('chats/' + room + 'messages/' + messageID)
           .set({
             profilepic: parent.get_url(),
             name: parent.get_name(),

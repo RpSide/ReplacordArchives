@@ -61,7 +61,7 @@ var send = {
   
   
 // Fire Base Chat Sender
-messsage: function(token, msg, chatroom)      {
+message: function(token, msg, chatroom)      {
       if ( chatroom != null || chatroom != undefined || chatroom != "" ) {
       var room = 'chats/' + chatroom
       var roommessager = 'chats/' + chatroom + '/messages/'
@@ -70,6 +70,8 @@ messsage: function(token, msg, chatroom)      {
       var room = 'chats/chatroom1'
       var roommessager = 'chats/chatroom1/messages/'
 
+}
+}
 }
 
   
@@ -83,7 +85,7 @@ dbRef.child("bot/" + token).child('name').get().then((snapshot) => {
       var messages = db.ref(roommessager);
       messages.once('value', function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1
-        db.ref(roommessager + `message_${index}`).set({
+        db.ref(roommessager + messageID).set({
 		     pfp: pfp,
 		     profilepic: pfp,
           client: '2.2 api',
