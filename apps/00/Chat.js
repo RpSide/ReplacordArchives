@@ -10,7 +10,11 @@ var baseurl = '/apps/testinggrounds/chat'
 else {
 var baseurl = '/apps/00'
 }
+if (name == '' || name == null || name == undefined) {
 
+window.location.href = 'https://devcompessay.glitch.me/apps/?id=2'
+
+}
 
 window.onload = function() {
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -27,6 +31,9 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
   var database = firebase.database();
+
+  
+  
 
 // sign up, in, and out
 
@@ -60,12 +67,7 @@ const firebaseConfig = {
 
       var join_input_container = document.createElement('div')
       join_input_container.setAttribute('id', 'join_input_container')
-
-      var join_input_2 = document.createElement("input");
-      join_input_2.setAttribute("id", "join_input");
-      join_input_2.placeholder = "Picture url";
-      join_input_2.textContent = pfpurle;
-
+    
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
       join_input.setAttribute("maxlength", 10);
@@ -82,7 +84,6 @@ const firebaseConfig = {
           join_button.classList.add("enabled");
           join_button.onclick = function() {
             parent.save_name(join_input.value);
-            parent.save_url(join_input_2.value);
             join_container.remove();
             parent.create_chat();
           };
@@ -93,13 +94,16 @@ const firebaseConfig = {
 
       join_button_container.append(join_button);
       join_input_container.append(join_input);
-      join_input_container.append(join_input_2);
       join_inner_container.append(join_input_container, join_button_container);
       join_container.append(join_inner_container);
       document.body.append(join_container);
 
 // 
     }
+    
+    
+    
+    
     create_load(id) {
       // YOU ALSO MUST HAVE (PARENT = THIS). BUT IT'S WHATEVER THO.
       var parent = this;
@@ -568,9 +572,3 @@ if (subtitle2 != undefined || subtitle2 != null) {
       title_container.append(title_inner_container)
       document.body.append(title_container)
     }*/
-
-
-
-
- 
-
