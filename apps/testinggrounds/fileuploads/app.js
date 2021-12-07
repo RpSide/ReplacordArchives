@@ -11,6 +11,17 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+var names = document.getElementById('name').value
+var submit = document.getElementById('submit')
+submit.onclick = function() {
+  
+  window.setItem('name', names)
+  
+  
+  
+}
+
+
 document.getElementById('file').addEventListener('change', (event) => {
     const file = event.target.files[0];
     const storageRef = firebase.storage().ref('user-pfps/' + file.name);
@@ -23,16 +34,14 @@ document.getElementById('file').addEventListener('change', (event) => {
     });
 
     storageRef.getDownloadURL().then(function(url){
-        const image = document.getElementById('image');
         console.log(url);
-        image.src = url
+        window.setItem('url', url)
     });
   
   
     storageRef.getDownloadURL().then(function(url){
-        const image = document.getElementById('image');
         console.log(url);
-        image.src = url
+        window.setItem('url', url)
     });
 
   
