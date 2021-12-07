@@ -68,7 +68,7 @@ const firebaseConfig = {
 
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
-      join_input.setAttribute("maxlength", 6);
+      join_input.setAttribute("maxlength", 10);
       join_input.placeholder = "Name";
       join_input.textContent = namee;
 
@@ -460,7 +460,7 @@ window.location.href = 'https://' + document.domain +'?id=3&code=' + roomcode
   // Join a Chatroom
 
 jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + '?appID=3&inv=true&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/?id0&inv=true&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
@@ -473,7 +473,7 @@ window.location.href = join
 // Make A invite
 
 invmker.onclick = function(params) {
-   window.location.href = 'https://' + document.domain + baseurl + '/copyinvite/' + '?appID=3&code=' + roomcode
+   window.location.href = 'https://' + document.domain + '/apps/?cin=true&id=0&code=' + roomcode
 }
 
 
