@@ -1,3 +1,14 @@
+// grabs paramiters from the url
+
+var queryString = window.location.search
+  
+  var urlParams = new URLSearchParams(queryString);
+   
+  var appID = urlParams.get('id')
+  var invitecode = urlParams.get('code')
+
+var url = 'https://' + document.domain + '/apps/' + '?id=0&code=' + invitecode
+
 function myFunction() {
   /* Get the text field */
   var copyText = document.getElementById("myInput");
@@ -10,5 +21,5 @@ function myFunction() {
   navigator.clipboard.writeText(copyText.value);
   
   /* Alert the copied text */
-  window.location.href = copyText.value
+  window.location.href = url
 }
