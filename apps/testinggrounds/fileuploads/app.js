@@ -22,9 +22,19 @@ document.getElementById('file').addEventListener('change', (event) => {
         progressBar.value = progress;
     });
 
-    window.setTimeoutstorageRef.getDownloadURL().then(function(url){
+    storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
         image.src = url
     });
+  
+  
+    storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
+        console.log(url);
+        image.src = url
+    });
+
+  
+  
 });
