@@ -39,11 +39,15 @@ document.getElementById('file').addEventListener('change', (event) => {
         const image = document.getElementById('image');
         console.log(url);
         localStorage.setItem('url', url)
+      alert(url)
+      window.setTimeOut(submit.style.visibility = 'visible')
     });
   
   storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
         localStorage.setItem('url', url)
+    alert(url)
+    window.setTimeOut(submit.style.visibility = 'visible')
     });
 });
