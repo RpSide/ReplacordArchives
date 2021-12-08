@@ -1,7 +1,13 @@
 var pfpurle = localStorage.getItem("url");
+var ctheme = localStorage.getItem('theme');
+if (ctheme == null || ctheme == undefined) {
+
+docuemnt.write("")
+
+}
 var namee = localStorage.getItem("name");
 var client = '3.0'
-var fullclient = '3.0.2'
+var fullclient = '3.0.4'
 if (client == 'Developer') {
 
 var baseurl = '/apps/testinggrounds/chat'
@@ -428,8 +434,19 @@ var bttods = document.createElement('button')
 
 theme.onclick = function(){
 
-window.location.href = 'https://' + document.domain + '/apps/' + '?themes=true&code=' + roomcode 
+let themess = prompt("Theme Url", 'https://essaycomp.github.io/chat/themes/dark.css');
+let text3;
+if (themess == null || themess == "") {
+ alert ('empty field');
+} else {
+localStorage.setItem('theme', themess)
+  }
+window.location.href = 'https://' + document.domain +'/apps/?id=0&code=' + roomcode
+  
+
 }
+
+
   
 // go to the old days 
 
@@ -460,6 +477,7 @@ window.location.href = 'https://' + document.domain +'?id=3&code=' + roomcode
 }
 }
 
+
   
   // Join a Chatroom
 
@@ -472,6 +490,7 @@ if (join == null || join == "") {
 window.location.href = join
 }
 }
+
 
 
 // Make A invite
