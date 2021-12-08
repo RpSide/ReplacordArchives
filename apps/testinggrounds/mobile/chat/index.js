@@ -1,31 +1,17 @@
 var pfpurle = localStorage.getItem("url");
 var namee = localStorage.getItem("name");
-var client = '2.5w12a'
+var client = '3.0 mobile'
+var fullclient = '3.0.2 mob'
 if (client == 'Developer') {
 
 var baseurl = '/apps/testinggrounds/chat'
 
 }
 else {
-var baseurl = '/apps/chat'
+var baseurl = '/apps/00'
 }
-
-var linker = document.createElement('link')
-
-if ( window.innerWidth >  window.innerHeight) {
-
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet"href="https://devcompessays.glitch.me/apps/testinggrounds/mobile/chat/H.css"/>')
-
-}
-else {
-
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet"href="https://devcompessays.glitch.me/apps/testinggrounds/mobile/chat/V.css"/>')
-
-}
-
 
 window.onload = function() {
-
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
@@ -40,6 +26,9 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database();
   var database = firebase.database();
+
+  
+  
 
 // sign up, in, and out
 
@@ -73,15 +62,10 @@ const firebaseConfig = {
 
       var join_input_container = document.createElement('div')
       join_input_container.setAttribute('id', 'join_input_container')
-
-      var join_input_2 = document.createElement("input");
-      join_input_2.setAttribute("id", "join_input");
-      join_input_2.placeholder = "Picture url";
-      join_input_2.textContent = pfpurle;
-
+    
       var join_input = document.createElement("input");
       join_input.setAttribute("id", "join_input");
-      join_input.setAttribute("maxlength", 6);
+      join_input.setAttribute("maxlength", 10);
       join_input.placeholder = "Name";
       join_input.textContent = namee;
 
@@ -94,8 +78,6 @@ const firebaseConfig = {
         if (join_input.value.length > 0) {
           join_button.classList.add("enabled");
           join_button.onclick = function() {
-            parent.save_name(join_input.value);
-            parent.save_url(join_input_2.value);
             join_container.remove();
             parent.create_chat();
           };
@@ -106,13 +88,16 @@ const firebaseConfig = {
 
       join_button_container.append(join_button);
       join_input_container.append(join_input);
-      join_input_container.append(join_input_2);
       join_inner_container.append(join_input_container, join_button_container);
       join_container.append(join_inner_container);
       document.body.append(join_container);
 
 // 
     }
+    
+    
+    
+    
     create_load(id) {
       // YOU ALSO MUST HAVE (PARENT = THIS). BUT IT'S WHATEVER THO.
       var parent = this;
@@ -151,11 +136,30 @@ const firebaseConfig = {
       chat_input_send.setAttribute("disabled", true);
       chat_input_send.innerHTML = `<i class="far fa-paper-plane"></i>`;
 
+      function handle(e){
+        alert('e')
+      var key=e.keyCode || e.which;
+  if (key==13){
+    
+    alert('e')
+  }
+}    
       var chat_input = document.createElement("input");
       chat_input.setAttribute("id", "chat_input");
-      chat_input.setAttribute("maxlength", 1000);
+      chat_input.setAttribute("maxlength", 2000);
       chat_input.placeholder = `${localStorage.getItem("name")}. Say something...`;
-      chat_input.onkeyup = function() {
+      
+      chat_input.onkeypress = function(e){
+      var key=e.keyCode || e.which;
+  if (key==13){
+    if (chat_input.value.length > 0){
+    parent.send_message(chat_input.value)
+    chat_input.value = ''
+  }
+  }
+    }
+  chat_input.onkeyup = function() {
+    
         if (chat_input.value.length > 0) {
           chat_input_send.removeAttribute("disabled");
           chat_input_send.classList.add("enabled");
@@ -175,6 +179,8 @@ const firebaseConfig = {
           chat_input_send.classList.remove("enabled");
         }
       };
+      
+      
 
       var chat_logout_container = document.createElement("div");
       chat_logout_container.setAttribute("id", "chat_logout_container");
@@ -227,15 +233,16 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 
 }
-
+      var messageID = Math.random().toString(20).substr(5)
       var messages = db.ref('chats/' + room + 'messages/');
       messages.once("value", function(snapshot) {
         var index = parseFloat(snapshot.numChildren()) + 1;
-        db.ref('chats/' + room + 'messages/' + `message_${index}`)
+        db.ref('chats/' + room + 'messages/' + messageID)
           .set({
             profilepic: parent.get_url(),
-            name: parent.get_name() + '  ( ' + time + ' | ' + datee + ' )',
+            name: parent.get_name(),
             message: message,
+            messageID: messageID,
             index: index,
             time: time,
             date: datee,
@@ -404,7 +411,20 @@ var bttods = document.createElement('button')
     bttods.setAttribute('id', 'bttods')
     bttods.setAttribute('class', 'unb')
     bttods.textContent = 'Switch to Old'
+  
+  var theme = document.createElement('button')
+    theme.setAttribute('id', 'themes')
+    theme.setAttribute('class', 'unb')
+    theme.textContent = 'Themes'
 
+  // go to the old days 
+
+
+theme.onclick = function(){
+
+window.location.href = 'https://' + document.domain + '/apps/' + '?themes=true&code=' + roomcode 
+}
+  
 // go to the old days 
 
 
@@ -418,7 +438,7 @@ window.location.href = 'https://' + document.domain + '/apps/archive/chat/?appID
 
 cmaker.onclick = function(){
 
- var roomcode = Math.random().toString(20).substr(5)
+ var roomcode =  Math.random().toString(20).substr(5)
    
   
 let roomname = prompt("chatroom name", 'e');
@@ -429,7 +449,7 @@ if (roomname == null || roomname == "") {
 firebase.database().ref('chats/' + roomcode + '/').set({
     name: roomname,
   });
-window.location.href = 'https://' + document.domain + baseurl +'/invite?appID=3&code=' + roomcode
+window.location.href = 'https://' + document.domain +'?id=3&code=' + roomcode
 
 }
 }
@@ -438,7 +458,7 @@ window.location.href = 'https://' + document.domain + baseurl +'/invite?appID=3&
   // Join a Chatroom
 
 jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + baseurl + '/invite/' + '?appID=3&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/?id0&inv=true&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
@@ -451,7 +471,7 @@ window.location.href = join
 // Make A invite
 
 invmker.onclick = function(params) {
-   window.location.href = 'https://' + document.domain + baseurl + '/copyinvite/' + '?appID=3&code=' + roomcode
+   window.location.href = 'https://' + document.domain + '/apps/?cin=true&id=0&code=' + roomcode
 }
 
 
@@ -459,11 +479,14 @@ invmker.onclick = function(params) {
 firebase.database().ref().child('chats/' + roomcode).child('name').get().then((snapshot) => {
   if (snapshot.exists()) {
 
+    if (snapshot.val() != null || snapshot.val() != undefined || snapshot.val() != 'null' || snapshot.val() != ' ') {
+      
 var titlee = snapshot.val() + ' || Scuffed Discord'
     title3.textContent = titlee
     title.textContent = snapshot.val()
     console.log(snapshot.val());
     return snapshot.val() 
+    }
     }
   
   else {
@@ -479,7 +502,7 @@ var titlee = snapshot.val() + ' || Scuffed Discord'
 firebase.database().ref().child('chats/' + roomcode).child('welcome').get().then((snapshot) => {
   if (snapshot.exists()) {
 var welcomemessage = snapshot.val()
-if (welcomemessage != undefined || welcomemessage != null) {
+if (welcomemessage != undefined || welcomemessage != null || welcomemessage != 'null' || welcomemessage != 'undefined') {
 
 alert(welcomemessage)
   
@@ -523,6 +546,7 @@ if (subtitle2 != undefined || subtitle2 != null) {
       title_container2.append(cmaker)
       title_container2.append(jroom)
       title_container2.append(invmker)
+      title_container2.append(theme)
       document.body.append(title_container)
       document.body.append(title_container2)
 
@@ -542,9 +566,3 @@ if (subtitle2 != undefined || subtitle2 != null) {
       title_container.append(title_inner_container)
       document.body.append(title_container)
     }*/
-
-
-
-
- 
-
