@@ -18,11 +18,11 @@ var client = '3.0'
 var fullclient = '3.0.4'
 if (client == 'Developer') {
 
-var baseurl = '/apps/testinggrounds/chat'
+var baseurl = '/apps/00/chat'
 
 }
 else {
-var baseurl = '/apps/00'
+var baseurl = '/apps/00/'
 }
 if (namee == '' || namee == null || namee == undefined) {
 
