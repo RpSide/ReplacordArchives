@@ -39,7 +39,6 @@ document.getElementById('file').addEventListener('change', (event) => {
         const image = document.getElementById('image');
         console.log(url);
         localStorage.setItem('url', url)
-      alert(url)
       window.setTimeOut(submit.style.visibility = 'visible')
     });
   
@@ -47,7 +46,6 @@ document.getElementById('file').addEventListener('change', (event) => {
         const image = document.getElementById('image');
         console.log(url);
         localStorage.setItem('url', url)
-    alert(url)
     window.setTimeOut(submit.style.visibility = 'visible')
     });
 });
