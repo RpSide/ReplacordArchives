@@ -1,5 +1,6 @@
 var pfpurle = localStorage.getItem("url");
 var ctheme = localStorage.getItem('theme');
+
 if (ctheme == null || ctheme == undefined) {
 
 document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
