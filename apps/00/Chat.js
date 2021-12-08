@@ -14,8 +14,8 @@ document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="styles
 
 
 var namee = localStorage.getItem("name");
-var client = '3.0'
-var fullclient = '3.0.4'
+var client = 'Beta 3.3'
+var fullclient = '3.0.7'
 if (client == 'Developer') {
 
 var baseurl = '/apps/00/chat'
