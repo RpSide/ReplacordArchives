@@ -9,7 +9,7 @@ var queryString = window.location.search
   var copyinvite = urlParams.get('cin')
   var code = urlParams.get('code')
 
-// Scuffed Discord App 
+// Replacord App 
  if (AppID == '0' && invite != 'true' && copyinvite != 'true') {
 	  
 	  document.write('<!DOCTYPE html><html lang="en" dir="ltr"><head><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://use.typekit.net/tto8pja.css"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script><!-- Web Linked JavaScript (Js)--><script src="https://devcompessays.glitch.me/apps/00/botapilatest.js"></script><script type="text/javascript" src="https://devcompessays.glitch.me/apps/00/Chat.js"></script></head><body></body></div></div></html>')
@@ -18,7 +18,7 @@ var queryString = window.location.search
   }
 
   
-// Scuffed Discord App Invitation
+// Replacord App Invitation
    if (AppID == '0' && invite == 'true' && copyinvite != 'true'){
 	if (code == null || code == undefined){
 		
@@ -35,7 +35,7 @@ var queryString = window.location.search
 }
 
 
-// Scuffed Discord App Copy Invitation
+// Replacord App Copy Invitation
    if (AppID == '0' && copyinvite == 'true' && invite != 'true'){
 	if (code == null || code == undefined){
   

@@ -444,12 +444,7 @@ theme.onclick = function(){
 
 let themess = prompt("Theme Url", 'https://essaycomp.github.io/chat/themes/dark.css');
 let text3;
-if (themess == null || themess == "") {
- alert ('empty field');
-} else {
-localStorage.setItem('theme', themess)
-  }
-window.location.href = 'https://' + document.domain +'/apps/?id=0&code=' + roomcode
+if (themess == null || themess == ""de
   
 
 }
@@ -514,7 +509,7 @@ firebase.database().ref().child('chats/' + roomcode).child('name').get().then((s
 
     if (snapshot.val() != null || snapshot.val() != undefined || snapshot.val() != 'null' || snapshot.val() != ' ') {
       
-var titlee = snapshot.val() + ' || Scuffed Discord'
+var titlee = snapshot.val() + ' || Replacord'
     title3.textContent = titlee
     title.textContent = snapshot.val()
     console.log(snapshot.val());
@@ -567,8 +562,7 @@ if (subtitle2 != undefined || subtitle2 != null) {
   else {
     console.log("No data available");
   }
-}).catch((error) => {
-  console.error(error);
+}).cr);
 });
     
       
@@ -598,4 +592,4 @@ if (subtitle2 != undefined || subtitle2 != null) {
       title_inner_container.append(title)
       title_container.append(title_inner_container)
       document.body.append(title_container)
-    }*/
+    a}*/
