@@ -14,8 +14,8 @@ document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="styles
 
 
 var namee = localStorage.getItem("name");
-var client = 'Beta 3.1 last update 12/9/2021'
-var fullclient = '3.1.1 B'
+var client = 'Beta 3.3'
+var fullclient = '3.3.0 B'
 if (client == 'Developer') {
 
 var baseurl = '/apps/00/chat'
@@ -443,7 +443,7 @@ if (themess == null || themess == "") {
   
 
 }
-
+}
 
   
 // make a chatroom   
@@ -552,7 +552,8 @@ if (subtitle2 != undefined || subtitle2 != null) {
 }).catch((error) => {
   console.error(error);
 });
-}
+  
+
       
       title_container.append(title)
       title_container.append(title3)
