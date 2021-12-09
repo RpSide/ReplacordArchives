@@ -328,6 +328,7 @@ return localStorage.getItem("url");
           var name = data.name;
           var message = data.message;
           var ver = data.client;
+          var pic = data.picture;
 
           var message_container = document.createElement("div");
           message_container.setAttribute("class", "message_container");
@@ -608,7 +609,7 @@ if (subtitle2 != undefined || subtitle2 != null) {
   storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-        localStorage.setItem('url', url)
+        
     });
 });
   
