@@ -132,6 +132,7 @@ const firebaseConfig = {
       loader_container.append(loader);
       container.append(loader_container);
     }
+    
     create_chat() {
       var parent = this;
       // GET THAT MEMECHAT HEADER OUTTA HERE
