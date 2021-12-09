@@ -480,7 +480,7 @@ if (roomname == null || roomname == "") {
 firebase.database().ref('chats/' + roomcode + '/').set({
     name: roomname,
   });
-window.location.href = 'https://' + document.domain +'?id=3&code=' + roomcode
+window.location.href = 'https://' + document.domain +'/apps/?id=0&code=' + roomcode
 
 }
 }
