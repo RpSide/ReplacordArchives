@@ -30,7 +30,7 @@ window.location.href = 'https://devcompessays.glitch.me/apps/?id=2'
 
 }
 
-window.onload = function() {
+
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
@@ -46,9 +46,8 @@ const firebaseConfig = {
   var db = firebase.database();
   var database = firebase.database();
 
-  
-  
 
+window.onload = function() {
 // sign up, in, and out
 
 
@@ -263,6 +262,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
             profilepic: 'https://proxy-copy.glitch.me/' + parent.get_url(),
             name: parent.get_name(),
             message: message,
+            picture: getpic(),
             messageID: messageID,
             index: index,
             time: time,
@@ -361,11 +361,16 @@ return localStorage.getItem("url");
           var message_content = document.createElement("p");
           message_content.setAttribute("class", "message_content");
           message_content.textContent = message;
+          
+           var pic_content = document.createElement("img");
+          message_content.setAttribute("class", "message_content");
+          message_content.src = pic;
 
           message_user_container.append(message_pfp);
           message_user_container.append(message_user);
           
           message_content_container.append(message_content);
+          message_content_container.append(pic_content);
           message_inner_container.append(message_user_container, message_content_container);
           message_container.append(message_inner_container);
 
@@ -582,3 +587,28 @@ if (subtitle2 != undefined || subtitle2 != null) {
       title_container.append(title_inner_container)
       document.body.append(title_container)
     a}*/
+
+  document.getElementById('file').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const storageRef = firebase.storage().ref('user-pfps/' + file.name);
+
+    storageRef.put(file).on('state_changed', (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log(progress);
+        const progressBar = document.getElementById('progress_bar');
+        progressBar.value = progress;
+    });
+
+    storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
+        console.log(url);
+        localStorage.setItem('url', url)
+    });
+  
+  storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
+        console.log(url);
+        localStorage.setItem('url', url)
+    });
+});
+  
