@@ -426,11 +426,6 @@ var invmker = document.createElement('button')
     invmker.setAttribute('id', 'invm')
     invmker.setAttribute('class', 'unb')
     invmker.textContent = 'Make an Invite'
-
-var bttods = document.createElement('button')
-    bttods.setAttribute('id', 'bttods')
-    bttods.setAttribute('class', 'unb')
-    bttods.textContent = 'Switch to Old'
   
   var theme = document.createElement('button')
     theme.setAttribute('id', 'themes')
@@ -444,20 +439,12 @@ theme.onclick = function(){
 
 let themess = prompt("Theme Url", 'https://essaycomp.github.io/chat/themes/dark.css');
 let text3;
-if (themess == null || themess == ""de
+if (themess == null || themess == "") {
   
 
 }
 
 
-  
-// go to the old days 
-
-
-bttods.onclick = function(){
-
-window.location.href = 'https://' + document.domain + '/apps/archive/chat/?appID=3&code=chatroom1'
-}
   
 // make a chatroom   
 
@@ -562,14 +549,14 @@ if (subtitle2 != undefined || subtitle2 != null) {
   else {
     console.log("No data available");
   }
-}).cr);
+}).catch((error) => {
+  console.error(error);
 });
-    
+}
       
       title_container.append(title)
       title_container.append(title3)
       title_container.append(subtitle)
-      title_container2.append(bttods)
       title_container2.append(cmaker)
       title_container2.append(jroom)
       title_container2.append(invmker)
