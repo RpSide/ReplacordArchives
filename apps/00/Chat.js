@@ -30,7 +30,7 @@ window.location.href = 'https://devcompessays.glitch.me/apps/?id=2'
 
 }
 
-
+window.onload = function() {
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
@@ -47,7 +47,7 @@ const firebaseConfig = {
   var database = firebase.database();
 
 
-window.onload = function() {
+
 // sign up, in, and out
 
 
@@ -588,28 +588,3 @@ if (subtitle2 != undefined || subtitle2 != null) {
       title_container.append(title_inner_container)
       document.body.append(title_container)
     a}*/
-
-  document.getElementById('file').addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    const storageRef = firebase.storage().ref('user-pfps/' + file.name);
-
-    storageRef.put(file).on('state_changed', (snapshot) => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(progress);
-        const progressBar = document.getElementById('progress_bar');
-        progressBar.value = progress;
-    });
-
-    storageRef.getDownloadURL().then(function(url){
-        const image = document.getElementById('image');
-        console.log(url);
-        localStorage.setItem('url', url)
-    });
-  
-  storageRef.getDownloadURL().then(function(url){
-        const image = document.getElementById('image');
-        console.log(url);
-        
-    });
-});
-  
