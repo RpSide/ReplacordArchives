@@ -261,7 +261,6 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
             profilepic: 'https://proxy-copy.glitch.me/' + parent.get_url(),
             name: parent.get_name(),
             message: message,
-            picture: getpic(),
             messageID: messageID,
             index: index,
             time: time,
