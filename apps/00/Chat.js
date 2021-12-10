@@ -18,7 +18,7 @@ var client = 'Beta 3.3'
 var fullclient = '3.3.0 B'
 if (client == 'Developer') {
 
-var baseurl = '/apps/00/chat'
+var baseurl = '/apps/00/'
 
 }
 else {
@@ -31,10 +31,11 @@ window.location.href = 'https://devcompessays.glitch.me/apps/?id=2'
 }
 
 window.onload = function() {
- // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
   authDomain: "chat-883eb.firebaseapp.com",
+  databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
   projectId: "chat-883eb",
   storageBucket: "chat-883eb.appspot.com",
   messagingSenderId: "421817736954",
@@ -43,27 +44,25 @@ const firebaseConfig = {
 };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  var db = firebase.database();
-  var database = firebase.database();
+  var db = firebase.database()
 
-
-
-// sign up, in, and out
-
-
-  class MEME_CHAT {
-    home() {
-      document.body.innerHTML = "";
-      create_title();
-      this.create_join_form();
+  class MEME_CHAT{
+    home(){
+      document.body.innerHTML = ''
+      create_title()
+      this.create_join_form()
     }
-    chat() {
-      create_title();
-      this.create_chat();
+    chat(){
+      create_title()
+      this.create_chat()
     }
 
-  create_join_form(){
-      // YOU MUST HAVE (PARENT = THIS). OR NOT. I'M NOT YOUR BOSS!😂
+	  
+	  
+	  
+	  // Creates Join Form -----------------------------
+    create_join_form(){
+      // YOU MUST HAVE (PARENT = THIS). OR NOT. I'M NOT YOUR BOSS!??
       var parent = this;
 
       var join_container = document.createElement('div')
