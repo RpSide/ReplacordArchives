@@ -1,5 +1,5 @@
-var pfpurle = localStorage.getItem("url");
-var ctheme = localStorage.getItem('theme');
+let pfpurle = localStorage.getItem("url");
+let ctheme = localStorage.getItem('theme');
 
 if (ctheme == null || ctheme == undefined) {
 
