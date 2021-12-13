@@ -14,12 +14,15 @@ let firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var SettingId = html.geturlparams('sid')
+let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
 
-let url = 'https://' + document.domain + '/apps/?id=0&code=' + roomcode
+let url = 'https://' + document.domain + '/apps/?code=' + roomcode
 
-html.button('Back to chat', url)
+html.button('Back to chat', url + '&id=0')
+html.button('Home', url + '&sid=1&id=1')
+html.button('Themes', url + '&sid=2&id=1')
+html.button('Account', url + '&sid=3&id=1')
 
 //Home
 if (SettingId == '1') {
@@ -52,12 +55,17 @@ else if (SettingId == '3') {
 html.title('Settings - Account')
 html.h1('Settings - Account' ,'acctitle')
   
+  html.h4('Name' ,'acc-name-title')
   html.input_text('', 'Name' , 'acc-name')
-  html.input_text('', '' , 'acc-name')
-  
+    html.h4('Profile Picture' ,'acc-pfp-title')
+  html.input_file('acc-pfp')
+  html.buttononclick('Update Account', )
    html.div('acc')
   html.append('acctitle', 'acc')
+  html.append('acc-name-title', 'acc')
   html.append('acc-name', 'acc')
+  html.append('acc-pfp-title', 'acc')
+  html.append('acc-pfp', 'acc')
 }
 
 
