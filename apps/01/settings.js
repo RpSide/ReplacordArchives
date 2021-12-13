@@ -55,30 +55,44 @@ else if (SettingId == '3') {
 html.title('Settings - Account')
 html.h1('Settings - Account' ,'acctitle')
   
+  //name
   html.h4('Name' ,'acc-name-title')
-  html.input_text('', 'Name' , 'acc-name')
+  html.input_text('', 'Name' , '15',  'acc-name')
+  html.h1('', 'Update-name-cont')
+  html.buttononclick('Update Account Name', "", 'Update-name')
+  //pfp
     html.h4('Profile Picture' ,'acc-pfp-title')
   html.input_file('acc-pfp')
+  html.progress('0', '100', 'pfpprog')
+  html.h1('', 'Update-pfp-cont')
+  html.buttononclick('Update Account Profile Picture', "", 'Update-pfp')
   
-  html.buttononclick('Update Account', "", 'Update')
+  html.div('acc')
   
-  var Update = document.getElementById('Update')
+  // name
+  html.append('acctitle', 'acc')
+  html.append('acc-name-title', 'acc')
+  html.append('acc-name', 'acc')
+  html.append('Update-name', 'Update-name-cont')
+  html.append('Update-name-cont', 'acc')
+  
+  //pfp
+  html.append('acc-pfp-title', 'acc')
+  html.append('acc-pfp', 'acc')
+  html.append('pfpprog', 'acc')
+  html.append('Update-pfp', 'Update-pfp-cont')
+  html.append('Update-pfp-cont', 'acc')
+  
+  
+    var Update_name = document.getElementById('Update-name')
   var name = document.getElementById('acc-name')
-  Update.onclick = function(){
+  Update_name.onclick = function(){
     
     
     localStorage.setItem('name', name.value)
     
     
   }
-  
-  html.div('acc')
-  html.append('acctitle', 'acc')
-  html.append('acc-name-title', 'acc')
-  html.append('acc-name', 'acc')
-  html.append('acc-pfp-title', 'acc')
-  html.append('acc-pfp', 'acc')
-  html.append('Update', 'acc')
 }
 
 
