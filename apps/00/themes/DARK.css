@@ -339,7 +339,7 @@ display: block;
 }
 ::selection {
   background-color: white;
-  color: #fff;
+  color: black;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -372,4 +372,17 @@ border-radius: 50vw;
 button:hover {
   color: lightgray;
   border-color: lightgray; 
+}
+
+input {
+  padding: 1vw;
+display: inline-block;
+background-color: gray;
+  color: lightgray;
+border-color: darkgray; 
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
 }

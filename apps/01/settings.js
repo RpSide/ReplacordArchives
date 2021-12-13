@@ -1,5 +1,18 @@
 import { html } from 'https://replacord.glitch.me/libraies/BetterDOM.js'
 
+
+   let ctheme = localStorage.getItem('theme');
+alert(ctheme)
+if (ctheme == null || ctheme == undefined || ctheme == "") {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
+
+}
+else {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
+
+}
 // Your web app's Firebase configuration
 let firebaseConfig = {
  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
@@ -13,24 +26,6 @@ let firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
-let ctheme = localStorage.getItem('theme');
-function gettheme() {
-  
-   let ctheme = localStorage.getItem('theme');
-alert(ctheme)
-if (ctheme == null || ctheme == undefined || ctheme == "") {
-
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
-
-}
-else {
-
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
-
-}
-    
-}
 
 let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
@@ -51,7 +46,6 @@ html.title('Settings - Home')
   
   html.div('Home')
   html.append('Hometitle', 'Home')
-  gettheme()
 }
 
 
@@ -70,7 +64,6 @@ html.h1('Settings - Themes' ,'Themestitle')
 
 // Account
 else if (SettingId == '3') {
-  gettheme()
 html.title('Settings - Account')
 html.h1('Settings - Account' ,'acctitle')
   
@@ -121,7 +114,6 @@ html.h1('Settings - Account' ,'acctitle')
 
 // Could Not Find Setting + SettingID
 else {
-  gettheme()
   html.title('Settings - Not Found')
   
   html.h1('Setting "' + SettingId + '" Could Not Be Found' ,'ErrorMessage')
@@ -133,29 +125,15 @@ else {
 }
 
 
-let submit = document.getElementById('Update-pfp')
-document.getElementById('acc-pfp').addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    const storageRef = firebase.storage().ref('user-pfps/' + file.name);
+ 
 
-    storageRef.put(file).on('state_changed', (snapshot) => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(progress);
-        const progressBar = document.getElementById('pfpprog');
-        progressBar.value = progress;
-    });
+if (ctheme == null || ctheme == undefined || ctheme == "") {
 
-    storageRef.getDownloadURL().then(function(url){
-        const image = document.getElementById('image');
-        console.log(url);
-        localStorage.setItem('url', url)
-      window.setTimeOut(submit.style.backgroundColor = 'green')
-    });
-  
-  storageRef.getDownloadURL().then(function(url){
-        const image = document.getElementById('image');
-        console.log(url);
-        localStorage.setItem('url', url)
-    window.setTimeOut(submit.style.backgroundColor = 'green')
-    });
-});
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
+
+}
+else {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
+
+}
