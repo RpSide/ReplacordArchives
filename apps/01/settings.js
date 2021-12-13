@@ -59,13 +59,18 @@ html.h1('Settings - Account' ,'acctitle')
   html.input_text('', 'Name' , 'acc-name')
     html.h4('Profile Picture' ,'acc-pfp-title')
   html.input_file('acc-pfp')
-  html.buttononclick('Update Account', )
-   html.div('acc')
+  
+  let name = html.getelement('acc-name').value
+  
+  html.buttononclick('Update Account', "localStorage.setItem('name', localStorage.setItem('name'" + name + "))", 'Update')
+  
+  html.div('acc')
   html.append('acctitle', 'acc')
   html.append('acc-name-title', 'acc')
   html.append('acc-name', 'acc')
   html.append('acc-pfp-title', 'acc')
   html.append('acc-pfp', 'acc')
+  html.append('Update', 'acc')
 }
 
 
