@@ -1,7 +1,28 @@
+var version = localStorage.getItem('ver')
+
+let updates = {
+  
+  version : 'Beta 3.3.4'
+  
+  
+  
+  
+  
+}
+
+var client = 'Beta 3.3'
+var fullclient = '3.3.4 B'
+if (version != 'Beta 3.3.4') {
+  
+alert(updates)
+  
+}
+
 let pfpurle = localStorage.getItem("url");
 let ctheme = localStorage.getItem('theme');
 
-if (ctheme == null || ctheme == undefined) {
+
+if (ctheme == null || ctheme == undefined || ctheme == "") {
 
 document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
 
@@ -14,8 +35,7 @@ document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="styles
 
 
 var namee = localStorage.getItem("name");
-var client = 'Beta 3.3'
-var fullclient = '3.3.0 B'
+
 if (client == 'Developer') {
 
 var baseurl = '/apps/00/'
@@ -399,6 +419,7 @@ var queryString = window.location.search
    
   var roomcode = urlParams.get('code')
   var room = roomcode + '/'
+  var id = urlParams.get('id')
 
 function create_title(params) {
 
@@ -448,6 +469,13 @@ if (themess == null || themess == "") {
   
 
 }
+  else{
+
+localStorage.setItem('theme', themess)
+window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
+
+}
+  
 }
 
   
