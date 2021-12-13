@@ -14,19 +14,36 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var settingId = html.geturlparams('sid')
+var SettingId = html.geturlparams('sid')
 
-html.div('Home')
-html.h1('Settings' ,'Home - title')
-
-if (settingId == '' || settingId == undefined || settingId == null) {
+if (SettingId == '' || SettingId == undefined || SettingId == null) {
 html.title('Settings - Home')
   
+  html.h1('Settings' ,'Home - title')
+  
+  
+  html.div('Home')
+  html.append('Home - title', 'Home')
   
 }
 
-if (settingId >= 'Themes'  || settingId == '2' || settingId == undefined || settingId == null) {
+else if (SettingId >= 'Themes'  || settingId == '2' || settingId == undefined || settingId == null) {
 html.title('Settings - Themes')
 html.h1('Settings - Themes' ,'Themes')
+  
+}
+
+
+
+// Could Not Find Setting + SettingID
+else {
+  
+  html.title('Settings - Not Found')
+  
+  html.h1('Setting "' + settingId +Set Could Not Be Found' ,'ErrorMessage')
+  
+  
+  html.div('Error')
+  html.append('ErrorMessage', 'Error')
   
 }
