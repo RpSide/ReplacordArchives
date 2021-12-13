@@ -7,15 +7,7 @@ var queryString = window.location.search
   var roomcode = urlParams.get('code')
   var room = roomcode + '/'
   var id = urlParams.get('id')
-  var aptheme = urlParams.get('applytheme')
-  
-if (aptheme != '' || aptheme != null || aptheme != undefined || aptheme != 'undefined' || aptheme != 'null') {
-    
-    localStorage.setItem('theme', aptheme)
-    window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
-    
-    
-  }
+
 
 var version = localStorage.getItem('ver')
 
@@ -606,3 +598,13 @@ if (subtitle2 != undefined || subtitle2 != null) {
       document.body.append(title_container2)
 
     }
+
+if (urlParams.get('applytheme').includes("https://")) {
+    
+  var aptheme = urlParams.get('applytheme')
+  alert('Applying Theme')
+    localStorage.setItem('theme', aptheme)
+    window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
+    
+    
+  }
