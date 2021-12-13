@@ -100,19 +100,39 @@ function red() {
   window.location.href = url + copyText.value
 
 }
+    
+    function copy(id) {
+  /* Get the text field */
+  var copyText = document.getElementById(id);
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  
+  window.location.href = url + copyText.value
+
+}
 
 </script>
   </head>
   <body>
-    <h3>Classic Dark<h3>
-    <h4><input id='dark' type="text" value='https://essaycomp.github.io/chat/themes/dark.css'></h4>
-<button onclick='dark()'>Get Theme</button>
     
-    <h3><span class='tag'> Beta </span> Darkmode with better UI</h3>
+    <h3><span class='tag'> New </span> HollyJolly X-mas</h3>
+    <h4><input id='xmas1' type="text" value='https://devcompessays.glitch.me/apps/00/HollyJollyX-mas.css'></h4>
+<button onclick='copy("xmas1")'>Get Theme</button>
+    
+        <h3>NightTime Black + new UI</h3>
     <h4><input id='beta' type="text" value='https://kidslearning.glitch.me/apps/00/Chat2.css'></h4>
 <button onclick='beta()'>Get Theme</button>
     
-        <h3>Light Theme</h3>
+    <h3>NightTime Black<h3>
+    <h4><input id='dark' type="text" value='https://essaycomp.github.io/chat/themes/dark.css'></h4>
+<button onclick='dark()'>Get Theme</button>
+    
+        <h3>Blinding White</h3>
     <h4><input id='light' type="text" value='https://essaycomp.github.io/chat/themes/white.css'></h4>
     <button onclick='light()'>Get Theme</button>
     

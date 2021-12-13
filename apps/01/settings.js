@@ -130,13 +130,13 @@ document.getElementById('acc-pfp').addEventListener('change', (event) => {
         const image = document.getElementById('image');
         console.log(url);
         localStorage.setItem('url', url)
-      window.setTimeOut(submit.style.backgroundColor = 'green', 1000)
+      window.setTimeOut(submit.style.backgroundColor = 'green')
     });
   
   storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
         localStorage.setItem('url', url)
-    window.setTimeOut(submit.style.backgroundColor = 'green', 1000)
+    window.setTimeOut(submit.style.backgroundColor = 'green')
     });
 });
