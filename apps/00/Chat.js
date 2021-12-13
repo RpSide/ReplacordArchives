@@ -391,17 +391,13 @@ return localStorage.getItem("url");
           var message_content = document.createElement("p");
           message_content.setAttribute("class", "message_content");
           message_content.textContent = message;
-          
-           var pic_content = document.createElement("img");
-          message_content.setAttribute("class", "message_content");
-          message_content.src = pic;
 
-          message_user_container.append(message_pfp);
+
+ message_user_container.append(message_pfp);
           message_user_container.append(message_user);
+              message_user_container.append(message_content);      
           
-          message_content_container.append(message_content);
-          message_content_container.append(pic_content);
-          message_inner_container.append(message_user_container, message_content_container);
+          message_inner_container.append(message_user_container, );
           message_container.append(message_inner_container);
 
           chat_content_container.append(message_container);

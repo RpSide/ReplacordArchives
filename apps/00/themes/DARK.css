@@ -10,8 +10,8 @@
   font-weight: bold;
   font-size: 14px;
 	background-color: #000000;
-  position: relative;
-  top: 10px;
+
+  display: block;
 }
 
 .unb {
@@ -266,9 +266,7 @@ display: block;
   .message_user{
   font-weight: bold;
   font-size: 14px;
-  position: relative;
-  left: 5px;
-  bottom: 48px;
+display: block;
 }
 .message_content_container{
   width: 100%;
@@ -281,9 +279,8 @@ display: block;
   font-weight: normal;
   font-size: 14px;
   margin-top: 5px;
-   position: relative;
-  left: 110px;
-  bottom: 43px;
+  width: 278px;
+display: block;
 }
 
 
