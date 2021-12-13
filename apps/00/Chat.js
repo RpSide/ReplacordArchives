@@ -13,8 +13,8 @@ var version = localStorage.getItem('ver')
 
 let updates = {
   
-  version : 'Beta 3.3.4',
-  added : 'Custom Themes'
+  version : 'Beta 3.3.5',
+  added : 'Theme Intergration + Settings Menu'
   
   
   
@@ -22,11 +22,11 @@ let updates = {
 }
 
 var client = 'Beta 3.3'
-var fullclient = '3.3.4 B'
-if (version != 'Beta 3.3.4') {
+var fullclient = '3.3.5 B'
+if (version != 'Beta 3.3.5') {
   
 alert('Version : ' + updates.version + "     Thing(s) Added : " + updates.added)
-  var version = localStorage.setItem('ver', 'Beta 3.3.4')
+  var version = localStorage.setItem('ver', 'Beta 3.3.5')
 }
 
 let pfpurle = localStorage.getItem("url");
@@ -468,8 +468,12 @@ var invmker = document.createElement('button')
       settings.style.padding = '15px'
       settings.style.backgroundSize = '38px'
       settings.style.backgroundColor = 'gray'
-  // go to the old days 
-
+  // Open Settings
+settings.onclick = function() {
+  
+  window.location.href = 'https://devcompessays.glitch.me/apps/?id=1&code=' + roomcode
+  
+}
 
 theme.onclick = function(){
 
@@ -602,7 +606,6 @@ if (subtitle2 != undefined || subtitle2 != null) {
 if (urlParams.get('applytheme').includes("https://")) {
     
   var aptheme = urlParams.get('applytheme')
-  alert('Applying Theme')
     localStorage.setItem('theme', aptheme)
     window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
     
