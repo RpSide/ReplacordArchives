@@ -14,13 +14,15 @@ let firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-let SettingId = html.geturlparams('sid')
+var SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
 
-let url = 'https://' + document.domain + '/apps/?id=0' + roomcode
-html.buttononclick('Back to chat', 'html.href(' +  url + ')')
+let url = 'https://' + document.domain + '/apps/?id=0&code=' + roomcode
+
+html.button('Back to chat', url)
+
 //Home
-if (SettingId == '' || SettingId == undefined || SettingId == null) {
+if (SettingId == '' || SettingId >= 'Home' || SettingId == '1' || SettingId == undefined || SettingId == null) {
 html.title('Settings - Home')
   
   html.h1('Settings' ,'Home - title')
@@ -34,10 +36,24 @@ html.title('Settings - Home')
 
 
 // Themes
-else if (SettingId >= 'Themes'  || SettingId == '2' || SettingId == undefined || SettingId == null) {
+else if (SettingId >= 'Themes'  || SettingId == '2' || SettingId != undefined || SettingId != null) {
 html.title('Settings - Themes')
-html.h1('Settings - Themes' ,'Themes')
+html.h1('Settings - Themes' ,'Themes - title')
   
+  
+  html.div('Themes')
+  html.append('Themes - title', 'Themes')
+}
+
+
+
+// Account
+else if (SettingId >= 'account'  || SettingId == '3' || SettingId != undefined || SettingId != null) {
+html.title('Settings - Account')
+html.h1('Settings - Account' ,'acc - title')
+  
+   html.div('acc')
+  html.append('acc - title', 'acc')
 }
 
 

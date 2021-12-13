@@ -471,7 +471,7 @@ var invmker = document.createElement('button')
   // Open Settings
 settings.onclick = function() {
   
-  window.location.href = 'https://devcompessays.glitch.me/apps/?id=1&code=' + roomcode
+  window.location.href = 'https://' + document.domain + '/apps/?id=1&sid=&code=' + roomcode
   
 }
 
