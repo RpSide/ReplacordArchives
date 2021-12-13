@@ -93,6 +93,7 @@ html.h1('Settings - Account' ,'acctitle')
     
     
   }
+  
 }
 
 
@@ -111,3 +112,31 @@ else {
   html.append('ErrorMessage', 'Error')
   
 }
+
+
+let submit = document.getElementById('Update-pfp')
+document.getElementById('acc-pfp').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const storageRef = firebase.storage().ref('user-pfps/' + file.name);
+
+    storageRef.put(file).on('state_changed', (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log(progress);
+        const progressBar = document.getElementById('pfpprog');
+        progressBar.value = progress;
+    });
+
+    storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
+        console.log(url);
+        localStorage.setItem('url', url)
+      window.setTimeOut(submit.style.backgroundColor = 'green', 1000)
+    });
+  
+  storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
+        console.log(url);
+        localStorage.setItem('url', url)
+    window.setTimeOut(submit.style.backgroundColor = 'green', 1000)
+    });
+});
