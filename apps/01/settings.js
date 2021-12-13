@@ -60,9 +60,17 @@ html.h1('Settings - Account' ,'acctitle')
     html.h4('Profile Picture' ,'acc-pfp-title')
   html.input_file('acc-pfp')
   
-  let name = html.getelement('acc-name').value
+  html.buttononclick('Update Account', "", 'Update')
   
-  html.buttononclick('Update Account', "localStorage.setItem('name', localStorage.setItem('name'" + name + "))", 'Update')
+  var Update = document.getElementById('Update')
+  var name = document.getElementById('acc-name')
+  Update.onclick = function(){
+    
+    
+    localStorage.setItem('name', name.value)
+    
+    
+  }
   
   html.div('acc')
   html.append('acctitle', 'acc')
