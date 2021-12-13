@@ -2,8 +2,8 @@ var version = localStorage.getItem('ver')
 
 let updates = {
   
-  version : 'Beta 3.3.4'
-  
+  version : 'Beta 3.3.3',
+  added : 'Themes'
   
   
   
@@ -11,11 +11,11 @@ let updates = {
 }
 
 var client = 'Beta 3.3'
-var fullclient = '3.3.4 B'
-if (version != 'Beta 3.3.4') {
+var fullclient = '3.3.3 B'
+if (version != 'Beta 3.3.3') {
   
-alert(updates)
-  
+alert('Version : ' + updates.version + "     Thing(s) Added : " + updates.added)
+  var version = localStorage.setItem('ver', 'Beta 3.3.3')
 }
 
 let pfpurle = localStorage.getItem("url");
