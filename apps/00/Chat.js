@@ -30,19 +30,6 @@ alert('Version : ' + updates.version + "     Thing(s) Added : " + updates.added)
 }
 
 let pfpurle = localStorage.getItem("url");
-let ctheme = localStorage.getItem('theme');
-
-
-if (ctheme == null || ctheme == undefined || ctheme == "") {
-
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
-
-}
-else {
-
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
-
-}
 
 
 var namee = localStorage.getItem("name");
