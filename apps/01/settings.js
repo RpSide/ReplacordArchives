@@ -14,11 +14,11 @@ let firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
+let ctheme = localStorage.getItem('theme');
 function gettheme() {
   
    let ctheme = localStorage.getItem('theme');
-
+alert(ctheme)
 if (ctheme == null || ctheme == undefined || ctheme == "") {
 
 document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
@@ -43,7 +43,6 @@ html.button('Themes', url + '&sid=2&id=1')
 html.button('Account', url + '&sid=3&id=1')
 
 //Home
-gettheme()
 if (SettingId == '1') {
 html.title('Settings - Home')
   
@@ -52,14 +51,13 @@ html.title('Settings - Home')
   
   html.div('Home')
   html.append('Hometitle', 'Home')
-  
+  gettheme()
 }
 
 
 
 // Themes
 else if (SettingId == '2') {
-  gettheme()
 html.title('Settings - Themes')
 html.h1('Settings - Themes' ,'Themestitle')
   

@@ -338,7 +338,7 @@ display: block;
   100% {}
 }
 ::selection {
-  background-color: #D64045;
+  background-color: white;
   color: #fff;
 }
 /* width */

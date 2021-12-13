@@ -15,8 +15,8 @@ border-radius: 10px;
 
 }
 .tag2-9B  {
-color: black;
-background-color: white;
+color: white;
+background-color: blue;
 border-radius: 10px;
 
 }
@@ -24,6 +24,18 @@ border-radius: 10px;
       </style>
   <title>Themes</title>
   <script>
+       let ctheme = localStorage.getItem('theme');
+alert(ctheme)
+if (ctheme == null || ctheme == undefined || ctheme == "") {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
+
+}
+else {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
+
+}
     
     var queryString = window.location.search
   
@@ -124,7 +136,7 @@ function red() {
 </script>
   </head>
   <body>
-    <h3><span class='tag2-9B'> 2.9 UI </span><span class='tag'> New </span> Void Black + new UI</h3>
+    <h3><span class='tag2-9B'> 2.9 UI </span><span class='tag'> New </span> Void Black </h3>
     <h4><input id='darkest' type="text" value='https://devcompessays.glitch.me/apps/00/themes/DARK.css'></h4>
 <button onclick='copy("darkest")'>Get Theme</button>
     
@@ -133,7 +145,7 @@ function red() {
     <h4><input id='xmas1' type="text" value='https://devcompessays.glitch.me/apps/00/themes/HollyJollyX-mas.css'></h4>
 <button onclick='copy("xmas1")'>Get Theme</button>
     
-        <h3><span class='tag2.9B'> 2.9 UI </span>NightTime Black</h3>
+        <h3><span class='tag2-9B'> 2.9 UI </span>NightTime Black</h3>
     <h4><input id='beta' type="text" value='https://kidslearning.glitch.me/apps/00/Chat2.css'></h4>
 <button onclick='beta()'>Get Theme</button>
     
