@@ -2,8 +2,8 @@ var version = localStorage.getItem('ver')
 
 let updates = {
   
-  version : 'Beta 3.3.3',
-  added : 'Themes'
+  version : 'Beta 3.3.4',
+  added : 'Custom Themes'
   
   
   
@@ -11,11 +11,11 @@ let updates = {
 }
 
 var client = 'Beta 3.3'
-var fullclient = '3.3.3 B'
-if (version != 'Beta 3.3.3') {
+var fullclient = '3.3.4 B'
+if (version != 'Beta 3.3.4') {
   
 alert('Version : ' + updates.version + "     Thing(s) Added : " + updates.added)
-  var version = localStorage.setItem('ver', 'Beta 3.3.3')
+  var version = localStorage.setItem('ver', 'Beta 3.3.4')
 }
 
 let pfpurle = localStorage.getItem("url");
@@ -457,6 +457,9 @@ var invmker = document.createElement('button')
     theme.setAttribute('id', 'themes')
     theme.setAttribute('class', 'unb')
     theme.textContent = 'Themes'
+  
+  var settings = document.createElement('button')
+     settings.style.backgroundImage = ''
 
   // go to the old days 
 
