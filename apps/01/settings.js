@@ -22,38 +22,42 @@ let url = 'https://' + document.domain + '/apps/?id=0&code=' + roomcode
 html.button('Back to chat', url)
 
 //Home
-if (SettingId == '' || SettingId >= 'Home' || SettingId == '1' || SettingId == undefined || SettingId == null) {
+if (SettingId == '1') {
 html.title('Settings - Home')
   
-  html.h1('Settings' ,'Home - title')
+  html.h1('Settings' ,'Hometitle')
   
   
   html.div('Home')
-  html.append('Home - title', 'Home')
+  html.append('Hometitle', 'Home')
   
 }
 
 
 
 // Themes
-else if (SettingId >= 'Themes'  || SettingId == '2' || SettingId != undefined || SettingId != null) {
+else if (SettingId == '2') {
 html.title('Settings - Themes')
-html.h1('Settings - Themes' ,'Themes - title')
+html.h1('Settings - Themes' ,'Themestitle')
   
   
   html.div('Themes')
-  html.append('Themes - title', 'Themes')
+  html.append('Themestitle', 'Themes')
 }
 
 
 
 // Account
-else if (SettingId >= 'account'  || SettingId == '3' || SettingId != undefined || SettingId != null) {
+else if (SettingId == '3') {
 html.title('Settings - Account')
-html.h1('Settings - Account' ,'acc - title')
+html.h1('Settings - Account' ,'acctitle')
+  
+  html.input_text('', 'Name' , 'acc-name')
+  html.input_text('', '' , 'acc-name')
   
    html.div('acc')
-  html.append('acc - title', 'acc')
+  html.append('acctitle', 'acc')
+  html.append('acc-name', 'acc')
 }
 
 
