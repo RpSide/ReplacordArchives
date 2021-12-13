@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <style>
+      
+      .tag {
+color: white;
+background-color: red;
+border-radius: 10px;
+
+}
+
+#tag {
+color: white;
+background-color: red;
+border-radius: 10px;
+
+}
+      
+      </style>
+  <title>Themes</title>
+  <script>
+    
+    var queryString = window.location.search
+  
+  var urlParams = new URLSearchParams(queryString);
+   
+  var appID = urlParams.get('id')
+  var invitecode = urlParams.get('code')
+
+var url = 'https://' + document.domain + '/apps/' + '?id=0&code=' + invitecode
+
+function dark() {
+  /* Get the text field */
+  var copyText = document.getElementById("dark");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  
+  window.location.href = url
+ 
+}
+
+function beta() {
+  /* Get the text field */
+  var copyText = document.getElementById("beta");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+ 
+  window.location.href = url
+}
+
+function light() {
+  /* Get the text field */
+  var copyText = document.getElementById("light");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  
+  window.location.href = url
+}
+
+function blue() {
+  /* Get the text field */
+  var copyText = document.getElementById("blue");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  
+  window.location.href = url
+}
+
+function red() {
+  /* Get the text field */
+  var copyText = document.getElementById("red");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+  
+  window.location.href = url
+
+}
+
+</script>
+  </head>
+  <body>
+    <h3>Classic Dark<h3>
+    <h4><input id='dark' type="text" value='https://essaycomp.github.io/chat/themes/dark.css'></h4>
+<button onclick='dark()'>Get Theme</button>
+    
+    <h3><span class='tag'> Beta </span> Darkmode with better UI</h3>
+    <h4><input id='beta' type="text" value='https://kidslearning.glitch.me/apps/00/Chat2.css'></h4>
+<button onclick='beta()'>Get Theme</button>
+    
+        <h3>Light Theme</h3>
+    <h4><input id='light' type="text" value='https://essaycomp.github.io/chat/themes/white.css'></h4>
+    <button onclick='light()'>Get Theme</button>
+    
+            <h3>Rosey Red</h3>
+    <h4><input id='red' type="text" value='https://essaycomp.github.io/chat/themes/red.css'></h4>
+    <button onclick='red()'>Get Theme</button>
+    
+                <h3>BoomBoom Blue</h3>
+    <h4><input id='blue' type="text" value='https://essaycomp.github.io/chat/themes/blue.css'></h4>
+    <button onclick='blue()'>Get Theme</button>
+  </body>
+</html>
