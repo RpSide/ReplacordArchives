@@ -12,9 +12,9 @@
 .unb {
   padding: 1vw;
 display: inline-block;
-background-color: darkgray;
+background-color: gray;
 border-color: black; 
-color: black;
+color: darkgray;
 border-radius: 50vw;
   font-size: 1vw;
   border-size: 1vw;
@@ -23,15 +23,16 @@ border-radius: 50vw;
 }
 
 .unb:hover {
-background-color: lightgray;
+background-color: darkgray;
+  color: gray;
 }
 #untitle {
 border-radius: 60vw;
  width: 63vw;
  height: 18vh;
 margin: auto;
-background-color: gray;
-border-color: white;
+background-color: darkgray;
+border-color: lightgray;
 color: black;
   font-size: 40px;
 text-align-verticle: center;
@@ -46,8 +47,8 @@ border-radius: 10vw;
  width:   58vw;
  height: 8vh;
 margin: auto;
-background-color: gray;
-border-color: white;
+background-color: Darkgray;
+border-color: lightgray;
 color: black;
   font-size: 40px;
 
@@ -344,10 +345,10 @@ display: block;
 }
 /* Track */
 ::-webkit-scrollbar-track {
-  background: gray;
+  background: Darkgray;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: lightgray;
+  background: gray;
   border-radius: 5px;
 }
