@@ -459,8 +459,12 @@ var invmker = document.createElement('button')
     theme.textContent = 'Themes'
   
   var settings = document.createElement('button')
-     settings.style.backgroundImage = ''
-
+     settings.style.backgroundImage = 'url("https://th.bing.com/th/id/OIP.JkNEdkOFmyRT3lulHC-z-wHaHa?w=218&h=218&c=7&r=0&o=5&pid=1.7")'
+      settings.style.width = "41px";
+      settings.style.height = "41px";
+      settings.style.padding = '15px'
+      settings.style.backgroundSize = '38px'
+      settings.style.backgroundColor = 'gray'
   // go to the old days 
 
 
@@ -590,7 +594,6 @@ if (subtitle2 != undefined || subtitle2 != null) {
 });
   
 
-      
       title_container.append(title)
       title_container.append(title3)
       title_container.append(subtitle)
@@ -598,6 +601,7 @@ if (subtitle2 != undefined || subtitle2 != null) {
       title_container2.append(jroom)
       title_container2.append(invmker)
       title_container2.append(theme)
+      title_container2.append(settings)
       document.body.append(title_container)
       document.body.append(title_container2)
 
