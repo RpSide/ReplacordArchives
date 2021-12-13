@@ -12,9 +12,9 @@
 .unb {
   padding: 1vw;
 display: inline-block;
-background-color: gray;
-border-color: black; 
-color: darkgray;
+background-color: black;
+  color: gray;
+border-color: gray; 
 border-radius: 50vw;
   font-size: 1vw;
   border-size: 1vw;
@@ -23,17 +23,15 @@ border-radius: 50vw;
 }
 
 .unb:hover {
-background-color: darkgray;
-  color: gray;
+  color: lightgray;
+  border-color: lightgray; 
 }
 #untitle {
 border-radius: 60vw;
  width: 63vw;
  height: 18vh;
 margin: auto;
-background-color: darkgray;
-border-color: lightgray;
-color: black;
+background-color: black;
   font-size: 40px;
 text-align-verticle: center;
 text-align: center;
@@ -47,9 +45,7 @@ border-radius: 10vw;
  width:   58vw;
  height: 8vh;
 margin: auto;
-background-color: Darkgray;
-border-color: lightgray;
-color: black;
+background-color: black;
   font-size: 40px;
 
 text-align: center;
@@ -67,7 +63,7 @@ body {
   
   }
   *{
-    color: white;
+    color: gray;
     outline: none;
     padding: 0;
     margin: 0;
@@ -84,7 +80,7 @@ margin-bottom: 0;
   margin:10;
   padding:10;
 display: block;
-    color: #fff;/*EBEBD3, C5283D*/
+    color: gray;/*EBEBD3, C5283D*/
     font-size: 6vw;
     letter-spacing: 0vw;
     user-select: none;
@@ -92,7 +88,7 @@ display: block;
   }
 #title2{
     text-align: center;
-    color: #fff;/*EBEBD3, C5283D*/
+    color: gray;/*EBEBD3, C5283D*/
     font-size: 2vw;
     display:block;
     user-select: none;
