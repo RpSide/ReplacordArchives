@@ -1,3 +1,22 @@
+// grabs paramiters from the url
+
+var queryString = window.location.search
+  
+  var urlParams = new URLSearchParams(queryString);
+   
+  var roomcode = urlParams.get('code')
+  var room = roomcode + '/'
+  var id = urlParams.get('id')
+  var aptheme = urlParams.get('applytheme')
+  
+if (aptheme != '' || aptheme != null || aptheme != undefined || aptheme != 'undefined' || aptheme != 'null') {
+    
+    localStorage.setItem('theme', aptheme)
+    window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
+    
+    
+  }
+
 var version = localStorage.getItem('ver')
 
 let updates = {
@@ -411,24 +430,7 @@ return localStorage.getItem("url");
   }
 };
 
-// grabs paramiters from the url
 
-var queryString = window.location.search
-  
-  var urlParams = new URLSearchParams(queryString);
-   
-  var roomcode = urlParams.get('code')
-  var room = roomcode + '/'
-  var id = urlParams.get('id')
-  var aptheme = urlParams.get('applytheme')
-  
-  if (aptheme != '' || aptheme != null || aptheme != undefined) {
-    
-    localStorage.setItem('theme', aptheme)
-    window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
-    
-    
-  }
 
 function create_title(params) {
 
@@ -479,7 +481,7 @@ var invmker = document.createElement('button')
 
 theme.onclick = function(){
 
-window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
+window.location.href = 'https://' + document.domain + '/apps/00/themes.html?code=' + roomcode
   
 }
 
