@@ -14,7 +14,19 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-html.h1('Settings', 'e')
+var settingId = html.geturlparams('sid')
 
-alert('e')
+html.div('Home')
+html.h1('Settings' ,'Home - title')
 
+if (settingId == '' || settingId == undefined || settingId == null) {
+html.title('Settings - Home')
+  
+  
+}
+
+if (settingId >= 'Themes'  || settingId == '2' || settingId == undefined || settingId == null) {
+html.title('Settings - Themes')
+html.h1('Settings - Themes' ,'Themes')
+  
+}
