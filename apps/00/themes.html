@@ -27,7 +27,7 @@ border-radius: 10px;
   var appID = urlParams.get('id')
   var invitecode = urlParams.get('code')
 
-var url = 'https://' + document.domain + '/apps/' + '?id=0&code=' + invitecode
+var url = 'https://' + document.domain + '/apps/' + '?id=0&code=' + invitecode + '&applytheme='
 
 function dark() {
   /* Get the text field */
@@ -40,7 +40,7 @@ function dark() {
   /* Copy the text inside the text field */
   navigator.clipboard.writeText(copyText.value);
   
-  window.location.href = url
+  window.location.href = url + copyText.value
  
 }
 
@@ -55,7 +55,7 @@ function beta() {
   /* Copy the text inside the text field */
   navigator.clipboard.writeText(copyText.value);
  
-  window.location.href = url
+  window.location.href = url + copyText.value
 }
 
 function light() {
@@ -69,7 +69,7 @@ function light() {
   /* Copy the text inside the text field */
   navigator.clipboard.writeText(copyText.value);
   
-  window.location.href = url
+  window.location.href = url + copyText.value
 }
 
 function blue() {
@@ -83,7 +83,7 @@ function blue() {
   /* Copy the text inside the text field */
   navigator.clipboard.writeText(copyText.value);
   
-  window.location.href = url
+  window.location.href = url + copyText.value
 }
 
 function red() {
@@ -97,7 +97,7 @@ function red() {
   /* Copy the text inside the text field */
   navigator.clipboard.writeText(copyText.value);
   
-  window.location.href = url
+  window.location.href = url + copyText.value
 
 }
 

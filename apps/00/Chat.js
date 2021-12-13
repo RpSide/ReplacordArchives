@@ -420,6 +420,15 @@ var queryString = window.location.search
   var roomcode = urlParams.get('code')
   var room = roomcode + '/'
   var id = urlParams.get('id')
+  var aptheme = urlParams.get('applytheme')
+  
+  if (aptheme != '' || aptheme != null || aptheme != undefined) {
+    
+    localStorage.setItem('theme', aptheme)
+    window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
+    
+    
+  }
 
 function create_title(params) {
 
@@ -470,18 +479,7 @@ var invmker = document.createElement('button')
 
 theme.onclick = function(){
 
-let themess = prompt("Theme Url", 'https://essaycomp.github.io/chat/themes/dark.css');
-let text3;
-if (themess == null || themess == "") {
-  
-
-}
-  else{
-
-localStorage.setItem('theme', themess)
 window.location.href = 'https://' + document.domain + '/apps/?id=' + id + '&code=' + roomcode
-
-}
   
 }
 
