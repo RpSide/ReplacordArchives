@@ -14,6 +14,24 @@ let firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+
+function gettheme() {
+  
+   let ctheme = localStorage.getItem('theme');
+
+if (ctheme == null || ctheme == undefined || ctheme == "") {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
+
+}
+else {
+
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
+
+}
+    
+}
+
 let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
 
@@ -25,6 +43,7 @@ html.button('Themes', url + '&sid=2&id=1')
 html.button('Account', url + '&sid=3&id=1')
 
 //Home
+gettheme()
 if (SettingId == '1') {
 html.title('Settings - Home')
   
@@ -40,6 +59,7 @@ html.title('Settings - Home')
 
 // Themes
 else if (SettingId == '2') {
+  gettheme()
 html.title('Settings - Themes')
 html.h1('Settings - Themes' ,'Themestitle')
   
@@ -52,6 +72,7 @@ html.h1('Settings - Themes' ,'Themestitle')
 
 // Account
 else if (SettingId == '3') {
+  gettheme()
 html.title('Settings - Account')
 html.h1('Settings - Account' ,'acctitle')
   
@@ -102,7 +123,7 @@ html.h1('Settings - Account' ,'acctitle')
 
 // Could Not Find Setting + SettingID
 else {
-  
+  gettheme()
   html.title('Settings - Not Found')
   
   html.h1('Setting "' + SettingId + '" Could Not Be Found' ,'ErrorMessage')

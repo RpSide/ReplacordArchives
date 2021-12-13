@@ -284,6 +284,7 @@ display: block;
    position: relative;
   left: 110px;
   bottom: 43px;
+  width: 278px;
 }
 
 
@@ -352,4 +353,23 @@ display: block;
 ::-webkit-scrollbar-thumb {
   background: gray;
   border-radius: 5px;
+}
+
+
+button {
+  padding: 1vw;
+display: inline-block;
+background-color: black;
+  color: gray;
+border-color: gray; 
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
+}
+
+button:hover {
+  color: lightgray;
+  border-color: lightgray; 
 }

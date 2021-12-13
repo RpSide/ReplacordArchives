@@ -13,8 +13,8 @@ var version = localStorage.getItem('ver')
 
 let updates = {
   
-  version : 'Beta 3.3.5',
-  added : 'Theme Intergration + Settings Menu'
+  version : 'Beta 3.3.7',
+  added : 'Settings Menu name changer'
   
   
   
@@ -22,11 +22,11 @@ let updates = {
 }
 
 var client = 'Beta 3.3'
-var fullclient = '3.3.5 B'
-if (version != 'Beta 3.3.5') {
+var fullclient = '3.3.7 B'
+if (version != 'Beta 3.3.7') {
   
 alert('Version : ' + updates.version + "     Thing(s) Added : " + updates.added)
-  var version = localStorage.setItem('ver', 'Beta 3.3.5')
+  var version = localStorage.setItem('ver', 'Beta 3.3.7')
 }
 
 let pfpurle = localStorage.getItem("url");
