@@ -1,7 +1,7 @@
 import { html } from 'https://replacord.glitch.me/libraies/BetterDOM.js'
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+let firebaseConfig = {
  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
   authDomain: "chat-883eb.firebaseapp.com",
   databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
@@ -14,8 +14,12 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var SettingId = html.geturlparams('sid')
+let SettingId = html.geturlparams('sid')
+let roomcode = html.geturlparams('code')
 
+let url = 'https://' + document.domain + '/apps/?id=0' + roomcode
+html.buttononclick('Back to chat', 'html.href(' +  url + ')')
+//Home
 if (SettingId == '' || SettingId == undefined || SettingId == null) {
 html.title('Settings - Home')
   
@@ -27,11 +31,16 @@ html.title('Settings - Home')
   
 }
 
-else if (SettingId >= 'Themes'  || settingId == '2' || settingId == undefined || settingId == null) {
+
+
+// Themes
+else if (SettingId >= 'Themes'  || SettingId == '2' || SettingId == undefined || SettingId == null) {
 html.title('Settings - Themes')
 html.h1('Settings - Themes' ,'Themes')
   
 }
+
+
 
 
 
@@ -40,7 +49,7 @@ else {
   
   html.title('Settings - Not Found')
   
-  html.h1('Setting "' + settingId +Set Could Not Be Found' ,'ErrorMessage')
+  html.h1('Setting "' + SettingId + '" Could Not Be Found' ,'ErrorMessage')
   
   
   html.div('Error')
