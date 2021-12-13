@@ -1,3 +1,5 @@
+import { html } from 'https://replacord.glitch.me/libraies/BetterDOM.js'
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
@@ -12,40 +14,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+html.h1('Settings', 'e')
 
-var submit = document.getElementById('submit')
+alert('e')
 
-submit.onclick = function() {
-  var names = document.getElementById('name')
-localStorage.setItem('name', names.value)
-  window.location.href = 'https://devcompessays.glitch.me/apps/?id=0&code=chatroom1'
-
-}
-
-
-
-document.getElementById('file').addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    const storageRef = firebase.storage().ref('user-pfps/' + file.name);
-
-    storageRef.put(file).on('state_changed', (snapshot) => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(progress);
-        const progressBar = document.getElementById('progress_bar');
-        progressBar.value = progress;
-    });
-
-    storageRef.getDownloadURL().then(function(url){
-        const image = document.getElementById('image');
-        console.log(url);
-        localStorage.setItem('url', url)
-      window.setTimeOut(submit.style.visibility = 'visible')
-    });
-  
-  storageRef.getDownloadURL().then(function(url){
-        const image = document.getElementById('image');
-        console.log(url);
-        localStorage.setItem('url', url)
-    window.setTimeOut(submit.style.visibility = 'visible')
-    });
-});
