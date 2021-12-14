@@ -41,7 +41,7 @@ var queryString = window.location.search
 	}
 	 else {
 		 var invitelink = 'https://' + document.domain + '/apps/?id=0&code=' + code
-		 document.write("<a href='" + invitelink +"'>Accept invite to room</a>")
+		 document.write("<a href='" + invitelink + "'>Accept invite to room</a>")
 		 
 	 }
 }

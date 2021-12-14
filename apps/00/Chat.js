@@ -183,7 +183,7 @@ const firebaseConfig = {
 }    
       var chat_input = document.createElement("input");
       chat_input.setAttribute("id", "chat_input");
-      chat_input.setAttribute("maxlength", 2000);
+      chat_input.setAttribute("maxlength", 4000);
       chat_input.placeholder = `${localStorage.getItem("name")}. Say something...`;
       
       chat_input.onkeypress = function(e){
