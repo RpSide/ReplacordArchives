@@ -6,6 +6,7 @@ var queryString = window.location.search
    
   var appID = urlParams.get('id')
   var invitecode = urlParams.get('code')
+  
 if (appID != null && appID != undefined && appID == 0 && invitecode != "" && invitecode != null && invitecode != undefined ) {
 var url = 'https://' + document.domain + '/apps/' + '?id=0&inv=true&code=' + invitecode
 
@@ -19,5 +20,4 @@ else {
 document.write("<h1>Not A Valid Invite Link</h1>")
 
 }
-e url
 
