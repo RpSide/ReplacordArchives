@@ -1,4 +1,4 @@
-import { html } from 'https://replacord.glitch.me/libraies/BetterDOMjs.js'
+import { html } from 'https://cdn-cdn.glitch.me/libraies/BetterDOMjs.js'
 
 
 
