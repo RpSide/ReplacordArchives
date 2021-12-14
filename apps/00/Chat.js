@@ -167,10 +167,11 @@ const firebaseConfig = {
       var chat_input_container = document.createElement("div");
       chat_input_container.setAttribute("id", "chat_input_container");
 
-      var chat_input_send = document.createElement("button");
+      if (navigator.userAgent.include('Mobile') == true){ 
+        var chat_input_send = document.createElement("button");
       chat_input_send.setAttribute("id", "chat_input_send");
       chat_input_send.setAttribute("disabled", true);
-      chat_input_send.innerHTML = `<i class="far fa-paper-plane"></i>`;
+      chat_input_send.innerHTML = `<i class="far fa-paper-plane"></i>`;}
 
       function handle(e){
         alert('e')
@@ -194,7 +195,8 @@ const firebaseConfig = {
   }
   }
     }
-  chat_input.onkeyup = function() {
+  if (navigator.userAgent.include('Mobile') == 'true'){
+    chat_input.onkeyup = function() {
     
         if (chat_input.value.length > 0) {
           chat_input_send.removeAttribute("disabled");
@@ -215,6 +217,7 @@ const firebaseConfig = {
           chat_input_send.classList.remove("enabled");
         }
       };
+  }
       
       
 
@@ -231,7 +234,8 @@ const firebaseConfig = {
       };
 
       chat_logout_container.append(chat_logout);
-      chat_input_container.append(chat_input, chat_input_send);
+      chat_input_container.append(chat_input);
+      if (navigator.userAgent.include('Mobile') == true){chat_input_container.append(chat_input_send);}
       chat_inner_container.append(
         chat_content_container,
         chat_input_container,
