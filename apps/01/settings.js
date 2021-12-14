@@ -1,18 +1,7 @@
 import { html } from 'https://replacord.glitch.me/libraies/BetterDOM.js'
 
 
-   let ctheme = localStorage.getItem('theme');
-alert(ctheme)
-if (ctheme == null || ctheme == undefined || ctheme == "") {
 
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
-
-}
-else {
-
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
-
-}
 // Your web app's Firebase configuration
 let firebaseConfig = {
  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",

@@ -211,16 +211,18 @@ display: block;
   font-size: 15px;
 }
 #chat_input_send{
-  width: 5%;
-  height: 100%;
-  float: left;
-  font-size: 18px;
-  background-color: Transparent;
-  text-align: right;
-  color: #ccc;
+ width: 3vw;
+    height: 4.5vh;
+    float: left;
+    font-size: 18px;
+  border-radius: 500px;
+    background-color: black;
+    background-image: url("https://cdn.glitch.me/aba0400a-da74-4a50-8c09-c6c68dbf722e%2Fsend.png?v=1637717846590");
+    text-align: right;
+    color: #ccc;
 }
 #chat_input_send.enabled{
-  color: #D64045;
+  color: gray;
   background-color: Transparent;
   cursor: pointer;
 
