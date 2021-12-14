@@ -1,7 +1,7 @@
 let ctheme = localStorage.getItem('theme');
 if (ctheme == null || ctheme == undefined || ctheme == "") {
 
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
+document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://devcompessays.glitch.me/apps/00/themes/DARK.css"/>')
 
 }
 else {
