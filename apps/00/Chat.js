@@ -1,3 +1,11 @@
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        document.write('<style>#chat_input{width: 95%;height: 100%;}</style>')
+      }
+else{
+  
+  document.write('<style>#chat_input{width: 100%;height: 100%;}</style>')
+  
+}
 // grabs paramiters from the url
 
 var queryString = window.location.search
@@ -168,6 +176,7 @@ const firebaseConfig = {
       chat_input_container.setAttribute("id", "chat_input_container");
 
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
         var chat_input_send = document.createElement("button");
       chat_input_send.setAttribute("id", "chat_input_send");
       chat_input_send.setAttribute("disabled", true);

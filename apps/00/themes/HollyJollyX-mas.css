@@ -210,8 +210,6 @@ display: block;
 #chat_input{
   border-radius: 20px;
   max: 10px;
-  width: 95%;
-  height: 100%;
   float: left;
   background-color: lightgreen;
   color: green;
