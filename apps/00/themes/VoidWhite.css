@@ -363,9 +363,9 @@ display: block;
 button {
   padding: 1vw;
 display: inline-block;
-background-color: darkgray;
+background-color: white;
   color: lightgray;
-border-color: lightgray; 
+border-color: darkgray; 
 border-radius: 50vw;
   font-size: 1vw;
   border-size: 1vw;
@@ -374,16 +374,17 @@ border-radius: 50vw;
 }
 
 button:hover {
-  color: white;
-  border-color: white; 
+  background-color: transparent;
+  color: darkgray;
+  border-color: lightgray; 
 }
 
 input {
   padding: 1vw;
 display: inline-block;
-background-color: gray;
-  color: white;
-border-color: lightgray; 
+  background-color: Transparent;
+  color: black;
+border-color: darkgray; 
 border-radius: 50vw;
   font-size: 3w;
   border-size: 1vw;
