@@ -25,8 +25,8 @@ let updates = {
 }
 
 var client = 'Beta 3.4'
-var fullclient = '3.3.7 B'
-if (version != 'Beta 3.3.7') {
+var fullclient = '3.4.1 B'
+if (version != 'Beta 3.4.1') {
   
 alert('Version : ' + updates.version + "     Thing(s) Added : " + updates.added)
   var version = localStorage.setItem('ver', 'Beta 3.3.7')
