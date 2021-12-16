@@ -21,8 +21,8 @@ var version = localStorage.getItem('ver')
 
 let updates = {
   
-  version : 'Beta 3.3.7',
-  added : 'Settings Menu name changer'
+  version : 'Beta 3.3.7=9',
+  added : 'Settings : Name and Pfp changer now operational'
   
   
   
