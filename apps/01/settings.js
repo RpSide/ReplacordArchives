@@ -19,6 +19,7 @@ firebase.initializeApp(firebaseConfig);
 
 let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
+let ThemeLab = html.geturlparams('thlb')
 
 let normalurl = 'https://' + document.domain + '/apps/?code=' + roomcode
 
@@ -48,6 +49,19 @@ html.h1('Settings - Themes' ,'Themestitle')
   
   html.div('Themes')
   html.append('Themestitle', 'Themes')
+  
+  html.button('Themes Lab', normalurl + '&sid=2&id=1&thlb=true')
+}
+ if (ThemeLab == 'true') {
+    html.clear()
+html.title('Themes - Lab')
+html.h1('Themes - Lab' ,'ThemeLabTitle')
+  
+  
+  html.div('Themes')
+  html.append('ThemeLabTitle', 'Themes')
+  
+  html.button('Themes Lab', normalurl + '&sid=2&id=1&lb=true')
 }
 
 
