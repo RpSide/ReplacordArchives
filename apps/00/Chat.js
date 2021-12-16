@@ -16,15 +16,15 @@ var version = localStorage.getItem('ver')
 
 let updates = {
   
-  version : 'Beta 3.3.7=9',
-  added : 'Settings : Name and Pfp changer now operational'
+  version : 'Beta 3.4.1',
+  added : 'Settings : You can now change your text color with the color picker'
   
   
   
   
 }
 
-var client = 'Beta 3.3'
+var client = 'Beta 3.4'
 var fullclient = '3.3.7 B'
 if (version != 'Beta 3.3.7') {
   
