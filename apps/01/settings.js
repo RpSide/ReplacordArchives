@@ -25,6 +25,7 @@ let normalurl = 'https://' + document.domain + '/apps/?code=' + roomcode
 
 function createnavbar(){
 html.button('Back to chat', normalurl + '&id=0')
+html.buttononclick('Back', 'history.back()') 
 html.button('Home', normalurl + '&sid=1&id=1')
 html.button('Themes', normalurl + '&sid=2&id=1')
 html.button('Account', normalurl + '&sid=3&id=1')
@@ -53,7 +54,7 @@ else if (SettingId == '2') {
   
 html.title('Settings - Themes')
 html.h1('Settings - Themes' ,'Themestitle')
-  html.button('Themes Lab', normalurl + '&sid=2&id=1&lb=true', 'lab')
+  html.button('Themes Lab', normalurl + '&sid=2&id=1&thlb=true', 'lab')
   
   html.div('Themes')
   html.append('Themestitle', 'Themes')
@@ -65,12 +66,8 @@ html.h1('Settings - Themes' ,'Themestitle')
     
 html.title('Themes - Lab')
 html.h1('Themes - Lab' ,'ThemeLabTitle')
-  
-  
   html.div('Themes-lab')
   html.append('ThemeLabTitle', 'Themes-lab')
-  
-  html.button('Themes Lab', normalurl + '&sid=2&id=1&lb=true')
 }
 }
 
