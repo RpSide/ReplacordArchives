@@ -23,13 +23,18 @@ let ThemeLab = html.geturlparams('thlb')
 
 let normalurl = 'https://' + document.domain + '/apps/?code=' + roomcode
 
+function createnavbar(){
 html.button('Back to chat', normalurl + '&id=0')
 html.button('Home', normalurl + '&sid=1&id=1')
 html.button('Themes', normalurl + '&sid=2&id=1')
 html.button('Account', normalurl + '&sid=3&id=1')
+}
 
 //Home
 if (SettingId == '1') {
+  html.newdoc()
+  createnavbar()
+  
 html.title('Settings - Home')
   
   html.h1('Settings' ,'Hometitle')
@@ -43,17 +48,22 @@ html.title('Settings - Home')
 
 // Themes
 else if (SettingId == '2') {
+  html.newdoc()
+  createnavbar()
+  
 html.title('Settings - Themes')
 html.h1('Settings - Themes' ,'Themestitle')
   
+  html.buttononclick('Themes Lab', 'alert("&id=1&sid=2&thlb=true")', 'lab')
   
   html.div('Themes')
   html.append('Themestitle', 'Themes')
+  html.append('lab', 'Themes')
   
-  html.button('Themes Lab', normalurl + '&sid=2&id=1&thlb=true')
-}
- if (ThemeLab == 'true') {
-    html.clear()
+  if (ThemeLab == 'true') {
+    html.newdoc()
+  createnavbar()
+    
 html.title('Themes - Lab')
 html.h1('Themes - Lab' ,'ThemeLabTitle')
   
@@ -63,11 +73,15 @@ html.h1('Themes - Lab' ,'ThemeLabTitle')
   
   html.button('Themes Lab', normalurl + '&sid=2&id=1&lb=true')
 }
+}
 
 
 
 // Account
 else if (SettingId == '3') {
+  html.newdoc()
+  createnavbar()
+  
 html.title('Settings - Account')
 html.h1('Settings - Account' ,'acctitle')
   
@@ -115,6 +129,9 @@ html.h1('Settings - Account' ,'acctitle')
 
 // Could Not Find Setting + SettingID
 else {
+  html.newdoc()
+  createnavbar()
+  
   html.title('Settings - Not Found')
   
   html.h1('Setting "' + SettingId + '" Could Not Be Found' ,'ErrorMessage')
