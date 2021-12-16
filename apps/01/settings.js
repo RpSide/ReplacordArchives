@@ -67,8 +67,8 @@ html.title('Themes - Lab')
 html.h1('Themes - Lab' ,'ThemeLabTitle')
   
   
-  html.div('Themes')
-  html.append('ThemeLabTitle', 'Themes')
+  html.div('Themes-lab')
+  html.append('ThemeLabTitle', 'Themes-lab')
   
   html.button('Themes Lab', normalurl + '&sid=2&id=1&lb=true')
 }
