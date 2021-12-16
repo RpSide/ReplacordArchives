@@ -58,8 +58,9 @@ html.title('Settings - Account')
 html.h1('Settings - Account' ,'acctitle')
   
   //name
+  var username = localStorage.getItem('name')
   html.h4('Name' ,'acc-name-title')
-  html.input_text('', 'Name' , '15',  'acc-name')
+  html.input_text(username, 'Name' , '15',  'acc-name')
   html.h1('', 'Update-name-cont')
   html.buttononclick('Update Account Name', "", 'Update-name')
   //pfp
@@ -86,7 +87,7 @@ html.h1('Settings - Account' ,'acctitle')
   var name = document.getElementById('acc-name')
   Update_name.onclick = function(){
     
-    
+    alert('Name Changed')
     localStorage.setItem('name', name.value)
     
     
@@ -112,6 +113,8 @@ else {
 
 
 document.getElementById('acc-pfp').addEventListener('change', (event) => {
+  
+  
     const file = event.target.files[0];
     const storageRef = firebase.storage().ref('user-pfps/' + file.name);
 
@@ -125,16 +128,14 @@ document.getElementById('acc-pfp').addEventListener('change', (event) => {
     storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-        window.setTimeOut(localStorage.setItem('url', url))
       alert('pfp Updated')
+        window.setTimeOut(localStorage.setItem('url', url))
     });
   
   storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-        window.setTimeOut(localStorage.setItem('url', url))
     alert('pfp Updated')
+        window.setTimeOut(localStorage.setItem('url', url))
     });
 });
-    
-  
