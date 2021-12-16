@@ -385,7 +385,7 @@ border-radius: 50vw;
   font-size: 3w;
   border-size: 1vw;
   align-self: auto;
-
+padding: 1vw;
 }
 input[type="color"] {
 	-webkit-appearance: none;

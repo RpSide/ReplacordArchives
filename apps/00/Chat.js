@@ -29,7 +29,7 @@ var fullclient = '3.4.1 B'
 if (version != 'Beta 3.4.1') {
   
 alert('Version : ' + updates.version + "     Thing(s) Added : " + updates.added)
-  var version = localStorage.setItem('ver', 'Beta 3.3.7')
+  var version = localStorage.setItem('ver', 'Beta 3.4.1')
 }
 
 let pfpurle = localStorage.getItem("url");
