@@ -20,12 +20,12 @@ firebase.initializeApp(firebaseConfig);
 let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
 
-let url = 'https://' + document.domain + '/apps/?code=' + roomcode
+let normalurl = 'https://' + document.domain + '/apps/?code=' + roomcode
 
-html.button('Back to chat', url + '&id=0')
-html.button('Home', url + '&sid=1&id=1')
-html.button('Themes', url + '&sid=2&id=1')
-html.button('Account', url + '&sid=3&id=1')
+html.button('Back to chat', normalurl + '&id=0')
+html.button('Home', normalurl + '&sid=1&id=1')
+html.button('Themes', normalurl + '&sid=2&id=1')
+html.button('Account', normalurl + '&sid=3&id=1')
 
 //Home
 if (SettingId == '1') {
@@ -66,8 +66,6 @@ html.h1('Settings - Account' ,'acctitle')
     html.h4('Profile Picture' ,'acc-pfp-title')
   html.input_file('acc-pfp')
   html.progress('0', '100', 'pfpprog')
-  html.h1('', 'Update-pfp-cont')
-  html.buttononclick('Update Account Profile Picture', "", 'Update-pfp')
   
   html.div('acc')
   
@@ -82,8 +80,6 @@ html.h1('Settings - Account' ,'acctitle')
   html.append('acc-pfp-title', 'acc')
   html.append('acc-pfp', 'acc')
   html.append('pfpprog', 'acc')
-  html.append('Update-pfp', 'Update-pfp-cont')
-  html.append('Update-pfp-cont', 'acc')
   
   
     var Update_name = document.getElementById('Update-name')
@@ -129,13 +125,15 @@ document.getElementById('acc-pfp').addEventListener('change', (event) => {
     storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-        localStorage.setItem('url', url)
+        window.setTimeOut(localStorage.setItem('url', url))
+      alert('pfp Updated')
     });
   
   storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-        localStorage.setItem('url', url)
+        window.setTimeOut(localStorage.setItem('url', url))
+    alert('pfp Updated')
     });
 });
     
