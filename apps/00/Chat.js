@@ -1,11 +1,6 @@
-      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        document.write('<style>#chat_input{width: 95%;height: 100%;}</style>')
-      }
-else{
-  
-  document.write('<style>#chat_input{width: 100%;height: 100%;}</style>')
-  
-}
+
+        document.write('<style>#chat_input{width: 90%;height: 100%;}</style>')
+
 // grabs paramiters from the url
 
 var queryString = window.location.search
@@ -190,6 +185,11 @@ const firebaseConfig = {
     alert('e')
   }
 }    
+      var txtcolor = document.createElement("input");
+      txtcolor.setAttribute('type', 'color')
+      txtcolor.setAttribute('value', '#D3D3D3')
+      txtcolor.setAttribute('id', 'colors')
+      
       var chat_input = document.createElement("input");
       chat_input.setAttribute("id", "chat_input");
       chat_input.setAttribute("maxlength", 4000);
@@ -199,7 +199,7 @@ const firebaseConfig = {
       var key=e.keyCode || e.which;
   if (key==13){
     if (chat_input.value.length > 0){
-    parent.send_message(chat_input.value)
+    parent.send_message('<span style="color:' + txtcolor.value +  '">' + chat_input.value + '</span>')
     chat_input.value = ''
   }
   }
@@ -243,7 +243,8 @@ const firebaseConfig = {
       };
 
       chat_logout_container.append(chat_logout);
-      chat_input_container.append(chat_input);
+      chat_input_container.append(txtcolor, chat_input);
+      
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {chat_input_container.append(chat_input_send);}
       chat_inner_container.append(
         chat_content_container,
