@@ -53,8 +53,7 @@ else if (SettingId == '2') {
   
 html.title('Settings - Themes')
 html.h1('Settings - Themes' ,'Themestitle')
-  
-  html.buttononclick('Themes Lab', 'alert("&id=1&sid=2&thlb=true")', 'lab')
+  html.buttononclick('Themes Lab', "window.location.href = 'https://' + document.domain + '/apps/?code=' + '&id=1&sid=2&thlb=true'", 'lab')
   
   html.div('Themes')
   html.append('Themestitle', 'Themes')
