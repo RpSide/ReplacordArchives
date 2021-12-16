@@ -189,6 +189,7 @@ const firebaseConfig = {
       txtcolor.setAttribute('type', 'color')
       txtcolor.setAttribute('value', '#D3D3D3')
       txtcolor.setAttribute('id', 'colors')
+      txtcolor.textContent = 'e'
       
       var chat_input = document.createElement("input");
       chat_input.setAttribute("id", "chat_input");
