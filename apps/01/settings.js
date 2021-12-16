@@ -3,7 +3,7 @@ import { html } from 'https://cdn-cdn.glitch.me/libraies/BetterDOMjs.js'
 
 
 // Your web app's Firebase configuration
-let firebaseConfig = {
+var firebaseConfig = {
  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
   authDomain: "chat-883eb.firebaseapp.com",
   databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
@@ -15,6 +15,7 @@ let firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 
 let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
@@ -93,10 +94,10 @@ html.h1('Settings - Account' ,'acctitle')
     localStorage.setItem('name', name.value)
     
     
-  }
+    
   
 }
-
+}
 
 
 
@@ -114,15 +115,28 @@ else {
 }
 
 
- 
+document.getElementById('acc-pfp').addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const storageRef = firebase.storage().ref('user-pfps/' + file.name);
 
-if (ctheme == null || ctheme == undefined || ctheme == "") {
+    storageRef.put(file).on('state_changed', (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log(progress);
+        const progressBar = document.getElementById('pfpprog');
+        progressBar.value = progress;
+    });
 
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://essaycomp.github.io/chat/themes/dark.css"/>')
-
-}
-else {
-
-document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
-
-}
+    storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
+        console.log(url);
+        localStorage.setItem('url', url)
+    });
+  
+  storageRef.getDownloadURL().then(function(url){
+        const image = document.getElementById('image');
+        console.log(url);
+        localStorage.setItem('url', url)
+    });
+});
+    
+  

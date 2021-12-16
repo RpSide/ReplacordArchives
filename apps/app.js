@@ -68,7 +68,7 @@ var queryString = window.location.search
 // Settings
  if (AppID == '1') {
 	  
-	  document.write('<!DOCTYPE html><html lang="en" dir="ltr"><head><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://use.typekit.net/tto8pja.css"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></script><!-- Web Linked JavaScript (Js)--><script type="module" src="https://devcompessays.glitch.me/apps/01/settings.js"></script></head><body></body></div></div></html>')
+	  document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>firebase storage</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><script type="module" src="https://devcompessays.glitch.me/apps/01/settings.js"></script></head><body></body></div></div></html>')
 	  
 	  
   }
