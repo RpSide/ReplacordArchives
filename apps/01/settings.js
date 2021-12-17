@@ -66,11 +66,18 @@ html.h1('Settings - Themes' ,'Themestitle')
 html.title('Themes - Lab')
 html.h1('Themes - Lab' ,'ThemeLabTitle')
   
-    html.h3('Background')
-  html.input_color('', 'background')
+    html.h3('Background', 'colortitle1')
+  html.input_color('', 'bg-color')
+    
+    html.h3('Title & Subtitle', 'colortitle2')
+  html.input_color('#ffffff', 'title-color')
     
   html.div('Themes-lab')
   html.append('ThemeLabTitle', 'Themes-lab')
+    html.append('colortitle1', 'Themes-lab')
+    html.append('bg-color', 'Themes-lab')
+        html.append('colortitle2', 'Themes-lab')
+    html.append('title-color', 'Themes-lab')
 }
 }
 
