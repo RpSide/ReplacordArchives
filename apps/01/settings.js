@@ -53,7 +53,7 @@ else if (SettingId == '2') {
   
 html.title('Settings - Themes')
 html.h1('Settings - Themes' ,'Themestitle')
-  html.button('Themes Lab', normalurl + '&sid=2&id=1&lb=true', 'lab')
+  html.button('Themes Lab', normalurl + '&sid=2&id=1&thlb=true', 'lab')
   
   html.div('Themes')
   html.append('Themestitle', 'Themes')
@@ -66,11 +66,11 @@ html.h1('Settings - Themes' ,'Themestitle')
 html.title('Themes - Lab')
 html.h1('Themes - Lab' ,'ThemeLabTitle')
   
-  
+    html.h3('Background')
+  html.input_color('', 'background')
+    
   html.div('Themes-lab')
   html.append('ThemeLabTitle', 'Themes-lab')
-  
-  html.button('Themes Lab', normalurl + '&sid=2&id=1&lb=true')
 }
 }
 
