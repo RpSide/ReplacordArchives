@@ -67,7 +67,7 @@ html.title('Themes - Lab')
 html.h1('Themes - Lab' ,'ThemeLabTitle')
   
     html.h3('Background', 'colortitle1')
-  html.input_color('', 'bg-color')
+  html.input_color('#525252', 'bg-color')
     
     html.h3('Title & Subtitle', 'colortitle2')
   html.input_color('#ffffff', 'title-color')
