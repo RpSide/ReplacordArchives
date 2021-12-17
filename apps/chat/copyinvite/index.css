@@ -1,0 +1,69 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+button {
+background-color: darkgray;
+border-color: black; 
+color: black;
+border-radius: 500px;
+  font-size: 15px;
+font-family: 'Ceviche One', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+  padding: 3px;
+}
+
+button:hover {
+background-color: lightgray;
+border-color: black;
+color: black;
+border-radius: 500px;
+  font-size: 15px;
+font-family: 'Ceviche One', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+}
+html {
+background-color: black;
+}
+input {
+background-color: lightgray;
+border-color: black; 
+color: black;
+border-radius: 500px;
+  font-size: 15px;
+font-family: 'Ceviche One', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+  padding: 3px;}
