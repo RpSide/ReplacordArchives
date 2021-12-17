@@ -75,8 +75,10 @@ html.h1('Themes - Lab' ,'ThemeLabTitle')
   html.div('Themes-lab')
   html.append('ThemeLabTitle', 'Themes-lab')
     html.append('colortitle1', 'Themes-lab')
+    
     html.append('bg-color', 'Themes-lab')
         html.append('colortitle2', 'Themes-lab')
+    
     html.append('title-color', 'Themes-lab')
 }
 }
