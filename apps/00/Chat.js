@@ -188,7 +188,6 @@ const firebaseConfig = {
       txtcolor.setAttribute('type', 'color')
       txtcolor.setAttribute('value', '#D3D3D3')
       txtcolor.setAttribute('id', 'colors')
-      txtcolor.textContent = 'e'
       
       var chat_input = document.createElement("input");
       chat_input.setAttribute("id", "chat_input");
@@ -199,7 +198,7 @@ const firebaseConfig = {
       var key=e.keyCode || e.which;
   if (key==13){
     if (chat_input.value.length > 0){
-    parent.send_message('<span style="color:' + txtcolor.value +  '">' + chat_input.value + '</span>')
+    parent.send_message(chat_input.value)
     chat_input.value = ''
   }
   }
@@ -262,6 +261,7 @@ const firebaseConfig = {
     save_url(url){
       localStorage.setItem("url", url);
   }
+    
     send_message(message) {
       var parent = this;
       if (parent.get_name() == null && message == null) {
@@ -284,6 +284,9 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
 
 
 }
+      
+      
+      
       var messageID = Math.random().toString(20).substr(5)
       var messages = db.ref('chats/' + room + 'messages/');
       messages.once("value", function(snapshot) {
@@ -293,6 +296,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
             profilepic: 'https://proxy-copy.glitch.me/' + parent.get_url(),
             name: parent.get_name(),
             message: message,
+            color: '#fffff',
             messageID: messageID,
             index: index,
             time: time,
@@ -357,6 +361,7 @@ return localStorage.getItem("url");
           var profpic = data.profilepic;
           var name = data.name;
           var message = data.message;
+          var msgcolor = data.color;
           var ver = data.client;
           var pic = data.picture;
 
@@ -391,7 +396,7 @@ return localStorage.getItem("url");
 
           var message_content = document.createElement("p");
           message_content.setAttribute("class", "message_content");
-          message_content.innerHTML = message;
+          message_content.textContent = message;
           
            
 
