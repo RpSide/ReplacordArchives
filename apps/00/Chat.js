@@ -268,7 +268,7 @@ return '#fffffff'
 
 }
       else {
-      return 'color.value'
+      return color.value
       }
       
     }
@@ -406,8 +406,8 @@ return localStorage.getItem("url");
           );
 
           var message_content = document.createElement("span");
-          message_content.setAttribute("class", "message_contente");
-          message_content.innerHTML = msgcolor;
+          message_content.setAttribute("class", "message_content");
+          message_content.style.color = msgcolor;
           message_content.textContent = message;
           
            
