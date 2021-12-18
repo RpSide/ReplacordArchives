@@ -261,6 +261,17 @@ const firebaseConfig = {
     save_url(url){
       localStorage.setItem("url", url);
   }
+    get_color(e){
+      let color = document.getElementById('colors')
+      if (color.value == null || color.value == undefined) {
+return '#fffffff'
+
+}
+      else {
+      return 'color.value'
+      }
+      
+    }
     
     send_message(message) {
       var parent = this;
@@ -296,7 +307,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
             profilepic: 'https://proxy-copy.glitch.me/' + parent.get_url(),
             name: parent.get_name(),
             message: message,
-            color: '#fffff',
+            color: parent.get_color(),
             messageID: messageID,
             index: index,
             time: time,
@@ -394,8 +405,9 @@ return localStorage.getItem("url");
             "message_content_container"
           );
 
-          var message_content = document.createElement("p");
-          message_content.setAttribute("class", "message_content");
+          var message_content = document.createElement("span");
+          message_content.setAttribute("class", "message_contente");
+          message_content.innerHTML = msgcolor;
           message_content.textContent = message;
           
            
