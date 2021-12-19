@@ -257,7 +257,7 @@ const firebaseConfig = {
       };
 
       chat_logout_container.append(chat_logout);
-      chat_input_container.append(txtcolor, chat_input);
+      chat_input_container.append(chat_input, txtcolor);
       
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {chat_input_container.append(chat_input_send);}
       chat_inner_container.append(

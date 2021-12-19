@@ -1,11 +1,10 @@
 .message_pfp{
   border-radius: 30vw;
-  width: 6vw;
-  height:  6vw;
+  width: 8vw;
+  height:  8vw;
   font-weight: bold;
   font-size: 14px;
 	background-color: #000000;
-  background-size: vw;
   position: relative;
   top: 10px;
 }
@@ -408,6 +407,6 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 
 #chat_input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: darkgray
+  color: darkgray;
   opacity: 1; /* Firefox */
 }
