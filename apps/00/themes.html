@@ -126,6 +126,14 @@ function red() {
     
     function copy(id) {
   /* Get the text field */
+  var theme = document.getElementById(id);
+  
+  window.location.href = url + theme.value
+
+}
+  
+    function copytxt(id) {
+  /* Get the text field */
   var copyText = document.getElementById(id);
 
   /* Select the text field */
