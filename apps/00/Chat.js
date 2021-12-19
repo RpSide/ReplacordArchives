@@ -205,6 +205,7 @@ const firebaseConfig = {
       txtcolor.setAttribute('id', 'colors')
       
       var chat_input = document.createElement("input");
+      chat_input.setAttribute("type", "text");
       chat_input.setAttribute("id", "chat_input");
       chat_input.setAttribute("maxlength", 4000);
       chat_input.placeholder = `${localStorage.getItem("name")}. Say something...`;
