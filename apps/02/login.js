@@ -12,13 +12,13 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
+ var domain = document.domain
 var submit = document.getElementById('submit')
 
 submit.onclick = function() {
   var names = document.getElementById('name')
 localStorage.setItem('name', names.value)
-  window.location.href = 'https://devcompessays.glitch.me/apps/?id=0&code=chatroom1'
+  window.location.href = 'https://' + domain + '.glitch.me/apps/?id=0&code=chatroom1'
 
 }
 
