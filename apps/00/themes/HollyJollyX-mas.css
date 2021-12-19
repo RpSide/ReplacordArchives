@@ -208,12 +208,15 @@ display: block;
   margin-top: 10px;
 }
 #chat_input{
-  border-radius: 20px;
-  max: 10px;
-  float: left;
-  background-color: lightgreen;
+  display: inline-block;
+background-color: lightgreen;
   color: green;
-  font-size: 15px;
+border-color: green; 
+border-radius: 50vw;
+  font-size: 3w;
+  border-size: 1vw;
+  align-self: auto;
+padding: 1vw;
 }
 #chat_input_send{
  width: 3vw;
@@ -378,14 +381,16 @@ color: lightcoral;
 }
 
 input{
-  border-radius: 20px;
-  max: 10px;
-  width: 300px;
-  height: 40px;
-  float: left;
-  background-color: lightgreen;
+  
+display: inline-block;
+background-color: lightgreen;
   color: green;
-  font-size: 15px;
+border-color: green; 
+border-radius: 50vw;
+  font-size: 3w;
+  border-size: 1vw;
+  align-self: auto;
+padding: 1vw;
 }
 
 input[type="color"] {
