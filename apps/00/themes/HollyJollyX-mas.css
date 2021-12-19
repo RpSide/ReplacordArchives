@@ -1,7 +1,4 @@
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: darkgreen;
-  opacity: 1; /* Firefox */
-}
+
 
 
 .message_pfp{
@@ -218,6 +215,11 @@ border-radius: 50vw;
   align-self: auto;
 padding: 1vw;
 }
+
+#chat_input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: darkgreen;
+  opacity: 1; /* Firefox */
+}
 #chat_input_send{
  width: 3vw;
     height: 4.5vh;
@@ -391,7 +393,10 @@ border-radius: 50vw;
   align-self: auto;
 padding: 1vw;
 }
-
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: darkgreen;
+  opacity: 1; /* Firefox */
+}
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;

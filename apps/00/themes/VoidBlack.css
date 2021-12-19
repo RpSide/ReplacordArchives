@@ -1,8 +1,3 @@
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: gray;
-  opacity: 1; /* Firefox */
-}
-
 .message_pfp{
   border-radius: 30vw;
   width: 6vw;
@@ -403,4 +398,14 @@ input[type="color"]::-webkit-color-swatch {
 	border: none;
   padding: 0;
   border-radius: 50vw;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: darkgray;
+  opacity: 1; /* Firefox */
+}
+
+#chat_input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: darkgreen;
+  opacity: 1; /* Firefox */
 }
