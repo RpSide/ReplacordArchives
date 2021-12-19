@@ -1,4 +1,16 @@
-        document.write('<style>#chat_input{width: 90%;height: 100%;}</style>')
+        document.write(`<style>
+
+.message_container{
+  width: 70%;
+}
+
+#chat_input{
+
+width: 90%;
+height: 100%;
+}
+
+</style>`)
 
 // grabs paramiters from the url
 
