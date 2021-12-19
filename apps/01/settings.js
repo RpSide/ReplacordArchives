@@ -164,17 +164,18 @@ document.getElementById('acc-pfp').addEventListener('change', (event) => {
         progressBar.value = progress;
     });
 
-    storageRef.getDownloadURL().then(function(url){
+  storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-      alert('pfp Updated')
-        window.setTimeOut(localStorage.setItem('url', url))
+         alert('Pfp Updated')
+window.setTimeOut(localStorage.setItem('url', url))
     });
   
   storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-    alert('pfp Updated')
-        window.setTimeOut(localStorage.setItem('url', url))
+         alert('Pfp Updated')
+window.setTimeOut(localStorage.setItem('url', url))
     });
+  
 });

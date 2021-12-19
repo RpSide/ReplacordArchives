@@ -5,6 +5,7 @@
   font-weight: bold;
   font-size: 14px;
 	background-color: #000000;
+  background-size: vw;
   position: relative;
   top: 10px;
 }
@@ -381,6 +382,7 @@ border-radius: 50vw;
   align-self: auto;
 padding: 1vw;
 }
+
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
@@ -406,6 +408,6 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 }
 
 #chat_input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: darkgreen;
+  color: darkgray
   opacity: 1; /* Firefox */
 }
