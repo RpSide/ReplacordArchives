@@ -44,9 +44,12 @@ var baseurl = '/apps/00/'
 else {
 var baseurl = '/apps/00/'
 }
+
+let loginredirect = 'https://' + document.domain + '/apps/?id=2'
+
 if (namee == '' || namee == null || namee == undefined) {
 
-window.location.href = 'https://devcompessays.glitch.me/apps/?id=2'
+window.location.href = loginredirect
 
 }
 
@@ -237,7 +240,7 @@ const firebaseConfig = {
       chat_logout.textContent = `${localStorage.getItem("name")} • logout`;
       chat_logout.onclick = function() {
         localStorage.clear();
-        window.location.href = 'https://devcompessays.glitch.me/apps/?id=0&code=chatroom1'
+        window.location.href = loginredirect
         parent.home();
       };
 
