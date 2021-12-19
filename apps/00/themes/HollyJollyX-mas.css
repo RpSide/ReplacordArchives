@@ -348,9 +348,9 @@ display: block;
 button {
   padding: 1vw;
 display: inline-block;
-background-color: black;
-  color: gray;
-border-color: gray; 
+background-color: green;
+  color: red;
+border-color: darkgreen; 
 border-radius: 50vw;
   font-size: 1vw;
   border-size: 1vw;
@@ -359,15 +359,16 @@ border-radius: 50vw;
 }
 
 button:hover {
-  color: lightgray;
-  border-color: lightgray; 
+  background-color: lightgreen;
+  color: lightcoral;
+  border-color: green; 
 }
 
 input {
   
 display: inline-block;
-background-color: gray;
-  color: lightgray;
+background-color: lightgreen;
+  color: green;
 border-color: darkgray; 
 border-radius: 50vw;
   font-size: 3w;
@@ -396,19 +397,19 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: darkgray;
+  color: darkgreen;
   opacity: 1; /* Firefox */
 }
 
 #chat_input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: darkgray;
+  color: darkgreen;
   opacity: 1; /* Firefox */
 }
 
 #chat_input{
   max: 10px;
   float: left;
-  background-color: Transparent;
-  color: white;
+  background-color: lightgreen;
+  color: green;
   font-size: 15px;
 }

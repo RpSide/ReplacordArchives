@@ -372,7 +372,7 @@ button:hover {
 input {
   
 display: inline-block;
-background-color: gray;
+background-color: transparent;
   color: lightgray;
 border-color: darkgray; 
 border-radius: 50vw;
