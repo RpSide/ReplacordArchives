@@ -1,3 +1,5 @@
+var domain = document.domain
+
 let ctheme = localStorage.getItem('theme');
 if (ctheme == null || ctheme == undefined || ctheme == "") {
 
@@ -21,7 +23,6 @@ var queryString = window.location.search
   var copyinvite = urlParams.get('cin')
   var code = urlParams.get('code')
   
-  var domain = document.domain
 
 // Replacord App 
  if (AppID == '0' && invite != 'true' && copyinvite != 'true') {
