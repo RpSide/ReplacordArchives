@@ -1,21 +1,13 @@
-<script>
-   function make_id() 
-	{
-		var ran = Math.random().toString().substr(10) + '' + Math.random().toString().substr(10)
-    var ran1 = Number(ran)
-    var id = ran1 + ran1
-    return id.toString(36)
-	}
-  function set_id(){
+<script type='module'>
+  import { id } from 'http://cdn-cdn.glitch.me/libraries/BetterHTML.js'
+  function get_id(){
     
     let input = document.getElementById("id")
     input.textContent = `Your ID >>>>>>>  ${make_id()}`
     
-    
-    
   }
 </script>
 
-<button onclick='set_id()'>get id</button>
+<button onclick='get_id()'>get id</button>
 
 <h1 id='id'>Your ID will appear Here</h1>
