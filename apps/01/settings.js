@@ -139,30 +139,30 @@ html.h1('Settings - Account' ,'acctitle')
 
 
 else if (SettingId == '4') {
-  
   html.newdoc()
   createnavbar()
-  html.title('Settings - Notifications')
-  html.h1('Settings - Notifications', 'setnot')
+  
+  html.h1('Settings - Notifications')
+  
+  html.buttononclick('Enable Notifications', 'localStorage("Notifications", "on")')
+  
+  html.buttononclick('Disable Notifications', 'localStorage("Notifications", "off")')
 
-  //Notifications Enabled/Disable
-  let input = document.createElement('input')
-  input.setAttribute('type', 'checkbox')
-  input.setAttribute('onchange', 'toggleNotificationPermissions(this.value)')
-  document.body.append(input)
 }
-// Could Not Find Setting + SettingID
+
 else {
+  
+  error()
+  
+}
+
+function error(){
+  
   html.newdoc()
   createnavbar()
   
-  html.title('Settings - Not Found')
+  html.h1(`Could not find the setting associated with this id ( ` + '"' + SettingId + '"' + ` )`)
   
-  html.h1('Setting "' + SettingId + '" Could Not Be Found' ,'ErrorMessage')
-  
-  
-  html.div('Error')
-  html.append('ErrorMessage', 'Error')
   
 }
 
