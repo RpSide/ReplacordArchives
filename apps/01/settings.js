@@ -23,6 +23,27 @@ let ThemeLab = html.geturlparams('thlb')
 
 let normalurl = 'https://' + document.domain + '/apps/?code=' + roomcode
 
+
+function toggleNotificationPermissions(input) {
+    if (Notification.permissions === 'granted') {
+        localStorage.setItem('notification-permissions', input.checked ? 'granted' : 'denied');
+    } else if (Notification.permissions === 'denied') {
+        localStorage.setItem('notification-permissions', 'denied');
+        input.checked = false;
+    } else if (Notification.permissions === 'default') {
+        Notification.requestPermission(function(choice) {
+            if (choice === 'granted') {
+                localStorage.setItem('notification-permissions', input.checked ? 'granted' : 'denied');
+            } else {
+                localStorage.setItem('notification-permissions', 'denied');
+                input.checked = false;
+            }
+        });
+    }
+}
+
+
+
 function createnavbar(){
 html.button('Back to chat', normalurl + '&id=0')
 html.button('Home', normalurl + '&sid=1&id=1')
@@ -121,8 +142,7 @@ html.h1('Settings - Account' ,'acctitle')
   html.append('acc-pfp', 'acc')
   html.append('pfpprog', 'acc')
   
-  
-  //notifications
+
   
     var Update_name = document.getElementById('Update-name')
   var name = document.getElementById('acc-name')
@@ -146,9 +166,7 @@ else if (SettingId == '4') {
   html.h1('Settings - Notifications', 'setnot')
 
   //Notifications Enabled/Disable
-  html.newtab_button('Enable', 'javascript: Notification.requestPermission()')
-  html.button
-}
+  document.
 
 // Could Not Find Setting + SettingID
 else {
