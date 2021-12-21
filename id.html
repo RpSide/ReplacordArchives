@@ -1,9 +1,11 @@
 <script>
-   function random_id_1() 
+   function random_id() 
 	{
-		var ran = (Math.floor(Math.random() * 10) + 10)
-    var letter = ran.toString(36).substr(2)
-    return ran.toString(36).substr(2)
+		var ran = Math.random().toString().substr(2) + '' + Math.random().toString().substr(14)
+    var id = Number(ran)
+    return id
 	}
-  document.write(random_id_1())
+  document.write(random_id())
 </script>
+
+<button>
