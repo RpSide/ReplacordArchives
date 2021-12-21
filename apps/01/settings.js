@@ -139,10 +139,8 @@ html.h1('Settings - Account' ,'acctitle')
 
 
 else if (SettingId == '4') {
-  html.newdoc()
   createnavbar()
-  
-  html.h1('Settings - Notifications')
+  html.newdoc('Settings - Notifications', 'Settings - Notifications')
   
   html.buttononclick('Enable Notifications', 'localStorage("Notifications", "on")')
   
