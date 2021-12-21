@@ -1,11 +1,21 @@
 <script>
-   function random_id() 
+   function make_id() 
 	{
-		var ran = Math.random().toString().substr(2) + '' + Math.random().toString().substr(14)
-    var id = Number(ran)
-    return id
+		var ran = Math.random().toString().substr(10) + '' + Math.random().toString().substr(10)
+    var ran1 = Number(ran)
+    var id = ran1 + ran1
+    return id.toString(36)
 	}
-  document.write(random_id())
+  function set_id(){
+    
+    let input = document.getElementById("id")
+    input.textContent = `Your ID >>>>>>>  ${make_id()}`
+    
+    
+    
+  }
 </script>
 
-<button>
+<button onclick='set_id()'>get id</button>
+
+<h1 id='id'>Your ID will appear Here</h1>
