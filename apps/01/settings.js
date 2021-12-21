@@ -28,6 +28,7 @@ html.button('Back to chat', normalurl + '&id=0')
 html.button('Home', normalurl + '&sid=1&id=1')
 html.button('Themes', normalurl + '&sid=2&id=1')
 html.button('Account', normalurl + '&sid=3&id=1')
+html.button('Notifications', normalurl + '&sid=4&id=1')
 }
 
 //Home
@@ -106,6 +107,8 @@ html.h1('Settings - Account' ,'acctitle')
   
   html.div('acc')
   
+  
+  
   // name
   html.append('acctitle', 'acc')
   html.append('acc-name-title', 'acc')
@@ -118,6 +121,8 @@ html.h1('Settings - Account' ,'acctitle')
   html.append('acc-pfp', 'acc')
   html.append('pfpprog', 'acc')
   
+  
+  //notifications
   
     var Update_name = document.getElementById('Update-name')
   var name = document.getElementById('acc-name')
@@ -133,7 +138,17 @@ html.h1('Settings - Account' ,'acctitle')
 }
 
 
+else if (SettingId == '4') {
+  
+  html.newdoc()
+  createnavbar()
+  html.title('Settings - Notifications')
+  html.h1('Settings - Notifications', 'setnot')
 
+  //Notifications Enabled/Disable
+  html.newtab_button('Enable', 'javascript: Notification.requestPermission()')
+  html.button
+}
 
 // Could Not Find Setting + SettingID
 else {
@@ -179,3 +194,42 @@ window.setTimeOut(localStorage.setItem('url', url))
     });
   
 });
+
+
+function notifyMe() {
+    if (!window.Notification) {
+        console.log('Browser does not support notifications.');
+    } else {
+        // check if permission is already granted
+        if (Notification.permission === 'granted') {
+            // show notification here
+          
+          
+            var notify = new Notification('Replacord', {
+                body: 'PENIS',
+                icon: 'https://cdn.glitch.me/7020ef14-24b1-4c8f-973d-607594beb783/Me%20Holding%20Watermelon.png?v=1640107308793',
+            });
+          
+          
+          
+          
+          
+          
+        } else {
+            // request permission from user
+            Notification.requestPermission().then(function (p) {
+                if (p === 'granted') {
+                    // show notification here
+                    var notify = new Notification('Replacord', {
+                        body: 'Welcome to Replacord',
+                        icon: 'https://cdn.glitch.me/7020ef14-24b1-4c8f-973d-607594beb783/Me%20Holding%20Watermelon.png?v=1640107308793',
+                    });
+                } else {
+                    console.log('User blocked notifications.');
+                }
+            }).catch(function (err) {
+                console.error(err);
+            });
+        }
+    }
+}
