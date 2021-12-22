@@ -5,28 +5,26 @@ import { html } from 'https://cdn-cdn.glitch.me/libraies/BetterDOMjs.js'
  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
-import { getFirestore } from "firebase/firestore"
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
-    authDomain: "chat-883eb.firebaseapp.com",
-    databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
-    projectId: "chat-883eb",
-    storageBucket: "chat-883eb.appspot.com",
-    messagingSenderId: "421817736954",
-    appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
-    measurementId: "G-YCQZGGEGZ9"
+    apiKey: "AIzaSyASAhqjDqjMvxmAUZPBvdbfnO-fVh7Wsh0",
+    authDomain: "replacord.firebaseapp.com",
+    databaseURL: "https://replacord-default-rtdb.firebaseio.com",
+    projectId: "replacord",
+    storageBucket: "replacord.appspot.com",
+    messagingSenderId: "811577852329",
+    appId: "1:811577852329:web:017b860343f8ebbf9084b8",
+    measurementId: "G-K73TLX6YDJ"
   };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-  
-const db = getFirestore();
+var db = firebase.firestore();
 
 let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
