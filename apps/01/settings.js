@@ -2,9 +2,9 @@ import { html } from 'https://cdn-cdn.glitch.me/libraies/BetterDOMjs.js'
 
 
 
-// Your web app's Firebase configuration
-var firebaseConfig = {
- apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
   authDomain: "chat-883eb.firebaseapp.com",
   databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
   projectId: "chat-883eb",
@@ -13,8 +13,7 @@ var firebaseConfig = {
   appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
   measurementId: "G-YCQZGGEGZ9"
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+
 
 
 let SettingId = html.geturlparams('sid')
@@ -29,7 +28,7 @@ html.button('Back to chat', normalurl + '&id=0')
 html.button('Home', normalurl + '&sid=1&id=1')
 html.button('Themes', normalurl + '&sid=2&id=1')
 html.button('Account', normalurl + '&sid=3&id=1')
-html.button('Notifications', normalurl + '&sid=4&id=1')
+html.button('tst', normalurl + '&sid=4&id=1')
 }
 
 //Home
@@ -146,6 +145,13 @@ else if (SettingId == '4') {
   
   html.buttononclick('Disable Notifications', 'localStorage("Notifications", "off")')
 
+
+
+db.collection("cities").doc("SF")
+    .onSnapshot((doc) => {
+        var source = doc.metadata.hasPendingWrites ? "Local" : "Server";
+        document.write(source, " data: ", doc.data());
+    })
 }
 
 else {
