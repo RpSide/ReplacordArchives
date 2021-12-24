@@ -160,8 +160,8 @@ function error(){
   html.newdoc()
   createnavbar()
   
-  html.h1(`Could not find the setting associated with this id ( ` + '"' + SettingId + '"' + ` )`)
-  
+  html.h1(`(404 Not Found) Could not find the setting associated with this id ( ` + '"' + SettingId + '"' + ` )`)
+  html.title(`404 Not Found`)
   
 }
 

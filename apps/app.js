@@ -28,6 +28,21 @@ document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="styles
 
 }
 
+    // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
+  authDomain: "chat-883eb.firebaseapp.com",
+  databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
+  projectId: "chat-883eb",
+  storageBucket: "chat-883eb.appspot.com",
+  messagingSenderId: "421817736954",
+  appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
+  measurementId: "G-YCQZGGEGZ9"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.database()
+
 //grabs paramiters from the url
 
 var queryString = window.location.search
@@ -38,6 +53,8 @@ var queryString = window.location.search
   var invite = urlParams.get('inv')
   var copyinvite = urlParams.get('cin')
   var code = urlParams.get('code')
+var roomcode = urlParams.get('code')
+
  if (AppID == '0'){ 
 // AppID 0
 // Replacord App 
@@ -120,11 +137,97 @@ document.write(`
 }
 
 else{
+  // buttons
+var cmaker = document.createElement('button')
+    cmaker.setAttribute('id', 'cmke')
+    cmaker.setAttribute('class', 'unb')
+    cmaker.textContent = 'Create a room'
+
+var jroom = document.createElement('button')
+    jroom.setAttribute('id', 'joom')
+    jroom.setAttribute('class', 'unb')
+    jroom.textContent = 'Join a Room'
+    
+var invmker = document.createElement('button')
+    invmker.setAttribute('id', 'invm')
+    invmker.setAttribute('class', 'unb')
+    invmker.textContent = 'Make an Invite'
   
+  var theme = document.createElement('button')
+    theme.setAttribute('id', 'themes')
+    theme.setAttribute('class', 'unb')
+    theme.textContent = 'Themes'
+  
+  var settings = document.createElement('button')
+     settings.style.backgroundImage = 'url("https://th.bing.com/th/id/OIP.JkNEdkOFmyRT3lulHC-z-wHaHa?w=218&h=218&c=7&r=0&o=5&pid=1.7")'
+      settings.style.width = "41px";
+      settings.style.height = "41px";
+      settings.style.padding = '15px'
+      settings.style.backgroundSize = '38px'
+      settings.style.backgroundColor = 'gray'
+  // Open Settings
+settings.onclick = function() {
+  
+  window.location.href = 'https://' + document.domain + '/apps/?id=1&sid=1&code=' + roomcode
+  
+}
+
+theme.onclick = function(){
+
+window.location.href = 'https://' + document.domain + '/apps/00/themes.html?code=' + roomcode
+  
+}
+
+  
+// make a chatroom   
+
+
+cmaker.onclick = function(){
+
+ var roomcode =  Math.random().toString(20).substr(5)
+   
+  
+let roomname = prompt("chatroom name", 'e');
+let text2;
+if (roomname == null || roomname == "") {
+ alert ('empty field');
+} else {
+firebase.database().ref('chats/' + roomcode + '/').set({
+    name: roomname,
+  });
+window.location.href = 'https://' + document.domain +'/apps/?id=0&code=' + roomcode
+
+}
+}
+
+
+  
+  // Join a Chatroom
+
+jroom.onclick = function(params) {
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/?id0&inv=true&code=chatroom1');
+let text2;
+if (join == null || join == "") {
+ alert ('empty field');
+} else {
+window.location.href = join
+}
+}
+
+
+
+// Make A invite
+
+invmker.onclick = function(params) {
+   window.location.href = 'https://' + document.domain + '/apps/?cin=true&id=0&code=' + roomcode
+}
+
+
+
   document.write(`
 <title>404 Not Found</title>
-<h1>Error Finding App Under This ID "${AppID}"</h1>
-<h3>404 Not Found}This App Does not exist or the link to this app was wrong or mistyped</h3>
+<h1>(404 Not Found) Error Finding App Under This ID "${AppID}"</h1>
+<h3>This App Does not exist or the link to this app was wrong or mistyped</h3>
 
 
 
