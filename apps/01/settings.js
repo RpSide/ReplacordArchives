@@ -28,7 +28,7 @@ html.button('Back to chat', normalurl + '&id=0')
 html.button('Home', normalurl + '&sid=1&id=1')
 html.button('Themes', normalurl + '&sid=2&id=1')
 html.button('Account', normalurl + '&sid=3&id=1')
-html.button('tst', normalurl + '&sid=4&id=1')
+html.button('Notifications', normalurl + '&sid=4&id=1')
 }
 
 //Home
@@ -206,7 +206,7 @@ function notifyMe() {
           
           
             var notify = new Notification('Replacord', {
-                body: 'PENIS',
+                body: 'Welcome to R',
                 icon: 'https://cdn.glitch.me/7020ef14-24b1-4c8f-973d-607594beb783/Me%20Holding%20Watermelon.png?v=1640107308793',
             });
           

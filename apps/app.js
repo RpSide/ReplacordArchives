@@ -9,6 +9,8 @@ const firebaseConfig = {
   appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
   measurementId: "G-YCQZGGEGZ9"
 };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 function notifications_on(){
 
@@ -39,7 +41,6 @@ else {
 document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="' + ctheme + '"/>')
 
 }
-
 
 //grabs paramiters from the url
 
@@ -188,7 +189,7 @@ window.location.href = 'https://' + document.domain + '/apps/00/themes.html?code
   
 cmaker.onclick = function(){
 
- var roomcod =  Math.random().toString(20).substr(5)
+ var roomcode =  Math.random().toString(20).substr(5)
    
   
 let roomname = prompt("chatroom name", 'e');
@@ -196,10 +197,10 @@ let text2;
 if (roomname == null || roomname == "") {
  alert ('empty field');
 } else {
-firebase.database().ref('chats/' + roomcod + '/').set({
+firebase.database().ref('chats/' + roomcode + '/').set({
     name: roomname,
   });
-window.location.href = 'https://' +  +'/apps/?id=0&code=' + roomcod
+window.location.href = 'https://' + domain +'/apps/?id=0&code=' + roomcode
 
 }
 }
@@ -209,7 +210,7 @@ window.location.href = 'https://' +  +'/apps/?id=0&code=' + roomcod
   // Join a Chatroom
 
 jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/?id=0&inv=true&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + domain + '/apps/?id=0&inv=true&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
@@ -223,11 +224,12 @@ window.location.href = join
 // Make A invite
 
 invmker.onclick = function(params) {
-   window.location.href = 'https://' + document.domain + '/apps/?cin=true&id=0&code=' + roomcode
+   window.location.href = 'https://' + domain + '/apps/?cin=true&id=0&code=' + roomcode
 }
 
 
   document.write(`
+ 
 <title>404 Not Found</title>
 <h1>(404 Not Found) Error Finding App Under This ID "${AppID}"</h1>
 <h3>This App Does not exist or the link to this app was wrong or mistyped</h3>
@@ -236,9 +238,8 @@ invmker.onclick = function(params) {
 
 
 `)
-document.write('<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>')
-  document.body.append(cmaker, jroom, invmker, theme, settings)
-  
-  
+  document.body.append(cmaker, jroom, invmker, theme)
+  document.write(`<button onclick="history.back()" id="unb">Back</button>`)
+  document.body.append(settings)
   
 }
