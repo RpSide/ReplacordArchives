@@ -416,7 +416,7 @@ input[type="file"] {
         color: #b8b8b8;
 }
 
-.file{
+label{
 
   display: inline-block;
         padding: 12px 18px;

@@ -413,3 +413,22 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: green;
   font-size: 15px;
 }
+
+input[type="file"] {
+        font-size: 17px;
+        color: #b8b8b8;
+}
+
+label{
+
+  padding: 1vw;
+display: inline-block;
+background-color: green;
+  color: red;
+border-color: darkgreen; 
+border-radius: 50vw;
+  font-size: 1vw;
+  border-size: 1vw;
+  align-self: auto;
+
+}
