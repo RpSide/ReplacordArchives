@@ -214,7 +214,7 @@ const firebaseConfig = {
       var key=e.keyCode || e.which;
   if (key==13){
     if (chat_input.value.length > 0){
-    parent.send_message(chat_input.value)
+    parent.send_message(chat_input.value, 'txt')
     chat_input.value = ''
   }
   }
@@ -289,7 +289,7 @@ return '#fffffff'
       
     }
     
-    send_message(message) {
+    send_message(message, type) {
       var parent = this;
       if (parent.get_name() == null && message == null) {
         return;
@@ -324,6 +324,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
             name: parent.get_name(),
             message: message,
             color: parent.get_color(),
+            type: type,
             messageID: messageID,
             index: index,
             time: time,
@@ -391,6 +392,7 @@ return localStorage.getItem("url");
           var msgcolor = data.color;
           var ver = data.client;
           var pic = data.picture;
+          var typ = data.type;
 
           var message_container = document.createElement("div");
           message_container.setAttribute("class", "message_container");
@@ -423,9 +425,14 @@ return localStorage.getItem("url");
 
           var message_content = document.createElement("span");
           message_content.setAttribute("class", "message_content");
+          if (typ = 'txt') {
           message_content.style.color = msgcolor;
           message_content.textContent = message;
-          
+          }
+          else{
+            
+            message_content.innerHTML = message;
+          }
            
 
           message_user_container.append(message_pfp);
