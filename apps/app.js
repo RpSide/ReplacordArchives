@@ -38,10 +38,10 @@ var queryString = window.location.search
   var invite = urlParams.get('inv')
   var copyinvite = urlParams.get('cin')
   var code = urlParams.get('code')
-  
+ if (AppID == '0'){ 
 // AppID 0
 // Replacord App 
- if (AppID == '0' && invite != 'true' && copyinvite != 'true') {
+ if (invite != 'true' && copyinvite != 'true') {
 	  
 	  document.write('<!DOCTYPE html><html lang="en" dir="ltr"><head><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://use.typekit.net/tto8pja.css"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script><!-- Web Linked JavaScript (Js)--><script type="text/javascript" src="https://' + domain + '/apps/00/Chat.js"></script></head><body></body></div></div></html>')
 	  
@@ -51,7 +51,7 @@ var queryString = window.location.search
 
 // AppID 0 && Inv true
 // Replacord App Invitation
-   if (AppID == '0' && invite == 'true' && copyinvite != 'true'){
+   if (invite == 'true' && copyinvite != 'true'){
 	if (code == null || code == undefined){
 		
 		alert("This Is Not A Valid Invite Link")
@@ -68,7 +68,7 @@ var queryString = window.location.search
 
 // AppID 0 && CopyInv true
 // Replacord App Copy Invitation
-   if (AppID == '0' && copyinvite == 'true' && invite != 'true'){
+  if (copyinvite == 'true' && invite != 'true'){
 	if (code == null || code == undefined){
   
     		alert("This Is Not A Valid Invite Link")
@@ -83,10 +83,10 @@ var queryString = window.location.search
 		 
 	 }
 }
-
+}
 // AppID 1
 // Settings
- if (AppID == '1') {
+ else if (AppID == '1') {
 	  
 	  document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><script type="module" src="https://' + domain + '/apps/01/settings.js"></script></head><body></body></div></div></html>')
 	  
@@ -94,7 +94,7 @@ var queryString = window.location.search
   }
 // AppID 2
 // SignUp/Login
-  if (AppID == '2')  {
+ else if (AppID == '2')  {
 
     document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login/SignUp</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><input id="name" placeholder="Name" maxlength="15"><input type="file" id="file"><button id="submit" style="visibility: hidden;">Login</button><progress id="progress_bar" value="0" max="100"></progress><script src="https://' + domain + '/apps/02/login.js" type="text/javascript"></script></body></html>')
 
@@ -103,14 +103,35 @@ var queryString = window.location.search
 // AppID 3
 // Themes 
 
-if (AppID == '3') {
+else if (AppID == '3') {
 
 document.write(`
 
 <html>
-<script src="https://${domain}">
+<!-- Themes.JS -->
+<script type="module" src="https://${domain}/apps/03/themes.js"></script>
+
+<!-- Themes.CSS -->
+<script type="module" src="https://${domain}/apps/03/themes.CSS.js"></script>
 </html>
 `)
 
 
+}
+
+else{
+  
+  document.write(`
+<title>404 Not Found</title>
+<h1>Error Finding App Under This ID "${AppID}"</h1>
+<h3>404 Not Found}This App Does not exist or the link to this app was wrong or mistyped</h3>
+
+
+
+
+`)
+  
+  
+  
+  
 }
