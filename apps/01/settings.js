@@ -1,30 +1,36 @@
 import { html } from 'https://cdn-cdn.glitch.me/libraies/BetterDOMjs.js'
 
-
-
- // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyASAhqjDqjMvxmAUZPBvdbfnO-fVh7Wsh0",
-    authDomain: "replacord.firebaseapp.com",
-    databaseURL: "https://replacord-default-rtdb.firebaseio.com",
-    projectId: "replacord",
-    storageBucket: "replacord.appspot.com",
-    messagingSenderId: "811577852329",
-    appId: "1:811577852329:web:017b860343f8ebbf9084b8",
-    measurementId: "G-K73TLX6YDJ"
-  };
-
+    // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
+  authDomain: "chat-883eb.firebaseapp.com",
+  databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
+  projectId: "chat-883eb",
+  storageBucket: "chat-883eb.appspot.com",
+  messagingSenderId: "421817736954",
+  appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
+  measurementId: "G-YCQZGGEGZ9"
+};
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-var db = firebase.firestore();
+  firebase.initializeApp(firebaseConfig);
+
+
+function notifications_on(){
+
+  alert('Notifications on')
+localStorage("Notifications", "on")
+
+}
+
+function notifications_off(){
+
+  alert('Notifications off')
+localStorage("Notifications", "off")
+
+}
+
+
+
 
 let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
@@ -151,9 +157,9 @@ else if (SettingId == '4') {
   createnavbar()
   html.newdoc('Settings - Notifications', 'Settings - Notifications')
   
-  html.buttononclick('Enable Notifications', 'localStorage("Notifications", "on")')
+  html.buttononclick('Enable Notifications', 'window.location.href =' + '"' + 'javascript: notifications_on()' + '"')
   
-  html.buttononclick('Disable Notifications', 'localStorage("Notifications", "off")')
+  html.button('Disable Notifications', 'javascript: notifications_off()')
 
 }
 else {
