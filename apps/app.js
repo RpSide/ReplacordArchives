@@ -28,20 +28,6 @@ document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="styles
 
 }
 
-    // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
-  authDomain: "chat-883eb.firebaseapp.com",
-  databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
-  projectId: "chat-883eb",
-  storageBucket: "chat-883eb.appspot.com",
-  messagingSenderId: "421817736954",
-  appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
-  measurementId: "G-YCQZGGEGZ9"
-};
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  var db = firebase.database()
 
 //grabs paramiters from the url
 
@@ -137,6 +123,22 @@ document.write(`
 }
 
 else{
+
+    // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
+  authDomain: "chat-883eb.firebaseapp.com",
+  databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
+  projectId: "chat-883eb",
+  storageBucket: "chat-883eb.appspot.com",
+  messagingSenderId: "421817736954",
+  appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
+  measurementId: "G-YCQZGGEGZ9"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.database()
+
   // buttons
 var cmaker = document.createElement('button')
     cmaker.setAttribute('id', 'cmke')
@@ -182,6 +184,7 @@ window.location.href = 'https://' + document.domain + '/apps/00/themes.html?code
 // make a chatroom   
 
 
+  
 cmaker.onclick = function(){
 
  var roomcode =  Math.random().toString(20).substr(5)
@@ -224,6 +227,7 @@ invmker.onclick = function(params) {
 
 
 
+document.body.append(cmaker, jroom, invmker, theme, settings)
   document.write(`
 <title>404 Not Found</title>
 <h1>(404 Not Found) Error Finding App Under This ID "${AppID}"</h1>
@@ -233,7 +237,7 @@ invmker.onclick = function(params) {
 
 
 `)
-  
+  document.body.append(cmaker, jroom, invmker, theme, settings)
   
   
   
