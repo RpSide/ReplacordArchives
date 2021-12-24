@@ -102,6 +102,7 @@ html.h1('Settings - Account' ,'acctitle')
   html.buttononclick('Update Account Name', "", 'Update-name')
   //pfp
     html.h4('Profile Picture' ,'acc-pfp-title')
+  html.label('Upload your PFP', 'acc-pfp')
   html.input_file('acc-pfp')
   html.progress('0', '100', 'pfpprog')
   
