@@ -39,7 +39,7 @@ var queryString = window.location.search
   var copyinvite = urlParams.get('cin')
   var code = urlParams.get('code')
   
-
+// AppID 0
 // Replacord App 
  if (AppID == '0' && invite != 'true' && copyinvite != 'true') {
 	  
@@ -48,7 +48,8 @@ var queryString = window.location.search
 	  
   }
 
-  
+
+// AppID 0 && Inv true
 // Replacord App Invitation
    if (AppID == '0' && invite == 'true' && copyinvite != 'true'){
 	if (code == null || code == undefined){
@@ -65,7 +66,7 @@ var queryString = window.location.search
 	 }
 }
 
-
+// AppID 0 && CopyInv true
 // Replacord App Copy Invitation
    if (AppID == '0' && copyinvite == 'true' && invite != 'true'){
 	if (code == null || code == undefined){
@@ -83,7 +84,7 @@ var queryString = window.location.search
 	 }
 }
 
-
+// AppID 1
 // Settings
  if (AppID == '1') {
 	  
@@ -91,10 +92,25 @@ var queryString = window.location.search
 	  
 	  
   }
-
+// AppID 2
 // SignUp/Login
   if (AppID == '2')  {
 
     document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login/SignUp</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><input id="name" placeholder="Name" maxlength="15"><input type="file" id="file"><button id="submit" style="visibility: hidden;">Login</button><progress id="progress_bar" value="0" max="100"></progress><script src="https://' + domain + '/apps/02/login.js" type="text/javascript"></script></body></html>')
+
+}
+
+// AppID 3
+// Themes 
+
+if (AppID == '3') {
+
+document.write(`
+
+<html>
+<script src="https://${domain}">
+</html>
+`)
+
 
 }
