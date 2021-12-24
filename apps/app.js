@@ -1,3 +1,46 @@
+function notonoff() {
+    if (!window.Notification) {
+        console.log('Browser does not support notifications.');
+    } else {
+        // check if permission is already granted
+        if (Notification.permission === 'granted') {
+            // show notification here
+          
+          if (localStorage.getItem("Notifications") == 'on') {
+            var notify = new Notification('Replacord', {
+                body: 'Notifications On',
+                icon: 'https://cdn.glitch.me/7020ef14-24b1-4c8f-973d-607594beb783/Me%20Holding%20Watermelon.png?v=1640107308793',
+            });
+          }
+          
+          else {
+            var notify = new Notification('Replacord', {
+                body: 'Notifications Off',
+                icon: 'https://cdn.glitch.me/7020ef14-24b1-4c8f-973d-607594beb783/Me%20Holding%20Watermelon.png?v=1640107308793',
+            });
+          }
+          
+          
+          
+        } else {
+            // request permission from user
+            Notification.requestPermission().then(function (p) {
+                if (p === 'granted') {
+                    // show notification here
+                    var notify = new Notification('Replacord', {
+                        body: 'Welcome to Replacord',
+                        icon: 'https://cdn.glitch.me/7020ef14-24b1-4c8f-973d-607594beb783/Me%20Holding%20Watermelon.png?v=1640107308793',
+                    });
+                } else {
+                    console.log('User blocked notifications.');
+                }
+            }).catch(function (err) {
+                console.error(err);
+            });
+        }
+    }
+}
+
     // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
@@ -14,15 +57,16 @@ firebase.initializeApp(firebaseConfig);
 
 function notifications_on(){
 
-  alert('Notifications on')
 localStorage.setItem("Notifications", "on")
+  notonoff()
 
 }
 
 function notifications_off(){
 
-  alert('Notifications off')
 localStorage.setItem("Notifications", "off")
+notonoff()
+
 
 }
 
