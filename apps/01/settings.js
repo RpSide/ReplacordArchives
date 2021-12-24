@@ -15,22 +15,6 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
 
-function notifications_on(){
-
-  alert('Notifications on')
-localStorage("Notifications", "on")
-
-}
-
-function notifications_off(){
-
-  alert('Notifications off')
-localStorage("Notifications", "off")
-
-}
-
-
-
 
 let SettingId = html.geturlparams('sid')
 let roomcode = html.geturlparams('code')
@@ -157,7 +141,8 @@ else if (SettingId == '4') {
   createnavbar()
   html.newdoc('Settings - Notifications', 'Settings - Notifications')
   
-  html.buttononclick('Enable Notifications', 'window.location.href =' + '"' + 'javascript: notifications_on()' + '"')
+  
+  html.buttononclick('Enable Notifications', "window.location.href = 'javascript: notifications_on()'")
   
   html.button('Disable Notifications', 'javascript: notifications_off()')
 

@@ -410,3 +410,10 @@ input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: darkgray;
   opacity: 1; /* Firefox */
 }
+
+input[type="file"] {
+  position: absolute;
+  font-size: 17px;
+  color: darkgray;
+  background-color:red;
+}

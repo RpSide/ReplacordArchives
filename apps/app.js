@@ -1,3 +1,18 @@
+function notifications_on(){
+
+  alert('Notifications on')
+localStorage.setItem("Notifications", "on")
+
+}
+
+function notifications_off(){
+
+  alert('Notifications off')
+localStorage.setItem("Notifications", "off")
+
+}
+
+
 
 var domain = document.domain
 
