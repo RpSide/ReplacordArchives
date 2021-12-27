@@ -25,27 +25,32 @@ localStorage.setItem('name', names.value)
 
 
 document.getElementById('file').addEventListener('change', (event) => {
+  
+  
     const file = event.target.files[0];
     const storageRef = firebase.storage().ref('user-pfps/' + file.name);
 
     storageRef.put(file).on('state_changed', (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log(progress);
-        const progressBar = document.getElementById('progress_bar');
+        const progressBar = document.getElementById('progress+bar');
         progressBar.value = progress;
     });
 
-    storageRef.getDownloadURL().then(function(url){
+  storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-        localStorage.setItem('url', url)
-      window.setTimeOut(submit.style.visibility = 'visible')
+         alert('Pfp Updated')
+localStorage.setItem('url', url)
+    window.setTimeOut(submit.style.visibility = 'visible')
     });
   
   storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-        localStorage.setItem('url', url)
+         alert('Pfp Updated')
+localStorage.setItem('url', url)
     window.setTimeOut(submit.style.visibility = 'visible')
     });
+  
 });
