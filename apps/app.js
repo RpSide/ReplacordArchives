@@ -41,20 +41,6 @@ function notonoff() {
     }
 }
 
-    // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
-  authDomain: "chat-883eb.firebaseapp.com",
-  databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
-  projectId: "chat-883eb",
-  storageBucket: "chat-883eb.appspot.com",
-  messagingSenderId: "421817736954",
-  appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
-  measurementId: "G-YCQZGGEGZ9"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
 function notifications_on(){
 
 localStorage.setItem("Notifications", "on")
@@ -156,7 +142,7 @@ var roomcode = urlParams.get('code')
 // SignUp/Login
  else if (AppID == '2')  {
 
-    document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login SignUp</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><input id="name" placeholder="Name" maxlength="15"><input type="file" id="file"><button id="submit" style="visibility: hidden;">Login</button><progress id="progress_bar" value="0" max="100"></progress><script src="https://' + document.domain + '/apps/02/login.js" type="text/javascript"></script></body></html>')
+    document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login SignUp</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><button id="submit" style="visibility: hidden;">Login</button><input id="name" placeholder="Name" maxlength="15"><label for="file">Upload PFP</label><progress id="progress_bar" value="0" max="100"></progress><input type="file" id="file"><script src="https://' + document.domain + '/apps/02/login.js" type="text/javascript"></script></body></html>')
 
 }
 
@@ -181,13 +167,6 @@ document.write(`
 
 else{
 
- 
-
-  // buttons
-var cmaker = document.createElement('button')
-    cmaker.setAttribute('id', 'cmke')
-    cmaker.setAttribute('class', 'unb')
-    cmaker.textContent = 'Create a room'
 
 var jroom = document.createElement('button')
     jroom.setAttribute('id', 'joom')
@@ -226,31 +205,7 @@ window.location.href = 'https://' + document.domain + '/apps/00/themes.html?code
   
 }
 
-  
-// make a chatroom   
 
-
-  
-cmaker.onclick = function(){
-
- var roomcode =  Math.random().toString(20).substr(5)
-   
-  
-let roomname = prompt("chatroom name", 'e');
-let text2;
-if (roomname == null || roomname == "") {
- alert ('empty field');
-} else {
-firebase.database().ref('chats/' + roomcode + '/').set({
-    name: roomname,
-  });
-window.location.href = 'https://' + domain +'/apps/?id=0&code=' + roomcode
-
-}
-}
-
-
-  
   // Join a Chatroom
 
 jroom.onclick = function(params) {
