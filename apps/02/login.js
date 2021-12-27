@@ -33,7 +33,7 @@ document.getElementById('file').addEventListener('change', (event) => {
     storageRef.put(file).on('state_changed', (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log(progress);
-        const progressBar = document.getElementById('progress+bar');
+        const progressBar = document.getElementById('progress_bar');
         progressBar.value = progress;
     });
 
