@@ -163,8 +163,16 @@ var roomcode = urlParams.get('code')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/SignUp</title>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><input id="name" placeholder="Name" maxlength="15"><label for="file">Upload PFP <input type="file" id="file"></label>
-                   <progress id="progress_bar" value="0" max="100"></progress><button id="submit" style="visibility: hidden;">Login</button><script src="https://' + domain + '/apps/02/login.js" type="text/javascript"></script></body></html>`)
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+    </head>
+    <body>
+    <input id="name" placeholder="Name" maxlength="15">
+    <input type="file" id="file">
+    <progress id="progress_bar" value="0" max="100"></progress>
+    <button id="submit" style="visibility: hidden;">Login</button>
+    <script src="https://devcompessays.glitch.me/apps/02/login.js" type="text/javascript"></script>
+    </body>
+    </html>`)
 
 }
 
