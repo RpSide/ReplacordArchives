@@ -97,7 +97,7 @@ html.h1('Settings - Account' ,'acctitle')
   //name
   var username = localStorage.getItem('name')
   html.h4('Name' ,'acc-name-title')
-  html.input_text('', username, '15',  'acc-name')
+  html.input_text('', username, '13',  'acc-name')
   html.h1('', 'Update-name-cont')
   html.buttononclick('Update Account Name', "", 'Update-name')
   //pfp

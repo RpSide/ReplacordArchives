@@ -142,7 +142,7 @@ var roomcode = urlParams.get('code')
 // SignUp/Login
  else if (AppID == '2')  {
 
-    document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login SignUp</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><button id="submit" style="visibility: hidden;">Login</button><input id="name" placeholder="Name" maxlength="15"><label for="file">Upload PFP</label><progress id="progress_bar" value="0" max="100"></progress><input type="file" id="file"><script src="https://' + document.domain + '/apps/02/login.js" type="text/javascript"></script></body></html>')
+    document.write('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login SignUp</title><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script></head><body><button id="submit" style="visibility: hidden;">Login</button><input id="name" placeholder="Name" maxlength="13"><label for="file">Upload PFP</label><progress id="progress_bar" value="0" max="100"></progress><input type="file" id="file"><script src="https://' + document.domain + '/apps/02/login.js" type="text/javascript"></script></body></html>')
 
 }
 
