@@ -82,6 +82,8 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database()
 
+  
+  
   class MEME_CHAT{
     home(){
       document.body.innerHTML = ''
@@ -148,8 +150,8 @@ const firebaseConfig = {
 // 
     }
     
-    
-    
+  
+
     
     create_load(id) {
       // YOU ALSO MUST HAVE (PARENT = THIS). BUT IT'S WHATEVER THO.
@@ -587,6 +589,24 @@ var titlee = snapshot.val() + ' || Replacord'
   console.error(error);
 });
 
+      firebase.database().ref().child('chats/' + roomcode).child('bans').get().then((snapshot) => {
+  if (snapshot.exists()) {
+    alert(snapshot.val())
+if (localStorage.getItem("name") == snapshot.val()){
+  
+  window.location.href='https://replacordd.glitch.me/apps/?id=0&code=chatroom1'
+  
+    }
+    }
+  
+  else {
+    title.textContent = ''
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+  
 firebase.database().ref().child('chats/' + roomcode).child('welcome').get().then((snapshot) => {
   if (snapshot.exists()) {
 var welcomemessage = snapshot.val()
