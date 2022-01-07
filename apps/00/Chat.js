@@ -590,10 +590,14 @@ var titlee = snapshot.val() + ' || Replacord'
 });
 
       firebase.database().ref().child('chats/' + roomcode).child('bans').get().then((snapshot) => {
+        
+let banned = snapshot.val()
+alert(snapshot.val())
   if (snapshot.exists()) {
-    alert(snapshot.val())
-if (localStorage.getItem("name") == snapshot.val()){
-  
+    
+
+if (banned.indexOf(localStorage.getItem("name")) ==! '-1'){
+  alert(snapshot.val() + ' you have been banned')
   window.location.href='https://replacordd.glitch.me/apps/?id=0&code=chatroom1'
   
     }
