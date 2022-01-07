@@ -1,4 +1,4 @@
-        document.write(`<style>
+document.write(`<style>
 
 .message_container{
   width: 70%;
@@ -77,6 +77,7 @@ const firebaseConfig = {
   appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
   measurementId: "G-YCQZGGEGZ9"
 };
+  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database()
@@ -562,9 +563,7 @@ window.location.href = join
 invmker.onclick = function(params) {
    window.location.href = 'https://' + document.domain + '/apps/?cin=true&id=0&code=' + roomcode
 }
-
-
-
+  
 firebase.database().ref().child('chats/' + roomcode).child('name').get().then((snapshot) => {
   if (snapshot.exists()) {
 
