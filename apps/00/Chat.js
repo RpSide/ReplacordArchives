@@ -589,8 +589,9 @@ var titlee = snapshot.val() + ' || Replacord'
   console.error(error);
 });
 
+function checkforban(){
       firebase.database().ref().child('chats/' + roomcode).child('bans').get().then((snapshot) => {
-        
+alert(snapshot.val())     
 let banned = snapshot.val()
 alert(snapshot.val())
   if (snapshot.exists()) {
@@ -608,8 +609,8 @@ if (banned.indexOf(localStorage.getItem("name")) ==! '-1'){
     console.log("No data available");
   }
 }).catch((error) => {
-  console.error(error);
-});
+  alert(error);
+})}
   
 firebase.database().ref().child('chats/' + roomcode).child('welcome').get().then((snapshot) => {
   if (snapshot.exists()) {
