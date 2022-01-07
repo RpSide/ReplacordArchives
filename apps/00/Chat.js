@@ -549,7 +549,7 @@ window.location.href = 'https://' + document.domain +'/apps/?id=0&code=' + roomc
   // Join a Chatroom
 
 jroom.onclick = function(params) {
-let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/?id0&inv=true&code=chatroom1');
+let join = prompt("Chatroom invite url", 'https://' + document.domain + '/apps/?id=0&inv=true&code=chatroom1');
 let text2;
 if (join == null || join == "") {
  alert ('empty field');
