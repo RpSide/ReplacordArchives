@@ -27,7 +27,7 @@ var version = localStorage.getItem('ver')
 
 let updates = {
   
-  version : 'Beta 3.4.1',
+  version : 'Beta 3.5.2',
   added : 'Settings : You can now change your text color with the color picker'
   
   
@@ -35,12 +35,12 @@ let updates = {
   
 }
 
-var client = 'Beta 3.4'
-var fullclient = '3.4.1 B'
-if (version != 'Beta 3.4.1') {
+var client = 'Beta 3.5'
+var fullclient = '3.5.2 B'
+if (version != 'Beta 3.5.2') {
   
 alert('Version : ' + updates.version + "     Thing(s) Added : " + updates.added)
-  var version = localStorage.setItem('ver', 'Beta 3.4.1')
+  var version = localStorage.setItem('ver', 'Beta 3.5.2')
 }
 
 let pfpurle = localStorage.getItem("url");
@@ -418,7 +418,7 @@ return localStorage.getItem("url");
 
           var message_user = document.createElement("span");
           message_user.setAttribute("class", "message_user");
-          message_user.textContent = "" + `${name}` + ' - ' + ver;
+          message_user.textContent = "" + `${name}`;
 
           var message_content_container = document.createElement("div");
           message_content_container.setAttribute(
