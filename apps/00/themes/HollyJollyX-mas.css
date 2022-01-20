@@ -1,3 +1,6 @@
+*{
+  scroll-behavior: smooth;
+}
 .message_pfp{
   border-radius: 30vw;
   width: 8vw;
