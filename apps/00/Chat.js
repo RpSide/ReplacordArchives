@@ -396,6 +396,8 @@ return localStorage.getItem("url");
           var ver = data.client;
           var pic = data.picture;
           var typ = data.type;
+          var time = data.time
+          var date = data.date
 
           var message_container = document.createElement("div");
           message_container.setAttribute("class", "message_container");
@@ -418,7 +420,7 @@ return localStorage.getItem("url");
 
           var message_user = document.createElement("span");
           message_user.setAttribute("class", "message_user");
-          message_user.textContent = "" + `${name}`;
+          message_user.textContent = "" + `${name} - ${date}  ${time}`;
 
           var message_content_container = document.createElement("div");
           message_content_container.setAttribute(
