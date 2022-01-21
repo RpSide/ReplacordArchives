@@ -15,9 +15,9 @@
 .unb {
   padding: 1vw;
 display: inline-block;
-background-color: darkgray;
+background-color: gray;
   color: black;
-border-color: gray; 
+border-color: darkgray; 
 border-radius: 50vw;
   font-size: 1vw;
   border-size: 1vw;
@@ -26,8 +26,10 @@ border-radius: 50vw;
 }
 
 .unb:hover {
-  color: lightgray;
-  border-color: lightgray; 
+  color: darkgray;
+  border-color: gray;
+  background-color: lightgray;
+  
 }
 #untitle {
 border-radius: 60vw;
