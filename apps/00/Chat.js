@@ -323,7 +323,7 @@ var time = (dateee.getHours()) + ':' + dateee.getMinutes() + ' am'
         var index = parseFloat(snapshot.numChildren()) + 1;
         db.ref('chats/' + room + 'messages/' + messageID)
           .set({
-            profilepic: 'https://proxy-copy.glitch.me/' + parent.get_url(),
+            profilepic: parent.get_url(),
             name: parent.get_name(),
             message: message,
             color: parent.get_color(),
