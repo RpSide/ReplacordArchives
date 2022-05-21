@@ -1,8 +1,10 @@
 import { html } from 'https://cdn-cdn.glitch.me/libraies/BetterDOMjs.js'
 
-    // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
+
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+ apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
   authDomain: "chat-883eb.firebaseapp.com",
   databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
   projectId: "chat-883eb",
@@ -11,9 +13,8 @@ const firebaseConfig = {
   appId: "1:421817736954:web:32ac95e1f698ea3ff0f343",
   measurementId: "G-YCQZGGEGZ9"
 };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 
 let SettingId = html.geturlparams('sid')
@@ -22,13 +23,11 @@ let ThemeLab = html.geturlparams('thlb')
 
 let normalurl = 'https://' + document.domain + '/apps/?code=' + roomcode
 
-
 function createnavbar(){
 html.button('Back to chat', normalurl + '&id=0')
 html.button('Home', normalurl + '&sid=1&id=1')
 html.button('Themes', normalurl + '&sid=2&id=1')
 html.button('Account', normalurl + '&sid=3&id=1')
-html.button('Notifications', normalurl + '&sid=4&id=1')
 }
 
 //Home
@@ -97,18 +96,15 @@ html.h1('Settings - Account' ,'acctitle')
   //name
   var username = localStorage.getItem('name')
   html.h4('Name' ,'acc-name-title')
-  html.input_text('', username, '25',  'acc-name')
+  html.input_text('', username, '15',  'acc-name')
   html.h1('', 'Update-name-cont')
   html.buttononclick('Update Account Name', "", 'Update-name')
   //pfp
     html.h4('Profile Picture' ,'acc-pfp-title')
-  html.label('Upload your PFP', 'acc-pfp', 'pfph')
   html.input_file('acc-pfp')
   html.progress('0', '100', 'pfpprog')
   
   html.div('acc')
-  
-  
   
   // name
   html.append('acctitle', 'acc')
@@ -119,11 +115,9 @@ html.h1('Settings - Account' ,'acctitle')
   
   //pfp
   html.append('acc-pfp-title', 'acc')
-  html.append('pfph', 'acc')
-html.append('pfpprog', 'acc')
   html.append('acc-pfp', 'acc')
+  html.append('pfpprog', 'acc')
   
-
   
     var Update_name = document.getElementById('Update-name')
   var name = document.getElementById('acc-name')
@@ -139,29 +133,20 @@ html.append('pfpprog', 'acc')
 }
 
 
-else if (SettingId == '4') {
-  createnavbar()
-  html.newdoc('Settings - Notifications', 'Settings - Notifications')
-  
-  
-  html.buttononclick('Enable Notifications', "window.location.href = 'javascript: notifications_on()'")
-  
-  html.button('Disable Notifications', 'javascript: notifications_off()')
 
-}
+
+// Could Not Find Setting + SettingID
 else {
-  
-  error()
-  
-}
-
-function error(){
-  
   html.newdoc()
   createnavbar()
   
-  html.h1(`(404 Not Found) Could not find the setting associated with this id ( ` + '"' + SettingId + '"' + ` )`)
-  html.title(`404 Not Found`)
+  html.title('Settings - Not Found')
+  
+  html.h1('Setting "' + SettingId + '" Could Not Be Found' ,'ErrorMessage')
+  
+  
+  html.div('Error')
+  html.append('ErrorMessage', 'Error')
   
 }
 
@@ -179,20 +164,17 @@ document.getElementById('acc-pfp').addEventListener('change', (event) => {
         progressBar.value = progress;
     });
 
-  storageRef.getDownloadURL().then(function(url){
+    storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-         alert('Pfp Updated')
-window.setTimeOut(localStorage.setItem('url', url))
+      alert('pfp Updated')
+        window.setTimeOut(localStorage.setItem('url', url))
     });
   
   storageRef.getDownloadURL().then(function(url){
         const image = document.getElementById('image');
         console.log(url);
-         alert('Pfp Updated')
-window.setTimeOut(localStorage.setItem('url', url))
+    alert('pfp Updated')
+        window.setTimeOut(localStorage.setItem('url', url))
     });
-  
 });
-
-

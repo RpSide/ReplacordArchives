@@ -15,6 +15,24 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var db = firebase.database()
 
+
+  var  get = {
+  data: function(token, attribute) {
+  
+  const dbRef = firebase.database().ref();
+dbRef.child("bot/" + tkn).child(attribute).get().then((snapshot) => {
+  if (snapshot.exists()) {
+    return snapshot.val()
+      } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+  }
+  }
+
+
 var create = {
 // Bot Creator
 bot: function(name) {
@@ -46,6 +64,13 @@ message: function(token, msg, chatroom)      {
       var room = 'chats/' + chatroom
       var roommessager = 'chats/' + chatroom + '/messages/'
           }
+      else {
+      var room = 'chats/chatroom1'
+      var roommessager = 'chats/chatroom1/messages/'
+
+}
+}
+}
 
   
   const dbRef = firebase.database().ref();
@@ -75,6 +100,8 @@ dbRef.child("bot/" + token).child('name').get().then((snapshot) => {
   console.error(error);
 });
 
-  
 }
+  
+  
+  
 }

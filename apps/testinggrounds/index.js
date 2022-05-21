@@ -3,6 +3,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyCF46UDRHhke3cHfUFOZ3YNcq9EJWdC10Y",
   authDomain: "chat-883eb.firebaseapp.com",
+  databaseURL: "https://chat-883eb-default-rtdb.firebaseio.com",
   projectId: "chat-883eb",
   storageBucket: "chat-883eb.appspot.com",
   messagingSenderId: "421817736954",
@@ -45,7 +46,7 @@ let text2;
 if (roomcode == null || roomcode == "") {
  alert ('empty field');
 } else {
-firebase.database().ref(roomcode + '/').set({
+firebase.database().ref("chats/"+roomcode + '/').set({
     name: roomname,
   });
 }
@@ -59,7 +60,7 @@ var roomname = document.getElementById('cname').value
 var welcome = document.getElementById('cwm').value 
 var subtitle = document.getElementById('csubt').value  
   
-firebase.database().ref(roomcode + '/').set({
+firebase.database().ref("chats/"+roomcode + '/').set({
     name: roomname,
       welcome: welcome,
     subtitle: subtitle

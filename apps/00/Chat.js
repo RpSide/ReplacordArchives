@@ -204,14 +204,14 @@ const firebaseConfig = {
 }    
       var txtcolor = document.createElement("input");
       txtcolor.setAttribute('type', 'color')
-      txtcolor.setAttribute('value', '#9e9e9e')
+      txtcolor.setAttribute('value', '#ffffff')
       txtcolor.setAttribute('id', 'colors')
       
       var chat_input = document.createElement("input");
       chat_input.setAttribute("type", "text");
       chat_input.setAttribute("id", "chat_input");
       chat_input.setAttribute("maxlength", 4000);
-      chat_input.placeholder = `${localStorage.getItem("name")}. Say something...`;
+      chat_input.placeholder = `${localStorage.getItem("name")}. Send something...`;
       
       chat_input.onkeypress = function(e){
       var key=e.keyCode || e.which;
@@ -601,7 +601,7 @@ alert(snapshot.val())
 
 if (banned.indexOf(localStorage.getItem("name")) ==! '-1'){
   alert(snapshot.val() + ' you have been banned')
-  window.location.href='https://replacordd.glitch.me/apps/?id=0&code=chatroom1'
+  window.location.href='https://'+document.domain+'/apps/?id=0&code=chatroom1'
   
     }
     }
