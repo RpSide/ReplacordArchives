@@ -51,78 +51,6 @@ document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="styles
   var invitecode = urlParams.get('code')
 
 var url = 'https://' + document.domain + '/apps/' + '?id=0&code=' + invitecode + '&applytheme='
-
-function dark() {
-  /* Get the text field */
-  var copyText = document.getElementById("dark");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-  
-  window.location.href = url + copyText.value
- 
-}
-
-function beta() {
-  /* Get the text field */
-  var copyText = document.getElementById("beta");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
- 
-  window.location.href = url + copyText.value
-}
-
-function light() {
-  /* Get the text field */
-  var copyText = document.getElementById("light");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-  
-  window.location.href = url + copyText.value
-}
-
-function blue() {
-  /* Get the text field */
-  var copyText = document.getElementById("blue");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-  
-  window.location.href = url + copyText.value
-}
-
-function red() {
-  /* Get the text field */
-  var copyText = document.getElementById("red");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-  
-  window.location.href = url + copyText.value
-
-}
     
     function copy(id) {
   /* Get the text field */
@@ -135,7 +63,7 @@ function red() {
   /* Copy the text inside the text field */
   navigator.clipboard.writeText(copyText.value);
   
-  window.location.href = url + copyText.value
+  window.location.href = url + copyText.value.replace("%url%", document.domain)
 
 }
 
@@ -144,36 +72,17 @@ function red() {
   <body>
     
     <h3><span class='tag2-9B'> 2.9 UI </span><span class='tag'> New </span> Void White </h3>
-    <h4><input id='lightest' type="text" value='https://devcompessays.glitch.me/apps/00/themes/VoidWhite.css'></h4>
+    <h4><input id='lightest' type="text" value='https://%url%/apps/00/themes/VoidWhite.css'></h4>
 <button onclick='copy("lightest")'>Get Theme</button>
     
     <h3><span class='tag2-9B'> 2.9 UI </span>Void Black </h3>
-    <h4><input id='darkest' type="text" value='https://devcompessays.glitch.me/apps/00/themes/VoidBlack.css'></h4>
+    <h4><input id='darkest' type="text" value='https://%url%/apps/00/themes/VoidBlack.css'></h4>
 <button onclick='copy("darkest")'>Get Theme</button>
     
     
     <h3><span class='tag2-9B'> 2.9 UI </span>HollyJolly X-mas</h3>
-    <h4><input id='xmas1' type="text" value='https://devcompessays.glitch.me/apps/00/themes/HollyJollyX-mas.css'></h4>
+    <h4><input id='xmas1' type="text" value='https://%url%/apps/00/themes/HollyJollyX-mas.css'></h4>
 <button onclick='copy("xmas1")'>Get Theme</button>
     
-    <h3><span class='tag2-9B'> 2.9 UI </span> <span class="notoptimized">Not Optimized</span>NightTime Black</h3>
-    <h4><input id='beta' type="text" value='https://kidslearning.glitch.me/apps/00/Chat2.css'></h4>
-<button onclick='beta()'>Get Theme</button>
-    
-    <h3><span class='tag1-9-4A'> 1.9.4 UI </span>NightTime Black<h3>
-    <h4><input id='dark' type="text" value='https://essaycomp.github.io/chat/themes/dark.css'></h4>
-<button onclick='dark()'>Get Theme</button>
-    
-        <h3><span class='tag1-9-4A'> 1.9.4 UI </span>Blinding White</h3>
-    <h4><input id='light' type="text" value='https://essaycomp.github.io/chat/themes/white.css'></h4>
-    <button onclick='light()'>Get Theme</button>
-    
-            <h3><span class='tag1-9-4A'> 1.9.4 UI </span>Rosey Red</h3>
-    <h4><input id='red' type="text" value='https://essaycomp.github.io/chat/themes/red.css'></h4>
-    <button onclick='red()'>Get Theme</button>
-    
-                <h3><span class='tag1-9-4A'> 1.9.4 UI </span>BoomBoom Blue</h3>
-    <h4><input id='blue' type="text" value='https://essaycomp.github.io/chat/themes/blue.css'></h4>
-    <button onclick='blue()'>Get Theme</button>
   </body>
 </html>
