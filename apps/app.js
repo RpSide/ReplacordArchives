@@ -60,7 +60,7 @@ notonoff()
 
 var domain = document.domain
 
-let ctheme = localStorage.getItem('theme');
+ctheme = localStorage.getItem('theme');
 if (ctheme == null || ctheme == undefined || ctheme == "") {
 
 document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="stylesheet" href="https://' + domain + '/apps/00/themes/VoidBlack.css"/>')
