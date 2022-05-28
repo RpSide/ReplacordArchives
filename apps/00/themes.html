@@ -51,84 +51,12 @@ document.write('<!-- Web Linked Casscading Style Sheet (Css)--><link rel="styles
   var invitecode = urlParams.get('code')
 
 var url = 'https://' + document.domain + '/apps/' + '?id=0&code=' + invitecode + '&applytheme='
-
-function dark() {
-  /* Get the text field */
-  var copyText = document.getElementById("dark");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-  
-  window.location.href = url + copyText.value
- 
-}
-
-function beta() {
-  /* Get the text field */
-  var copyText = document.getElementById("beta");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
- 
-  window.location.href = url + copyText.value
-}
-
-function light() {
-  /* Get the text field */
-  var copyText = document.getElementById("light");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-  
-  window.location.href = url + copyText.value
-}
-
-function blue() {
-  /* Get the text field */
-  var copyText = document.getElementById("blue");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-  
-  window.location.href = url + copyText.value
-}
-
-function red() {
-  /* Get the text field */
-  var copyText = document.getElementById("red");
-
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
-  
-  window.location.href = url + copyText.value
-
-}
     
     function usetheme(id) {
   /* Get the text field */
   var theme = document.getElementById(id);
   
-  window.location.href = url + theme.value
+  window.location.href = url + theme.value.replace("%url%", document.domain)
 
 }
   
@@ -152,14 +80,14 @@ function red() {
   <body>
     
     <h3><span class='tag2-9B'> 2.9 UI </span> Void White </h3>
-    <h4><input id='lightest' type="text" value='https://zombiefiedgamingyt.github.io/apps/00/themes/VoidWhite.css'></h4>
+    <h4><input id='lightest' type="text" value='https://%url%/apps/00/themes/VoidWhite.css'></h4>
 <button onclick='usetheme("lightest")'>Get Theme</button>
     
     <h3><span class='tag2-9B'> 2.9 UI </span>Void Black </h3>
-    <h4><input id='darkest' type="text" value='https://zombiefiedgamingyt.github.io/apps/00/themes/VoidBlack.css'></h4>
+    <h4><input id='darkest' type="text" value='https://%url%/apps/00/themes/VoidBlack.css'></h4>
 <button onclick='usetheme("darkest")'>Get Theme</button>
     
     
     <h3><span class='tag2-9B'> 2.9 UI </span>HollyJolly X-mas</h3>
-    <h4><input id='xmas1' type="text" value='https://zombiefiedgamingyt.github.io/apps/00/themes/HollyJollyX-mas.css'></h4>
+    <h4><input id='xmas1' type="text" value='https://%url%/apps/00/themes/HollyJollyX-mas.css'></h4>
 <button onclick='usetheme("xmas1")'>Get Theme</button>
