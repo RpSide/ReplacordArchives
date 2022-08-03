@@ -1,0 +1,22 @@
+<html>
+  <head>
+  <title>Replacord v1 Invite</title>
+
+  <script>
+
+// grabs paramiters from the url
+
+var queryString = window.location.search
+  
+  var urlParams = new URLSearchParams(queryString);
+   
+  var invitecode = urlParams.get('code')
+var url = 'https://' + document.domain + '/classic/v1/' + '?code=' + invitecode
+
+  window.location.href = url
+
+</script>
+  </head>
+  <body>
+  </body>
+</html>
