@@ -58,7 +58,7 @@ notonoff()
 
 
 
-var domain = document.domain + "/ReplacordArchives
+var domain = document.domain + "/ReplacordArchives"
 
 let ctheme = localStorage.getItem('theme');
 if (ctheme == null || ctheme == undefined || ctheme == "") {
